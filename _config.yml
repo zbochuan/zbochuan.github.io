@@ -100,5 +100,8 @@ theme: landscape
 
 # Deployment
 ## Docs: https://hexo.io/docs/one-command-deployment
+
 deploy:
-  type: ''
+  type: git
+  repo: https://github.com/zbochuan/zbochuan.github.io.git
+  branch: main  # 或者 master，取决于您的默认分支

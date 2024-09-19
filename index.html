@@ -301,13 +301,15 @@
   <div class="powered-by">Powered by <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://muse.theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Muse</a>
   </div>
 
-<script src="/js/canvas-nest.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/canvas-nest.js@1.0.1/dist/canvas-nest.js"></script>
 <script>
-    new CanvasNest(document.body, {
-        color: '0,255,255',  // 粒子颜色
-        opacity: 0.7,        // 透明度
-        count: 200           // 粒子数量
-    });
+    window.onload = function() {
+        new CanvasNest(document.body, {
+            color: '0,204,255',
+            opacity: 0.7,
+            count: 1000
+        });
+    };
 </script>
 
         

@@ -1,0 +1,292 @@
+// ===== 简约黑白分类页面样式 =====
+
+// 页面介绍区域
+.categories-intro
+  text-align: center
+  margin: 3rem 0 2rem 0
+  padding: 2rem 1rem
+  border-bottom: 1px solid #e5e5e5
+
+.categories-description
+  font-size: 1.1rem
+  color: #555
+  line-height: 1.6
+  margin: 0
+  font-weight: 300
+
+// 分类统计
+.category-stats
+  display: flex
+  justify-content: center
+  gap: 4rem
+  margin: 2rem 0
+  padding: 1.5rem 0
+  border-bottom: 1px solid #f0f0f0
+
+.stats-item
+  text-align: center
+
+.stats-number
+  display: block
+  font-size: 2.5rem
+  font-weight: 300
+  color: #333
+  line-height: 1
+  margin-bottom: 0.5rem
+
+.stats-label
+  font-size: 0.9rem
+  color: #999
+  text-transform: uppercase
+  letter-spacing: 2px
+  font-weight: 400
+
+// 搜索框
+.category-search
+  margin: 2rem 0
+  text-align: center
+
+.category-search input
+  padding: 0.8rem 1.2rem
+  border: 1px solid #ddd
+  border-radius: 0
+  width: 100%
+  max-width: 400px
+  font-size: 0.95rem
+  background: #fff
+  color: #333
+  transition: border-color 0.2s ease
+
+.category-search input:focus
+  outline: none
+  border-color: #333
+
+.category-search input::placeholder
+  color: #999
+  font-weight: 300
+
+// 分类列表标题
+.category-all-title
+  font-size: 1.3rem
+  font-weight: 400
+  color: #333
+  margin: 3rem 0 2rem 0
+  text-align: center
+  text-transform: uppercase
+  letter-spacing: 1px
+
+// 简约分类列表
+.category-list-enhanced .category-list-item
+  margin-bottom: 0
+  border-radius: 0
+  background: #fff
+  border: none
+  border-bottom: 1px solid #f0f0f0
+  transition: all 0.2s ease
+  opacity: 1
+  transform: none
+  animation: none
+
+.category-list-enhanced .category-list-item:hover
+  transform: none
+  box-shadow: none
+  background: #fafafa
+
+.category-list-enhanced .category-list-link
+  display: block
+  padding: 1.5rem 0
+  text-decoration: none
+  color: inherit
+  position: relative
+  border-left: 2px solid transparent
+  padding-left: 1rem
+  transition: border-color 0.2s ease
+
+.category-list-enhanced .category-list-link::before
+  display: none
+
+.category-list-enhanced .category-list-link:hover
+  border-left-color: #333
+
+.category-list-enhanced .category-list-count
+  float: right
+  background: #333
+  color: #fff
+  padding: 0.2rem 0.6rem
+  border-radius: 0
+  font-size: 0.8rem
+  font-weight: 400
+  min-width: auto
+  text-align: center
+  box-shadow: none
+  margin-left: 1rem
+
+.category-list-enhanced .category-list-name
+  font-size: 1.1rem
+  font-weight: 400
+  color: #333
+  margin-bottom: 0.3rem
+  display: flex
+  align-items: center
+  letter-spacing: 0.5px
+
+// 移除所有彩色图标，使用简单符号
+.category-list-enhanced .category-list-name::before
+  content: '—'
+  margin-right: 1rem
+  font-size: 1rem
+  color: #999
+  font-weight: 300
+
+// 移除特殊图标
+.category-list-enhanced a[href*="babel-tower"] .category-list-name::before
+  content: '—'
+
+.category-list-enhanced a[href*="computer-architecture"] .category-list-name::before
+  content: '—'
+
+.category-list-enhanced a[href*="software-design"] .category-list-name::before
+  content: '—'
+
+// 分类描述
+.category-description
+  color: #777 !important
+  font-size: 0.9rem !important
+  line-height: 1.5 !important
+  margin-top: 0.3rem !important
+  clear: both !important
+  font-weight: 300 !important
+
+// 无结果提示
+.no-results-message
+  text-align: center !important
+  padding: 3rem 1rem !important
+  color: #999 !important
+  font-style: normal !important
+  font-weight: 300 !important
+
+// 移除动画
+@keyframes shimmer
+  0%, 100%
+    transform: none
+  50%
+    transform: none
+
+@keyframes bounce
+  0%, 20%, 50%, 80%, 100%
+    transform: none
+  40%
+    transform: none
+  60%
+    transform: none
+
+@keyframes fadeInUp
+  to
+    opacity: 1
+    transform: none
+
+// 移除所有动画延迟
+.category-list-enhanced .category-list-item:nth-child(1),
+.category-list-enhanced .category-list-item:nth-child(2),
+.category-list-enhanced .category-list-item:nth-child(3),
+.category-list-enhanced .category-list-item:nth-child(4),
+.category-list-enhanced .category-list-item:nth-child(5),
+.category-list-enhanced .category-list-item:nth-child(6),
+.category-list-enhanced .category-list-item:nth-child(7),
+.category-list-enhanced .category-list-item:nth-child(8),
+.category-list-enhanced .category-list-item:nth-child(9),
+.category-list-enhanced .category-list-item:nth-child(10)
+  animation: none
+  animation-delay: 0s
+
+// 移除华丽的介绍样式
+.categories-intro::before
+  display: none
+
+.categories-icon
+  display: none
+
+// 响应式设计
+@media (max-width: 768px)
+  .category-stats
+    flex-direction: column
+    gap: 2rem
+  
+  .stats-number
+    font-size: 2rem
+  
+  .categories-intro
+    margin: 2rem 0 1rem 0
+    padding: 1rem
+  
+  .category-list-enhanced .category-list-link
+    padding: 1rem 0.5rem
+
+// 深色模式适配（保持简约）
+@media (prefers-color-scheme: dark)
+  .categories-intro
+    border-bottom-color: #333
+  
+  .categories-description
+    color: #ccc
+  
+  .category-stats
+    border-bottom-color: #333
+  
+  .stats-number
+    color: #fff
+  
+  .stats-label
+    color: #999
+  
+  .category-search input
+    background: #2d2d2d
+    border-color: #555
+    color: #fff
+  
+  .category-search input::placeholder
+    color: #999
+  
+  .category-search input:focus
+    border-color: #fff
+  
+  .category-all-title
+    color: #fff
+  
+  .category-list-enhanced .category-list-item
+    background: #1a1a1a
+    border-bottom-color: #333
+  
+  .category-list-enhanced .category-list-item:hover
+    background: #2d2d2d
+  
+  .category-list-enhanced .category-list-link:hover
+    border-left-color: #fff
+  
+  .category-list-enhanced .category-list-count
+    background: #fff
+    color: #333
+  
+  .category-list-enhanced .category-list-name
+    color: #fff
+  
+  .category-list-enhanced .category-list-name::before
+    color: #666
+  
+  .category-description
+    color: #999 !important
+
+// 额外的简约样式调整
+.categories-intro-content
+  margin-bottom: 1rem
+
+.category-all-title::after
+  display: none
+
+// 确保整体布局简洁
+.category-list-enhanced
+  border-top: 1px solid #f0f0f0
+
+@media (prefers-color-scheme: dark)
+  .category-list-enhanced
+    border-top-color: #333

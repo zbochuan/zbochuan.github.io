@@ -20,3 +20,10 @@ categories: [巴别塔(babel-tower),码术苑(software-design-architecture)]
 
   In a "Has a" relationship,  a class object has an object of another class to store its 
   state or do its work. It "has-a" reference to that other object.
+
+## Designing a Class
+  1. Always try to keep data private
+  2. Creating an object may require different actions such as initialization
+  3. Break up calsses with many responsibilities
+
+## 

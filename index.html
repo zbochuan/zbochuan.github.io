@@ -227,6 +227,78 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="CN">
+    <link itemprop="mainEntityOfPage" href="http://bochuan.site/2025/06/10/%E5%B7%B4%E5%88%AB%E5%A1%94/%E5%8D%83%E6%9C%BA%E5%9B%BE(computer-architecture)/Lab1/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="博川">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="百川赴海">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2025/06/10/%E5%B7%B4%E5%88%AB%E5%A1%94/%E5%8D%83%E6%9C%BA%E5%9B%BE(computer-architecture)/Lab1/" class="post-title-link" itemprop="url">Accumulator of Bfloat16</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+
+              <time title="Created: 2025-06-10 10:45:11" itemprop="dateCreated datePublished" datetime="2025-06-10T10:45:11+10:00">2025-06-10</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">In</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/babel-tower/" itemprop="url" rel="index"><span itemprop="name">巴别塔(babel-tower)</span></a>
+                </span>
+                  , 
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/babel-tower/computer-architecture/" itemprop="url" rel="index"><span itemprop="name">千机图(computer-architecture)</span></a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <p>In this lab we are required to build a hardware model for accumulation of a sequence of <a target="_blank" rel="noopener" href="https://en.wikipedia.org/wiki/Bfloat16_floating-point_format">Bfloat16</a> values and implement it on the lab board.Here we assume all values are positive and no overflow will occur. Each input<br>Value is set by the switches and the accumulative result for each new input is displayed on the LED array.</p>
+<p>Since we have a bottom to make operation <strong>compute</strong>, we may need a FSM. Intuitively, we will only need 2 state “idle &amp; compute”.</p>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="CN">
     <link itemprop="mainEntityOfPage" href="http://bochuan.site/2025/06/10/%E5%B7%B4%E5%88%AB%E5%A1%94/%E5%8D%83%E6%9C%BA%E5%9B%BE(computer-architecture)/Performance/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -473,7 +545,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="CN">
-    <link itemprop="mainEntityOfPage" href="http://bochuan.site/2025/06/10/%E5%B7%B4%E5%88%AB%E5%A1%94/%E5%8D%83%E6%9C%BA%E5%9B%BE(computer-architecture)/Lab1/">
+    <link itemprop="mainEntityOfPage" href="http://bochuan.site/2025/06/08/%E5%B7%B4%E5%88%AB%E5%A1%94/%E5%8D%83%E6%9C%BA%E5%9B%BE(computer-architecture)/MipsIntro/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.gif">
@@ -487,7 +559,7 @@
       <header class="post-header">
         <h2 class="post-title" itemprop="name headline">
           
-            <a href="/2025/06/10/%E5%B7%B4%E5%88%AB%E5%A1%94/%E5%8D%83%E6%9C%BA%E5%9B%BE(computer-architecture)/Lab1/" class="post-title-link" itemprop="url">Accumulator of Bfloat16</a>
+            <a href="/2025/06/08/%E5%B7%B4%E5%88%AB%E5%A1%94/%E5%8D%83%E6%9C%BA%E5%9B%BE(computer-architecture)/MipsIntro/" class="post-title-link" itemprop="url">An taste to MIPS ISA</a>
         </h2>
 
         <div class="post-meta">
@@ -497,7 +569,7 @@
               </span>
               <span class="post-meta-item-text">Posted on</span>
 
-              <time title="Created: 2025-06-10 10:45:11" itemprop="dateCreated datePublished" datetime="2025-06-10T10:45:11+10:00">2025-06-10</time>
+              <time title="Created: 2025-06-08 10:29:50" itemprop="dateCreated datePublished" datetime="2025-06-08T10:29:50+10:00">2025-06-08</time>
             </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -524,8 +596,70 @@
     <div class="post-body" itemprop="articleBody">
 
       
-          <p>In this lab we are required to build a hardware model for accumulation of a sequence of <a target="_blank" rel="noopener" href="https://en.wikipedia.org/wiki/Bfloat16_floating-point_format">Bfloat16</a> values and implement it on the lab board.Here we assume all values are positive and no overflow will occur. Each input<br>Value is set by the switches and the accumulative result for each new input is displayed on the LED array.</p>
-<p>Since we have a bottom to make operation <strong>compute</strong>, we may need a FSM. Intuitively, we will only need 2 state “idle &amp; compute”.</p>
+          <h2 id="Mips-interpretion"><a href="#Mips-interpretion" class="headerlink" title="Mips interpretion"></a>Mips interpretion</h2><p>Here is a traditional loop in C</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">while</span>(save[i] == K)</span><br><span class="line">  i+= <span class="number">1</span>;</span><br></pre></td></tr></table></figure>
+<p>Assume that i and k correspond to registers <code>$s3</code> and <code>$s5</code> and the base of the  array save is in <code>$s6</code>. What is the MIPS assembly code corresponding to this  C segment?</p>
+<figure class="highlight mips"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="symbol">Loop:</span> <span class="keyword">sll </span> $<span class="built_in">t1</span> $<span class="built_in">s3</span> <span class="number">2</span> </span><br><span class="line">      <span class="keyword">add </span> $<span class="built_in">t1</span> $<span class="built_in">t1</span> $<span class="built_in">s6</span></span><br><span class="line">      <span class="keyword">lw </span>  $<span class="built_in">t0</span>,<span class="number">0</span>($<span class="built_in">t1</span>)</span><br><span class="line">      <span class="keyword">bne </span> $<span class="built_in">t0</span>,$<span class="built_in">s5</span>, Exit</span><br><span class="line">      <span class="keyword">addi </span>$<span class="built_in">s3</span>,$<span class="built_in">s3</span>, <span class="number">1</span></span><br><span class="line">      <span class="keyword">j </span>   loop</span><br><span class="line"><span class="symbol">Exit:</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="Signed-Versus-Unsigned-Comparison"><a href="#Signed-Versus-Unsigned-Comparison" class="headerlink" title="Signed Versus Unsigned Comparison"></a>Signed Versus Unsigned Comparison</h2><p>Suppose register <code>$s0</code> has the binary number<br>$$ 1111\ 1111\ 1111\ 1111\ 1111\ 1111\  1111\  1111_{two}$$<br>and that register <code>$s1</code> has the binary number<br>$$ 0000\ 0000\ 0000\ 0000\ 0000\ 0000\  0000\  0001_{two}$$<br>where are the values pf registers <code>$t0</code> and <code>$t1</code> after these two instructions?</p>
+<figure class="highlight mips"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">slt </span>     $<span class="built_in">t0</span>, $<span class="built_in">s0</span>, $<span class="built_in">s1</span></span><br><span class="line"><span class="keyword">sltu </span>    $<span class="built_in">t1</span>, $<span class="built_in">s0</span>, $<span class="built_in">s1</span></span><br></pre></td></tr></table></figure>
+<p>The key spot of the question is <code>$s0</code> represents $-1_{ten}$ if it is a signed integer and $2^{32} - 1_{ten}$ if it is an unsigned integer. And the value in <code>$s1</code> represents $1_{ten}$ in either case.</p>
+<h2 id="Jump-opreation-in-MIPS"><a href="#Jump-opreation-in-MIPS" class="headerlink" title="Jump opreation in MIPS"></a>Jump opreation in MIPS</h2><table>
+<thead>
+<tr>
+<th>Instruction</th>
+<th>Syntax</th>
+<th>Address Source</th>
+<th>Saves Return Address</th>
+<th>Operation</th>
+<th>Common Use</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><strong>J</strong></td>
+<td><code>j target</code></td>
+<td>26-bit immediate</td>
+<td>No</td>
+<td>PC &#x3D; (PC+4)[31:28] || target || 00</td>
+<td>Unconditional jumps, loops</td>
+</tr>
+<tr>
+<td><strong>JAL</strong></td>
+<td><code>jal target</code></td>
+<td>26-bit immediate</td>
+<td>Yes (in $ra)</td>
+<td>$ra &#x3D; PC + 4<br>PC &#x3D; (PC+4)[31:28] || target || 00</td>
+<td>Function calls</td>
+</tr>
+<tr>
+<td><strong>JR</strong></td>
+<td><code>jr $rs</code></td>
+<td>Register content</td>
+<td>No</td>
+<td>PC &#x3D; $rs</td>
+<td>Function returns, indirect jumps</td>
+</tr>
+</tbody></table>
+<p>The jump register instruction jumps to the address stored in register <code>$ra</code> which is just what we want. Thus, the calling program, or <em>caller</em>, puts the parameter  values in <code>$a0–$a3</code> and uses <code>jal X</code> to jump to procedure X (sometimes named  the <code>callee</code>). The callee then performs the calculations, places the results in <code>$v0</code> and  <code>$v1</code>, and returns control to the caller using <code>jr $ra</code>.</p>
+<h2 id="Using-more-registers"><a href="#Using-more-registers" class="headerlink" title="Using more registers"></a>Using more registers</h2><p>We may have such question, What if we have a procedure which require more than 4 arguments and 2 return value registers. This situation is an example in which we need to spill registers to memory.</p>
+<p>Here we need to use a data structure called stack. A stack needs a pointer to the most recently allocated address in the stack  to show where the next procedure should place the registers to be spilled or where  old register values are found.By historical precedent, stacks “grow” from higher addresses to lower addresses.</p>
+<p>Compiling a C Procedure That Doesn’t Call Another Procedure:</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">int</span> <span class="title function_">leaf_example</span><span class="params">(<span class="type">int</span> g, <span class="type">int</span> h, <span class="type">int</span> i, <span class="type">int</span> j)</span> </span><br><span class="line">&#123;  </span><br><span class="line">  <span class="type">int</span> f;  </span><br><span class="line">  f = (g + h) – (i + j); </span><br><span class="line">  <span class="keyword">return</span> f; </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight mips"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">addi </span>$<span class="built_in">sp</span>, $<span class="built_in">sp</span>, –<span class="number">12</span> </span><br><span class="line"><span class="keyword">sw </span>$<span class="built_in">t1</span>,<span class="number">8</span>($<span class="built_in">sp</span>) </span><br><span class="line"><span class="keyword">sw </span>$<span class="built_in">t0</span>,<span class="number">4</span>($<span class="built_in">sp</span>)  </span><br><span class="line"><span class="keyword">sw </span>$<span class="built_in">s0</span>,<span class="number">0</span>($<span class="built_in">sp</span>) </span><br><span class="line"></span><br><span class="line"><span class="keyword">add </span>$<span class="built_in">t0</span>,$<span class="built_in">a0</span>,$<span class="built_in">a1</span> </span><br><span class="line"><span class="keyword">add </span>$<span class="built_in">t1</span>,$<span class="built_in">a2</span>,$<span class="built_in">a3</span></span><br><span class="line"><span class="keyword">sub </span>$<span class="built_in">s0</span>,$<span class="built_in">t0</span>,$<span class="built_in">t1</span> </span><br><span class="line"></span><br><span class="line"><span class="keyword">add </span>$<span class="built_in">v0</span>,$<span class="built_in">s0</span>,$<span class="built_in">zero</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">lw </span>$<span class="built_in">s0</span>, <span class="number">0</span>($<span class="built_in">sp</span>)</span><br><span class="line"><span class="keyword">lw </span>$<span class="built_in">t0</span>, <span class="number">4</span>($<span class="built_in">sp</span>) </span><br><span class="line"><span class="keyword">lw </span>$<span class="built_in">t1</span>, <span class="number">8</span>($<span class="built_in">sp</span>)</span><br><span class="line"><span class="keyword">addi </span>$<span class="built_in">sp</span>,$<span class="built_in">sp</span>,<span class="number">12</span></span><br><span class="line"><span class="keyword">jr </span>$<span class="built_in">ra</span></span><br></pre></td></tr></table></figure>
+<h3 id="Decoding-machine-code"><a href="#Decoding-machine-code" class="headerlink" title="Decoding machine code"></a>Decoding machine code</h3><p>What is the assembly language statement corresponding to this machine  instruction?<br><code>00af8020hex</code></p>
+<p>The first step in converting hexadecimal to binary is to find the op fields:</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">0    0    a    f    8    0    2    0  </span><br><span class="line">0000 0000 1010 1111 0100 0000 0010 0000</span><br></pre></td></tr></table></figure>
+<p>op field is <code>000000</code> in op(31:26) rs is <code>00101</code> rt is <code>01111</code> rd is <code>10000</code> shamt is <code>00000</code> funct is <code>100000</code></p>
+<p>By look up table we can know it is<br><code>add $s0, $a1, $t7</code></p>
+<p>I. What is the range of addresses for conditional branches in MIPS (K &#x3D; 1024)? </p>
+<ol>
+<li>Addresses between 0 and 64K # 1 </li>
+<li>Addresses between 0 and 256K # 1 </li>
+<li>Addresses up to about 32K before the branch to about 32K after </li>
+<li>Addresses up to about 128K before the branch to about 128K after</li>
+</ol>
+<p>Conditional branches use I-type format<br> 16-bit immediate field for the branch offset<br> The offset is signed<br> The offset represents the number of words to branch not bytes<br> Hence it will be $2^{16}$ words, $2^{15}$ words, $2^{17}$ bytes ahead and  backward.<br> which is 128KB ahead and backward.</p>
 
       
     </div>
@@ -700,140 +834,6 @@
 
       
           <h2 id=""><a href="#" class="headerlink" title=""></a></h2>
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="CN">
-    <link itemprop="mainEntityOfPage" href="http://bochuan.site/2025/06/08/%E5%B7%B4%E5%88%AB%E5%A1%94/%E5%8D%83%E6%9C%BA%E5%9B%BE(computer-architecture)/MipsIntro/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="博川">
-      <meta itemprop="description" content="">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="百川赴海">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2025/06/08/%E5%B7%B4%E5%88%AB%E5%A1%94/%E5%8D%83%E6%9C%BA%E5%9B%BE(computer-architecture)/MipsIntro/" class="post-title-link" itemprop="url">An taste to MIPS ISA</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">Posted on</span>
-
-              <time title="Created: 2025-06-08 10:29:50" itemprop="dateCreated datePublished" datetime="2025-06-08T10:29:50+10:00">2025-06-08</time>
-            </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-folder"></i>
-              </span>
-              <span class="post-meta-item-text">In</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/babel-tower/" itemprop="url" rel="index"><span itemprop="name">巴别塔(babel-tower)</span></a>
-                </span>
-                  , 
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/babel-tower/computer-architecture/" itemprop="url" rel="index"><span itemprop="name">千机图(computer-architecture)</span></a>
-                </span>
-            </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <h2 id="Mips-interpretion"><a href="#Mips-interpretion" class="headerlink" title="Mips interpretion"></a>Mips interpretion</h2><p>Here is a traditional loop in C</p>
-<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">while</span>(save[i] == K)</span><br><span class="line">  i+= <span class="number">1</span>;</span><br></pre></td></tr></table></figure>
-<p>Assume that i and k correspond to registers <code>$s3</code> and <code>$s5</code> and the base of the  array save is in <code>$s6</code>. What is the MIPS assembly code corresponding to this  C segment?</p>
-<figure class="highlight mips"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="symbol">Loop:</span> <span class="keyword">sll </span> $<span class="built_in">t1</span> $<span class="built_in">s3</span> <span class="number">2</span> </span><br><span class="line">      <span class="keyword">add </span> $<span class="built_in">t1</span> $<span class="built_in">t1</span> $<span class="built_in">s6</span></span><br><span class="line">      <span class="keyword">lw </span>  $<span class="built_in">t0</span>,<span class="number">0</span>($<span class="built_in">t1</span>)</span><br><span class="line">      <span class="keyword">bne </span> $<span class="built_in">t0</span>,$<span class="built_in">s5</span>, Exit</span><br><span class="line">      <span class="keyword">addi </span>$<span class="built_in">s3</span>,$<span class="built_in">s3</span>, <span class="number">1</span></span><br><span class="line">      <span class="keyword">j </span>   loop</span><br><span class="line"><span class="symbol">Exit:</span></span><br></pre></td></tr></table></figure>
-
-<h2 id="Signed-Versus-Unsigned-Comparison"><a href="#Signed-Versus-Unsigned-Comparison" class="headerlink" title="Signed Versus Unsigned Comparison"></a>Signed Versus Unsigned Comparison</h2><p>Suppose register <code>$s0</code> has the binary number<br>$$ 1111\ 1111\ 1111\ 1111\ 1111\ 1111\  1111\  1111_{two}$$<br>and that register <code>$s1</code> has the binary number<br>$$ 0000\ 0000\ 0000\ 0000\ 0000\ 0000\  0000\  0001_{two}$$<br>where are the values pf registers <code>$t0</code> and <code>$t1</code> after these two instructions?</p>
-<figure class="highlight mips"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">slt </span>     $<span class="built_in">t0</span>, $<span class="built_in">s0</span>, $<span class="built_in">s1</span></span><br><span class="line"><span class="keyword">sltu </span>    $<span class="built_in">t1</span>, $<span class="built_in">s0</span>, $<span class="built_in">s1</span></span><br></pre></td></tr></table></figure>
-<p>The key spot of the question is <code>$s0</code> represents $-1_{ten}$ if it is a signed integer and $2^{32} - 1_{ten}$ if it is an unsigned integer. And the value in <code>$s1</code> represents $1_{ten}$ in either case.</p>
-<h2 id="Jump-opreation-in-MIPS"><a href="#Jump-opreation-in-MIPS" class="headerlink" title="Jump opreation in MIPS"></a>Jump opreation in MIPS</h2><table>
-<thead>
-<tr>
-<th>Instruction</th>
-<th>Syntax</th>
-<th>Address Source</th>
-<th>Saves Return Address</th>
-<th>Operation</th>
-<th>Common Use</th>
-</tr>
-</thead>
-<tbody><tr>
-<td><strong>J</strong></td>
-<td><code>j target</code></td>
-<td>26-bit immediate</td>
-<td>No</td>
-<td>PC &#x3D; (PC+4)[31:28] || target || 00</td>
-<td>Unconditional jumps, loops</td>
-</tr>
-<tr>
-<td><strong>JAL</strong></td>
-<td><code>jal target</code></td>
-<td>26-bit immediate</td>
-<td>Yes (in $ra)</td>
-<td>$ra &#x3D; PC + 4<br>PC &#x3D; (PC+4)[31:28] || target || 00</td>
-<td>Function calls</td>
-</tr>
-<tr>
-<td><strong>JR</strong></td>
-<td><code>jr $rs</code></td>
-<td>Register content</td>
-<td>No</td>
-<td>PC &#x3D; $rs</td>
-<td>Function returns, indirect jumps</td>
-</tr>
-</tbody></table>
-<p>The jump register instruction jumps to the address stored in register <code>$ra</code> which is just what we want. Thus, the calling program, or <em>caller</em>, puts the parameter  values in <code>$a0–$a3</code> and uses <code>jal X</code> to jump to procedure X (sometimes named  the <code>callee</code>). The callee then performs the calculations, places the results in <code>$v0</code> and  <code>$v1</code>, and returns control to the caller using <code>jr $ra</code>.</p>
-<h2 id="Using-more-registers"><a href="#Using-more-registers" class="headerlink" title="Using more registers"></a>Using more registers</h2><p>We may have such question, What if we have a procedure which require more than 4 arguments and 2 return value registers. This situation is an example in which we need to spill registers to memory.</p>
-<p>Here we need to use a data structure called stack. A stack needs a pointer to the most recently allocated address in the stack  to show where the next procedure should place the registers to be spilled or where  old register values are found.By historical precedent, stacks “grow” from higher addresses to lower addresses.</p>
-<p>Compiling a C Procedure That Doesn’t Call Another Procedure:</p>
-<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">int</span> <span class="title function_">leaf_example</span><span class="params">(<span class="type">int</span> g, <span class="type">int</span> h, <span class="type">int</span> i, <span class="type">int</span> j)</span> </span><br><span class="line">&#123;  </span><br><span class="line">  <span class="type">int</span> f;  </span><br><span class="line">  f = (g + h) – (i + j); </span><br><span class="line">  <span class="keyword">return</span> f; </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<figure class="highlight mips"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">addi </span>$<span class="built_in">sp</span>, $<span class="built_in">sp</span>, –<span class="number">12</span> </span><br><span class="line"><span class="keyword">sw </span>$<span class="built_in">t1</span>,<span class="number">8</span>($<span class="built_in">sp</span>) </span><br><span class="line"><span class="keyword">sw </span>$<span class="built_in">t0</span>,<span class="number">4</span>($<span class="built_in">sp</span>)  </span><br><span class="line"><span class="keyword">sw </span>$<span class="built_in">s0</span>,<span class="number">0</span>($<span class="built_in">sp</span>) </span><br><span class="line"></span><br><span class="line"><span class="keyword">add </span>$<span class="built_in">t0</span>,$<span class="built_in">a0</span>,$<span class="built_in">a1</span> </span><br><span class="line"><span class="keyword">add </span>$<span class="built_in">t1</span>,$<span class="built_in">a2</span>,$<span class="built_in">a3</span></span><br><span class="line"><span class="keyword">sub </span>$<span class="built_in">s0</span>,$<span class="built_in">t0</span>,$<span class="built_in">t1</span> </span><br><span class="line"></span><br><span class="line"><span class="keyword">add </span>$<span class="built_in">v0</span>,$<span class="built_in">s0</span>,$<span class="built_in">zero</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">lw </span>$<span class="built_in">s0</span>, <span class="number">0</span>($<span class="built_in">sp</span>)</span><br><span class="line"><span class="keyword">lw </span>$<span class="built_in">t0</span>, <span class="number">4</span>($<span class="built_in">sp</span>) </span><br><span class="line"><span class="keyword">lw </span>$<span class="built_in">t1</span>, <span class="number">8</span>($<span class="built_in">sp</span>)</span><br><span class="line"><span class="keyword">addi </span>$<span class="built_in">sp</span>,$<span class="built_in">sp</span>,<span class="number">12</span></span><br><span class="line"><span class="keyword">jr </span>$<span class="built_in">ra</span></span><br></pre></td></tr></table></figure>
-<h3 id="Decoding-machine-code"><a href="#Decoding-machine-code" class="headerlink" title="Decoding machine code"></a>Decoding machine code</h3><p>What is the assembly language statement corresponding to this machine  instruction?<br><code>00af8020hex</code></p>
-<p>The first step in converting hexadecimal to binary is to find the op fields:</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">0    0    a    f    8    0    2    0  </span><br><span class="line">0000 0000 1010 1111 0100 0000 0010 0000</span><br></pre></td></tr></table></figure>
-<p>op field is <code>000000</code> in op(31:26) rs is <code>00101</code> rt is <code>01111</code> rd is <code>10000</code> shamt is <code>00000</code> funct is <code>100000</code></p>
-<p>By look up table we can know it is<br><code>add $s0, $a1, $t7</code></p>
-<p>I. What is the range of addresses for conditional branches in MIPS (K &#x3D; 1024)? </p>
-<ol>
-<li>Addresses between 0 and 64K # 1 </li>
-<li>Addresses between 0 and 256K # 1 </li>
-<li>Addresses up to about 32K before the branch to about 32K after </li>
-<li>Addresses up to about 128K before the branch to about 128K after</li>
-</ol>
-<p>Conditional branches use I-type format<br> 16-bit immediate field for the branch offset<br> The offset is signed<br> The offset represents the number of words to branch not bytes<br> Hence it will be $2^{16}$ words, $2^{15}$ words, $2^{17}$ bytes ahead and  backward.<br> which is 128KB ahead and backward.</p>
-
       
     </div>
 

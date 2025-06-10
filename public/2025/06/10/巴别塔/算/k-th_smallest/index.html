@@ -26,8 +26,8 @@
 <meta property="og:site_name" content="百川赴海">
 <meta property="og:description" content="ProblemGive integers n and  k, list all numbers from 1 n in directory order, then return $k^{th}$ number in that list. Logic Intuitively, we can generate all numbers $[1..n]$, convert to string, sort,">
 <meta property="og:locale">
-<meta property="article:published_time" content="2025-06-09T23:05:24.056Z">
-<meta property="article:modified_time" content="2025-06-09T23:15:20.123Z">
+<meta property="article:published_time" content="2025-06-10T00:45:11.868Z">
+<meta property="article:modified_time" content="2025-06-10T00:45:11.868Z">
 <meta property="article:author" content="博川">
 <meta name="twitter:card" content="summary">
 
@@ -176,9 +176,8 @@
                 <i class="far fa-calendar"></i>
               </span>
               <span class="post-meta-item-text">Posted on</span>
-              
 
-              <time title="Created: 2025-06-10 09:05:24 / Modified: 09:15:20" itemprop="dateCreated datePublished" datetime="2025-06-10T09:05:24+10:00">2025-06-10</time>
+              <time title="Created: 2025-06-10 10:45:11" itemprop="dateCreated datePublished" datetime="2025-06-10T10:45:11+10:00">2025-06-10</time>
             </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -209,7 +208,11 @@
 <h1 id="Logic"><a href="#Logic" class="headerlink" title="Logic"></a>Logic</h1><p> Intuitively, we can generate all numbers $[1..n]$, convert to string, sort, resulting to an $O(O log n)$.<br>Brutely, we can have the following code. </p>
 <figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span> &#123;</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="type">int</span> <span class="title">findKthNumber</span><span class="params">(<span class="type">int</span> n, <span class="type">int</span> k)</span> </span>&#123;</span><br><span class="line">        vector&lt;string&gt; nums;</span><br><span class="line">        </span><br><span class="line">        <span class="keyword">for</span> (<span class="type">int</span> i = <span class="number">1</span>; i &lt;= n; i++) &#123;</span><br><span class="line">            nums.<span class="built_in">push_back</span>(<span class="built_in">to_string</span>(i));</span><br><span class="line">        &#125;</span><br><span class="line">        </span><br><span class="line">        <span class="built_in">sort</span>(nums.<span class="built_in">begin</span>(), nums.<span class="built_in">end</span>());</span><br><span class="line"></span><br><span class="line">        <span class="keyword">return</span> <span class="built_in">stoi</span>(nums[k - <span class="number">1</span>]);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
 <p>No surprise, <strong>Time Limit Exceeded</strong>.</p>
-
+<p>The directory sequence corresponds to a 10-ary prefix tree of numbers. Each node <code>x</code> has children <code>x0, x1,...,x9</code>(of course if it still &lt;&#x3D;n ).</p>
+<p>We can count how many nodes are in each subtree and skip entire subtree when their size &lt; k.<br>we can have following solution.</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span> &#123;</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="type">int</span> <span class="title">findKthNumber</span><span class="params">(<span class="type">int</span> n, <span class="type">int</span> k)</span> </span>&#123;</span><br><span class="line">        <span class="type">int</span> curr = <span class="number">1</span>;</span><br><span class="line">        k--;<span class="comment">// 0-indexed</span></span><br><span class="line"></span><br><span class="line">        <span class="keyword">while</span>(k &gt; <span class="number">0</span>)&#123;</span><br><span class="line">                <span class="type">int</span> steps = <span class="built_in">countSteps</span>(n, curr, curr + <span class="number">1</span>);</span><br><span class="line">                <span class="keyword">if</span>(steps &lt;= k)&#123;</span><br><span class="line">                <span class="comment">//skip this subtree, go to next sibling</span></span><br><span class="line">                        curr++;</span><br><span class="line">                        k -= steps;</span><br><span class="line">                &#125;</span><br><span class="line">                <span class="keyword">else</span>&#123;</span><br><span class="line">                <span class="comment">//answer is in this subtree let&#x27;s go deeper</span></span><br><span class="line">                        curr *= <span class="number">10</span>;</span><br><span class="line">                        k--;</span><br><span class="line">                &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> curr;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+<p>countStep will calculate how many numbers exist with a prefix between ‘curr’ and ‘next’, and it should be &lt;&#x3D;n.</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="type">static</span> <span class="type">long</span> <span class="title">countSteps</span><span class="params">(<span class="type">long</span> <span class="type">long</span> curr, <span class="type">long</span> <span class="type">long</span> next, <span class="type">long</span> n)</span></span>&#123;</span><br><span class="line">      <span class="type">int</span> steps = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">while</span> (curr &lt;= n) &#123;</span><br><span class="line">            steps += <span class="built_in">min</span>((<span class="type">long</span> <span class="type">long</span>)n + <span class="number">1</span>, next) - curr;</span><br><span class="line">            curr *= <span class="number">10</span>;</span><br><span class="line">            next *= <span class="number">10</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> steps;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
     </div>
 
     
@@ -224,8 +227,8 @@
         
     <div class="post-nav">
       <div class="post-nav-item">
-    <a href="/2025/06/10/%E5%B7%B4%E5%88%AB%E5%A1%94/%E5%8D%83%E6%9C%BA%E5%9B%BE(computer-architecture)/Performance/" rel="prev" title="Performance">
-      <i class="fa fa-chevron-left"></i> Performance
+    <a href="/2025/06/10/%E5%B7%B4%E5%88%AB%E5%A1%94/%E5%8D%83%E6%9C%BA%E5%9B%BE(computer-architecture)/Lab1/" rel="prev" title="Accumulator of Bfloat16">
+      <i class="fa fa-chevron-left"></i> Accumulator of Bfloat16
     </a></div>
       <div class="post-nav-item"></div>
     </div>

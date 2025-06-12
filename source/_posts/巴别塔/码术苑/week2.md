@@ -66,3 +66,4 @@ We can also invoke`shapes[].area()`. Java will automatically use the implementat
 ## Interfaces in JAVA
 
 All the methods defined within an interface are **implicitly abstract**.
+

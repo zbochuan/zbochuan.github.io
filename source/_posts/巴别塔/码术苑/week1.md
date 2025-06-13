@@ -25,3 +25,10 @@ categories: [巴别塔(babel-tower),码术苑(software-design-architecture)]
   1. Always try to keep data private
   2. Creating an object may require different actions such as initialization
   3. Break up class with many responsibilities
+
+##
+
+
+
+
+

@@ -19,19 +19,19 @@
     var NexT = window.NexT || {};
     var CONFIG = {"hostname":"bochuan.site","root":"/","scheme":"Muse","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}}};
   </script>
-  <meta name="description" content="In this lab we are required to build a hardware model for accumulation of a sequence of Bfloat16 values and implement it on the lab board.Here we assume all values are positive and no overflow will oc">
+  <meta name="description" content="Super classes, Object, and Class Hierarchy Every class have a superclass If we don’t define the superclass, by default, it will be the class Object  Object class It is the only class that does not hav">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Accumulator of Bfloat16">
-<meta property="og:url" content="http://bochuan.site/2025/06/10/%E5%B7%B4%E5%88%AB%E5%A1%94/%E5%8D%83%E6%9C%BA%E5%9B%BE(computer-architecture)/Lab1/index.html">
+<meta property="og:title" content="Inheritance &amp; Abstract Classes &amp;  Polymorphism">
+<meta property="og:url" content="http://bochuan.site/2025/06/08/%E5%B7%B4%E5%88%AB%E5%A1%94/%E7%A0%81%E6%9C%AF%E8%8B%91/week2/index.html">
 <meta property="og:site_name" content="百川赴海">
-<meta property="og:description" content="In this lab we are required to build a hardware model for accumulation of a sequence of Bfloat16 values and implement it on the lab board.Here we assume all values are positive and no overflow will oc">
+<meta property="og:description" content="Super classes, Object, and Class Hierarchy Every class have a superclass If we don’t define the superclass, by default, it will be the class Object  Object class It is the only class that does not hav">
 <meta property="og:locale">
-<meta property="article:published_time" content="2025-06-10T00:45:11.867Z">
-<meta property="article:modified_time" content="2025-06-10T00:45:11.867Z">
+<meta property="article:published_time" content="2025-06-08T02:30:14.107Z">
+<meta property="article:modified_time" content="2025-06-11T23:12:28.519Z">
 <meta property="article:author" content="博川">
 <meta name="twitter:card" content="summary">
 
-<link rel="canonical" href="http://bochuan.site/2025/06/10/%E5%B7%B4%E5%88%AB%E5%A1%94/%E5%8D%83%E6%9C%BA%E5%9B%BE(computer-architecture)/Lab1/">
+<link rel="canonical" href="http://bochuan.site/2025/06/08/%E5%B7%B4%E5%88%AB%E5%A1%94/%E7%A0%81%E6%9C%AF%E8%8B%91/week2/">
 
 
 <script id="page-configurations">
@@ -44,7 +44,7 @@
   };
 </script>
 
-  <title>Accumulator of Bfloat16 | 百川赴海</title>
+  <title>Inheritance & Abstract Classes &  Polymorphism | 百川赴海</title>
   
 
 
@@ -154,7 +154,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="CN">
-    <link itemprop="mainEntityOfPage" href="http://bochuan.site/2025/06/10/%E5%B7%B4%E5%88%AB%E5%A1%94/%E5%8D%83%E6%9C%BA%E5%9B%BE(computer-architecture)/Lab1/">
+    <link itemprop="mainEntityOfPage" href="http://bochuan.site/2025/06/08/%E5%B7%B4%E5%88%AB%E5%A1%94/%E7%A0%81%E6%9C%AF%E8%8B%91/week2/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.gif">
@@ -167,7 +167,7 @@
     </span>
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
-          Accumulator of Bfloat16
+          Inheritance & Abstract Classes &  Polymorphism
         </h1>
 
         <div class="post-meta">
@@ -177,8 +177,15 @@
               </span>
               <span class="post-meta-item-text">Posted on</span>
 
-              <time title="Created: 2025-06-10 10:45:11" itemprop="dateCreated datePublished" datetime="2025-06-10T10:45:11+10:00">2025-06-10</time>
+              <time title="Created: 2025-06-08 12:30:14" itemprop="dateCreated datePublished" datetime="2025-06-08T12:30:14+10:00">2025-06-08</time>
             </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2025-06-12 09:12:28" itemprop="dateModified" datetime="2025-06-12T09:12:28+10:00">2025-06-12</time>
+              </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
                 <i class="far fa-folder"></i>
@@ -189,7 +196,7 @@
                 </span>
                   , 
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/babel-tower/computer-architecture/" itemprop="url" rel="index"><span itemprop="name">千机图(computer-architecture)</span></a>
+                  <a href="/categories/babel-tower/software-design-architecture/" itemprop="url" rel="index"><span itemprop="name">码术苑(software-design-architecture)</span></a>
                 </span>
             </span>
 
@@ -204,8 +211,24 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        <p>In this lab we are required to build a hardware model for accumulation of a sequence of <a target="_blank" rel="noopener" href="https://en.wikipedia.org/wiki/Bfloat16_floating-point_format">Bfloat16</a> values and implement it on the lab board.Here we assume all values are positive and no overflow will occur. Each input<br>Value is set by the switches and the accumulative result for each new input is displayed on the LED array.</p>
-<p>Since we have a bottom to make operation <strong>compute</strong>, we may need a FSM. Intuitively, we will only need 2 state “idle &amp; compute”.</p>
+        <h2 id="Super-classes-Object-and-Class-Hierarchy"><a href="#Super-classes-Object-and-Class-Hierarchy" class="headerlink" title="Super classes, Object, and Class Hierarchy"></a>Super classes, Object, and Class Hierarchy</h2><ul>
+<li>Every class have a superclass</li>
+<li>If we don’t define the superclass, by default, it will be the class Object</li>
+</ul>
+<h3 id="Object-class"><a href="#Object-class" class="headerlink" title="Object class"></a><strong>Object</strong> class</h3><ul>
+<li>It is the only class that does not have a superclass</li>
+</ul>
+<p>Often we need to <strong>override</strong> the following methods</p>
+<ul>
+<li>toString()</li>
+<li>equals()</li>
+<li>hasCode()</li>
+</ul>
+<h2 id="Abstract-classes"><a href="#Abstract-classes" class="headerlink" title="Abstract classes"></a>Abstract classes</h2><p>Using Abstract classes, we can declare classes that define ONLY part of implementation, leaving extended classes to provide specific implementation of some or all the methods</p>
+<p>One good example will be</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">abstract</span> <span class="keyword">class</span> <span class="title class_">Shape</span> &#123;</span><br><span class="line"></span><br><span class="line">	<span class="keyword">public</span> <span class="keyword">abstract</span> <span class="type">double</span> <span class="title function_">area</span><span class="params">()</span>;</span><br><span class="line"></span><br><span class="line">	<span class="keyword">public</span> <span class="keyword">abstract</span> <span class="type">double</span> <span class="title function_">circumference</span><span class="params">()</span>;</span><br><span class="line"></span><br><span class="line">	<span class="keyword">protected</span> <span class="keyword">static</span> <span class="type">int</span> <span class="variable">count_shapes</span> <span class="operator">=</span> <span class="number">0</span>;</span><br><span class="line"></span><br><span class="line">	<span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">printArea</span><span class="params">()</span> &#123;</span><br><span class="line">		System.out.println(<span class="string">&quot; (from Shape abstract class, method printArea)&gt; area is: &quot;</span> + <span class="built_in">this</span>.area());</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">Rectangle</span> <span class="keyword">extends</span> <span class="title class_">Shape</span> &#123;</span><br><span class="line">	<span class="keyword">protected</span> <span class="type">double</span> width, height;</span><br><span class="line"></span><br><span class="line">	<span class="keyword">public</span> <span class="title function_">Rectangle</span><span class="params">()</span> &#123;</span><br><span class="line">		width = <span class="number">1.0</span>;</span><br><span class="line">		height = <span class="number">1.0</span>;</span><br><span class="line">		count_shapes++;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	<span class="keyword">public</span> <span class="title function_">Rectangle</span><span class="params">(<span class="type">double</span> w, <span class="type">double</span> h)</span> &#123;</span><br><span class="line">		<span class="built_in">this</span>.width = w;</span><br><span class="line">		<span class="built_in">this</span>.height = h;</span><br><span class="line">		count_shapes++;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	<span class="keyword">public</span> <span class="type">double</span> <span class="title function_">area</span><span class="params">()</span> &#123;</span><br><span class="line">		<span class="keyword">return</span> width * height;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	<span class="keyword">public</span> <span class="type">double</span> <span class="title function_">circumference</span><span class="params">()</span> &#123;</span><br><span class="line">		<span class="keyword">return</span> <span class="number">2</span> * (width + height);</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>We can also invoke<code>shapes[].area()</code>. Java will automatically use the implementation.</p>
+<h2 id="Interfaces-in-JAVA"><a href="#Interfaces-in-JAVA" class="headerlink" title="Interfaces in JAVA"></a>Interfaces in JAVA</h2><p>All the methods defined within an interface are <strong>implicitly abstract</strong>.</p>
 
     </div>
 
@@ -221,12 +244,12 @@
         
     <div class="post-nav">
       <div class="post-nav-item">
-    <a href="/2025/06/10/%E5%B7%B4%E5%88%AB%E5%A1%94/%E5%8D%83%E6%9C%BA%E5%9B%BE(computer-architecture)/Performance/" rel="prev" title="Performance">
-      <i class="fa fa-chevron-left"></i> Performance
+    <a href="/2025/06/08/%E5%B7%B4%E5%88%AB%E5%A1%94/%E5%8D%83%E6%9C%BA%E5%9B%BE(computer-architecture)/MipsIntro/" rel="prev" title="An taste to MIPS ISA">
+      <i class="fa fa-chevron-left"></i> An taste to MIPS ISA
     </a></div>
       <div class="post-nav-item">
-    <a href="/2025/06/10/%E5%B7%B4%E5%88%AB%E5%A1%94/%E7%AE%97/k-th_smallest/" rel="next" title="Leetcode 440. K-th Smallest in Lexographical order">
-      Leetcode 440. K-th Smallest in Lexographical order <i class="fa fa-chevron-right"></i>
+    <a href="/2025/06/10/%E5%B7%B4%E5%88%AB%E5%A1%94/%E7%A0%81%E6%9C%AF%E8%8B%91/week1/" rel="next" title="intro to java and oop">
+      intro to java and oop <i class="fa fa-chevron-right"></i>
     </a></div>
     </div>
       </footer>
@@ -286,6 +309,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Super-classes-Object-and-Class-Hierarchy"><span class="nav-number">1.</span> <span class="nav-text">Super classes, Object, and Class Hierarchy</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Object-class"><span class="nav-number">1.1.</span> <span class="nav-text">Object class</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Abstract-classes"><span class="nav-number">2.</span> <span class="nav-text">Abstract classes</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Interfaces-in-JAVA"><span class="nav-number">3.</span> <span class="nav-text">Interfaces in JAVA</span></a></li></ol></div>
       </div>
       <!--/noindex-->
 
@@ -298,7 +322,7 @@
   <nav class="site-state">
       <div class="site-state-item site-state-posts">
           <a href="/archives">
-          <span class="site-state-item-count">8</span>
+          <span class="site-state-item-count">10</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>

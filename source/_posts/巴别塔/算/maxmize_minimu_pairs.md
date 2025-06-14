@@ -1,6 +1,9 @@
 ---
 title: Leetcode 2616. Minimize the maximum difference of pairs
 categories: [巴别塔(babel-tower),算(hermes)]
+tags:
+    - binary
+    - greedy
 ---
 
 ## Approach: binary + greedy

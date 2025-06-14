@@ -19,19 +19,20 @@
     var NexT = window.NexT || {};
     var CONFIG = {"hostname":"bochuan.site","root":"/","scheme":"Muse","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
   </script>
-  <meta name="description" content="Super classes, Object, and Class Hierarchy Every class have a superclass If we don’t define the superclass, by default, it will be the class Object  Object class It is the only class that does not hav">
+  <meta name="description" content="ProblemYou are given an integer num. Bob will sneakily remap one of the 10 possible digits(0 to 9) to another digit. Return the difference between the maximum and minimum value Bob can make by remap e">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Inheritance &amp; Abstract Classes &amp;  Polymorphism">
-<meta property="og:url" content="http://bochuan.site/2025/06/08/%E5%B7%B4%E5%88%AB%E5%A1%94/%E7%A0%81%E6%9C%AF%E8%8B%91/week2/index.html">
+<meta property="og:title" content="Leetcode2566. Maximum Difference by Remapping a Digit">
+<meta property="og:url" content="http://bochuan.site/2025/06/14/%E5%B7%B4%E5%88%AB%E5%A1%94/%E7%AE%97/Maximum_Difference_Remap/index.html">
 <meta property="og:site_name" content="百川赴海">
-<meta property="og:description" content="Super classes, Object, and Class Hierarchy Every class have a superclass If we don’t define the superclass, by default, it will be the class Object  Object class It is the only class that does not hav">
+<meta property="og:description" content="ProblemYou are given an integer num. Bob will sneakily remap one of the 10 possible digits(0 to 9) to another digit. Return the difference between the maximum and minimum value Bob can make by remap e">
 <meta property="og:locale">
-<meta property="article:published_time" content="2025-06-08T02:30:14.107Z">
-<meta property="article:modified_time" content="2025-06-11T23:12:28.519Z">
+<meta property="article:published_time" content="2025-06-14T00:08:13.698Z">
+<meta property="article:modified_time" content="2025-06-14T00:38:01.260Z">
 <meta property="article:author" content="博川">
+<meta property="article:tag" content="string">
 <meta name="twitter:card" content="summary">
 
-<link rel="canonical" href="http://bochuan.site/2025/06/08/%E5%B7%B4%E5%88%AB%E5%A1%94/%E7%A0%81%E6%9C%AF%E8%8B%91/week2/">
+<link rel="canonical" href="http://bochuan.site/2025/06/14/%E5%B7%B4%E5%88%AB%E5%A1%94/%E7%AE%97/Maximum_Difference_Remap/">
 
 
 <script id="page-configurations">
@@ -44,7 +45,7 @@
   };
 </script>
 
-  <title>Inheritance & Abstract Classes &  Polymorphism | 百川赴海</title>
+  <title>Leetcode2566. Maximum Difference by Remapping a Digit | 百川赴海</title>
   
 
 
@@ -187,7 +188,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="CN">
-    <link itemprop="mainEntityOfPage" href="http://bochuan.site/2025/06/08/%E5%B7%B4%E5%88%AB%E5%A1%94/%E7%A0%81%E6%9C%AF%E8%8B%91/week2/">
+    <link itemprop="mainEntityOfPage" href="http://bochuan.site/2025/06/14/%E5%B7%B4%E5%88%AB%E5%A1%94/%E7%AE%97/Maximum_Difference_Remap/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.gif">
@@ -200,7 +201,7 @@
     </span>
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
-          Inheritance & Abstract Classes &  Polymorphism
+          Leetcode2566. Maximum Difference by Remapping a Digit
         </h1>
 
         <div class="post-meta">
@@ -209,16 +210,10 @@
                 <i class="far fa-calendar"></i>
               </span>
               <span class="post-meta-item-text">Posted on</span>
+              
 
-              <time title="Created: 2025-06-08 12:30:14" itemprop="dateCreated datePublished" datetime="2025-06-08T12:30:14+10:00">2025-06-08</time>
+              <time title="Created: 2025-06-14 10:08:13 / Modified: 10:38:01" itemprop="dateCreated datePublished" datetime="2025-06-14T10:08:13+10:00">2025-06-14</time>
             </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2025-06-12 09:12:28" itemprop="dateModified" datetime="2025-06-12T09:12:28+10:00">2025-06-12</time>
-              </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
                 <i class="far fa-folder"></i>
@@ -229,7 +224,7 @@
                 </span>
                   , 
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/babel-tower/software-design-architecture/" itemprop="url" rel="index"><span itemprop="name">码术苑(software-design-architecture)</span></a>
+                  <a href="/categories/babel-tower/algorithm/" itemprop="url" rel="index"><span itemprop="name">算(hermes)</span></a>
                 </span>
             </span>
 
@@ -244,25 +239,14 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        <h2 id="Super-classes-Object-and-Class-Hierarchy"><a href="#Super-classes-Object-and-Class-Hierarchy" class="headerlink" title="Super classes, Object, and Class Hierarchy"></a>Super classes, Object, and Class Hierarchy</h2><ul>
-<li>Every class have a superclass</li>
-<li>If we don’t define the superclass, by default, it will be the class Object</li>
-</ul>
-<h3 id="Object-class"><a href="#Object-class" class="headerlink" title="Object class"></a><strong>Object</strong> class</h3><ul>
-<li>It is the only class that does not have a superclass</li>
-</ul>
-<p>Often we need to <strong>override</strong> the following methods</p>
-<ul>
-<li>toString()</li>
-<li>equals()</li>
-<li>hasCode()</li>
-</ul>
-<h2 id="Abstract-classes"><a href="#Abstract-classes" class="headerlink" title="Abstract classes"></a>Abstract classes</h2><p>Using Abstract classes, we can declare classes that define ONLY part of implementation, leaving extended classes to provide specific implementation of some or all the methods</p>
-<p>One good example will be</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">abstract</span> <span class="keyword">class</span> <span class="title class_">Shape</span> &#123;</span><br><span class="line"></span><br><span class="line">	<span class="keyword">public</span> <span class="keyword">abstract</span> <span class="type">double</span> <span class="title function_">area</span><span class="params">()</span>;</span><br><span class="line"></span><br><span class="line">	<span class="keyword">public</span> <span class="keyword">abstract</span> <span class="type">double</span> <span class="title function_">circumference</span><span class="params">()</span>;</span><br><span class="line"></span><br><span class="line">	<span class="keyword">protected</span> <span class="keyword">static</span> <span class="type">int</span> <span class="variable">count_shapes</span> <span class="operator">=</span> <span class="number">0</span>;</span><br><span class="line"></span><br><span class="line">	<span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">printArea</span><span class="params">()</span> &#123;</span><br><span class="line">		System.out.println(<span class="string">&quot; (from Shape abstract class, method printArea)&gt; area is: &quot;</span> + <span class="built_in">this</span>.area());</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">Rectangle</span> <span class="keyword">extends</span> <span class="title class_">Shape</span> &#123;</span><br><span class="line">	<span class="keyword">protected</span> <span class="type">double</span> width, height;</span><br><span class="line"></span><br><span class="line">	<span class="keyword">public</span> <span class="title function_">Rectangle</span><span class="params">()</span> &#123;</span><br><span class="line">		width = <span class="number">1.0</span>;</span><br><span class="line">		height = <span class="number">1.0</span>;</span><br><span class="line">		count_shapes++;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	<span class="keyword">public</span> <span class="title function_">Rectangle</span><span class="params">(<span class="type">double</span> w, <span class="type">double</span> h)</span> &#123;</span><br><span class="line">		<span class="built_in">this</span>.width = w;</span><br><span class="line">		<span class="built_in">this</span>.height = h;</span><br><span class="line">		count_shapes++;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	<span class="keyword">public</span> <span class="type">double</span> <span class="title function_">area</span><span class="params">()</span> &#123;</span><br><span class="line">		<span class="keyword">return</span> width * height;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	<span class="keyword">public</span> <span class="type">double</span> <span class="title function_">circumference</span><span class="params">()</span> &#123;</span><br><span class="line">		<span class="keyword">return</span> <span class="number">2</span> * (width + height);</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>We can also invoke<code>shapes[].area()</code>. Java will automatically use the implementation.</p>
-<h2 id="Interfaces-in-JAVA"><a href="#Interfaces-in-JAVA" class="headerlink" title="Interfaces in JAVA"></a>Interfaces in JAVA</h2><p>All the methods defined within an interface are <strong>implicitly abstract</strong>.</p>
-
+        <h2 id="Problem"><a href="#Problem" class="headerlink" title="Problem"></a>Problem</h2><p>You are given an integer <code>num</code>. Bob will sneakily remap one of the <code>10</code> possible digits(<code>0</code> to <code>9</code>) to another digit.</p>
+<p>Return the difference between the maximum and minimum value Bob can make by remap <strong>exactly one</strong> digit in <code>num</code>.</p>
+<p>Bob can remap a digit to it self.(not change)</p>
+<p>Resulting number after remapping can contain leading zeros.</p>
+<h2 id="Intuition"><a href="#Intuition" class="headerlink" title="Intuition"></a>Intuition</h2><p>Consider the number <code>11891</code>, Bob can remap <code>1</code> to <code>9</code> to obtain the max <code>99899</code>, and remap <code>1</code> to <code>0</code> to obtain the min <code>00890</code>.</p>
+<p>Consider the number <code>99919</code>, Bob can remap <code>1</code> to <code>9</code> to obtain the max <code>99999</code>, and remap <code>9</code> to <code>0</code> to obtain the min <code>00010</code>.</p>
+<p>Hence we can observe that remap the first non-9 digit to <code>9</code> to yield the max value. And replace the first digit to <code>0</code> to yield the min value.</p>
+<h2 id="COOOOOOOOOOOOODING"><a href="#COOOOOOOOOOOOODING" class="headerlink" title="COOOOOOOOOOOOODING"></a>COOOOOOOOOOOOODING</h2><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span>&#123;</span><br><span class="line">    <span class="keyword">public</span>:</span><br><span class="line">        <span class="function"><span class="type">int</span> <span class="title">minMaxDifference</span><span class="params">(<span class="type">int</span> num)</span></span>&#123;</span><br><span class="line">            string s = <span class="built_in">to_string</span>(num);</span><br><span class="line">            <span class="type">int</span> i = <span class="number">0</span>;</span><br><span class="line">            <span class="keyword">while</span>(s[i] == <span class="string">&#x27;9&#x27;</span> &amp;&amp; i &lt; s.<span class="built_in">length</span>()<span class="number">-1</span>) i+=<span class="number">1</span>;</span><br><span class="line"></span><br><span class="line">            string max = s;</span><br><span class="line">            <span class="keyword">for</span>(<span class="type">char</span>&amp; ch:max) <span class="keyword">if</span>(ch==s[i]) ch=<span class="string">&#x27;9&#x27;</span>;</span><br><span class="line">            </span><br><span class="line">            string min = s;</span><br><span class="line">            <span class="keyword">for</span>(<span class="type">char</span>&amp; ch:min) <span class="keyword">if</span>(ch==s[<span class="number">0</span>]) ch=<span class="string">&#x27;0&#x27;</span>;</span><br><span class="line">            <span class="keyword">return</span> <span class="built_in">stoi</span>(max)-<span class="built_in">stoi</span>(mn);</span><br><span class="line">        &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
     </div>
 
     
@@ -270,6 +254,9 @@
     
 
       <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/string/" rel="tag"># string</a>
+          </div>
 
         
 
@@ -277,13 +264,10 @@
         
     <div class="post-nav">
       <div class="post-nav-item">
-    <a href="/2025/06/08/%E5%B7%B4%E5%88%AB%E5%A1%94/%E5%8D%83%E6%9C%BA%E5%9B%BE(computer-architecture)/MipsIntro/" rel="prev" title="An taste to MIPS ISA">
-      <i class="fa fa-chevron-left"></i> An taste to MIPS ISA
+    <a href="/2025/06/14/%E5%B7%B4%E5%88%AB%E5%A1%94/%E7%AE%97/maxmize_minimu_pairs/" rel="prev" title="Leetcode 2616. Minimize the maximum difference of pairs">
+      <i class="fa fa-chevron-left"></i> Leetcode 2616. Minimize the maximum difference of pairs
     </a></div>
-      <div class="post-nav-item">
-    <a href="/2025/06/10/%E5%B7%B4%E5%88%AB%E5%A1%94/%E7%AE%97/k-th_smallest/" rel="next" title="Leetcode 440. K-th Smallest in Lexographical order">
-      Leetcode 440. K-th Smallest in Lexographical order <i class="fa fa-chevron-right"></i>
-    </a></div>
+      <div class="post-nav-item"></div>
     </div>
       </footer>
     
@@ -342,7 +326,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Super-classes-Object-and-Class-Hierarchy"><span class="nav-number">1.</span> <span class="nav-text">Super classes, Object, and Class Hierarchy</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Object-class"><span class="nav-number">1.1.</span> <span class="nav-text">Object class</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Abstract-classes"><span class="nav-number">2.</span> <span class="nav-text">Abstract classes</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Interfaces-in-JAVA"><span class="nav-number">3.</span> <span class="nav-text">Interfaces in JAVA</span></a></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Problem"><span class="nav-number">1.</span> <span class="nav-text">Problem</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Intuition"><span class="nav-number">2.</span> <span class="nav-text">Intuition</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#COOOOOOOOOOOOODING"><span class="nav-number">3.</span> <span class="nav-text">COOOOOOOOOOOOODING</span></a></li></ol></div>
       </div>
       <!--/noindex-->
 

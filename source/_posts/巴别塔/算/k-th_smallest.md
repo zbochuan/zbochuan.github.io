@@ -1,6 +1,8 @@
 ---
 title: Leetcode 440. K-th Smallest in Lexographical order
 categories: [巴别塔(babel-tower),算(hermes)]
+tags:
+    - tries
 ---
 # Problem
 Give integers **n** and  **k**, list all numbers from 1 **n** in directory order, then return $k^{th}$ number in that list.

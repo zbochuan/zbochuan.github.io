@@ -68,6 +68,14 @@ category_map:
   算(hermes): algorithm
 tag_map:
 
+# Search
+search:
+  path: search.xml
+  field: all
+  content: true
+  format: html
+  limit: 10000
+
 # Metadata elements
 meta_generator: true
 

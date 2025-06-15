@@ -119,7 +119,7 @@ menu:
   home: / || fa fa-home
   categories: /categories || fa fa-th-list
   friends: /friends || fa fa-users  # Add this line for friend links page
-  tags: /tags/ || fa fa-tags
+  #tags: /tags/ || fa fa-tags
   # about: /about/ || fa fa-user
 # Enable / Disable menu icons / item badges.
 menu_settings:

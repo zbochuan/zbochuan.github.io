@@ -19,15 +19,20 @@
     var NexT = window.NexT || {};
     var CONFIG = {"hostname":"bochuan.site","root":"/","scheme":"Muse","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
   </script>
-  <meta property="og:type" content="website">
-<meta property="og:title" content="百川赴海">
-<meta property="og:url" content="http://bochuan.site/categories/babel-tower/software-design-architecture/index.html">
+  <meta name="description" content="ProblemYou are given an integer num. Bob will sneakily remap one of the 10 possible digits(0 to 9) to another digit. Return the difference between the maximum and minimum value Bob can make by remap e">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Leetcode2566. Maximum Difference by Remapping a Digit">
+<meta property="og:url" content="http://bochuan.site/2025/06/16/%E5%B7%B4%E5%88%AB%E5%A1%94/%E7%AE%97/Maximum_Difference_Remap/index.html">
 <meta property="og:site_name" content="百川赴海">
+<meta property="og:description" content="ProblemYou are given an integer num. Bob will sneakily remap one of the 10 possible digits(0 to 9) to another digit. Return the difference between the maximum and minimum value Bob can make by remap e">
 <meta property="og:locale">
+<meta property="article:published_time" content="2025-06-16T00:44:03.855Z">
+<meta property="article:modified_time" content="2025-06-16T00:44:03.855Z">
 <meta property="article:author" content="博川">
+<meta property="article:tag" content="string">
 <meta name="twitter:card" content="summary">
 
-<link rel="canonical" href="http://bochuan.site/categories/babel-tower/software-design-architecture/">
+<link rel="canonical" href="http://bochuan.site/2025/06/16/%E5%B7%B4%E5%88%AB%E5%A1%94/%E7%AE%97/Maximum_Difference_Remap/">
 
 
 <script id="page-configurations">
@@ -35,12 +40,12 @@
   CONFIG.page = {
     sidebar: "",
     isHome : false,
-    isPost : false,
+    isPost : true,
     lang   : 'zh-Hans'
   };
 </script>
 
-  <title>Category: 码术苑(software-design-architecture) | 百川赴海</title>
+  <title>Leetcode2566. Maximum Difference by Remapping a Digit | 百川赴海</title>
   
 
 
@@ -171,71 +176,101 @@
         <div class="content-wrap">
           
 
-          <div class="content category">
+          <div class="content post posts-expand">
             
 
+    
   
   
-  
-  <div class="post-block">
-    <div class="posts-collapse">
-      <div class="collection-title">
-        <h2 class="collection-header">码术苑(software-design-architecture)
-          <small>Category</small>
-        </h2>
-      </div>
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-Hans">
+    <link itemprop="mainEntityOfPage" href="http://bochuan.site/2025/06/16/%E5%B7%B4%E5%88%AB%E5%A1%94/%E7%AE%97/Maximum_Difference_Remap/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="博川">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="百川赴海">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          Leetcode2566. Maximum Difference by Remapping a Digit
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+
+              <time title="Created: 2025-06-16 10:44:31n" itemprop="dateCreated datePublished" datetime="2025-06-16T10:44:03+10:00">2025-06-16</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">In</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/babel-tower/" itemprop="url" rel="index"><span itemprop="name">巴别塔(babel-tower)</span></a>
+                </span>
+                  , 
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/babel-tower/algorithm/" itemprop="url" rel="index"><span itemprop="name">算(hermes)</span></a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
 
       
-    <div class="collection-year">
-      <span class="collection-header">2025</span>
+        <h2 id="Problem"><a href="#Problem" class="headerlink" title="Problem"></a>Problem</h2><p>You are given an integer <code>num</code>. Bob will sneakily remap one of the <code>10</code> possible digits(<code>0</code> to <code>9</code>) to another digit.</p>
+<p>Return the difference between the maximum and minimum value Bob can make by remap <strong>exactly one</strong> digit in <code>num</code>.</p>
+<p>Bob can remap a digit to it self.(not change)</p>
+<p>Resulting number after remapping can contain leading zeros.</p>
+<h2 id="Intuition"><a href="#Intuition" class="headerlink" title="Intuition"></a>Intuition</h2><p>Consider the number <code>11891</code>, Bob can remap <code>1</code> to <code>9</code> to obtain the max <code>99899</code>, and remap <code>1</code> to <code>0</code> to obtain the min <code>00890</code>.</p>
+<p>Consider the number <code>99919</code>, Bob can remap <code>1</code> to <code>9</code> to obtain the max <code>99999</code>, and remap <code>9</code> to <code>0</code> to obtain the min <code>00010</code>.</p>
+<p>Hence we can observe that remap the first non-9 digit to <code>9</code> to yield the max value. And replace the first digit to <code>0</code> to yield the min value.</p>
+<h2 id="COOOOOOOOOOOOODING"><a href="#COOOOOOOOOOOOODING" class="headerlink" title="COOOOOOOOOOOOODING"></a>COOOOOOOOOOOOODING</h2><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span>&#123;</span><br><span class="line">    <span class="keyword">public</span>:</span><br><span class="line">        <span class="function"><span class="type">int</span> <span class="title">minMaxDifference</span><span class="params">(<span class="type">int</span> num)</span></span>&#123;</span><br><span class="line">            string s = <span class="built_in">to_string</span>(num);</span><br><span class="line">            <span class="type">int</span> i = <span class="number">0</span>;</span><br><span class="line">            <span class="keyword">while</span>(s[i] == <span class="string">&#x27;9&#x27;</span> &amp;&amp; i &lt; s.<span class="built_in">length</span>()<span class="number">-1</span>) i+=<span class="number">1</span>;</span><br><span class="line"></span><br><span class="line">            string max = s;</span><br><span class="line">            <span class="keyword">for</span>(<span class="type">char</span>&amp; ch:max) <span class="keyword">if</span>(ch==s[i]) ch=<span class="string">&#x27;9&#x27;</span>;</span><br><span class="line">            </span><br><span class="line">            string min = s;</span><br><span class="line">            <span class="keyword">for</span>(<span class="type">char</span>&amp; ch:min) <span class="keyword">if</span>(ch==s[<span class="number">0</span>]) ch=<span class="string">&#x27;0&#x27;</span>;</span><br><span class="line">            <span class="keyword">return</span> <span class="built_in">stoi</span>(max)-<span class="built_in">stoi</span>(mn);</span><br><span class="line">        &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
     </div>
 
-  <article itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
+    
+    
+    
 
-      <div class="post-meta">
-        <time itemprop="dateCreated"
-              datetime="2025-06-13T08:39:28+10:00"
-              content="2025-06-13">
-          06-13
-        </time>
-      </div>
+      <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/string/" rel="tag"># string</a>
+          </div>
 
-      <div class="post-title">
-          <a class="post-title-link" href="/2025/06/13/%E5%B7%B4%E5%88%AB%E5%A1%94/%E7%A0%81%E6%9C%AF%E8%8B%91/week2/" itemprop="url">
-            <span itemprop="name">Inheritance & Abstract Classes &  Polymorphism</span>
-          </a>
-      </div>
+        
 
-    </header>
-  </article>
 
-  <article itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <div class="post-meta">
-        <time itemprop="dateCreated"
-              datetime="2025-06-10T10:45:11+10:00"
-              content="2025-06-10">
-          06-10
-        </time>
-      </div>
-
-      <div class="post-title">
-          <a class="post-title-link" href="/2025/06/10/%E5%B7%B4%E5%88%AB%E5%A1%94/%E7%A0%81%E6%9C%AF%E8%8B%91/week1/" itemprop="url">
-            <span itemprop="name">intro to java and oop</span>
-          </a>
-      </div>
-
-    </header>
-  </article>
-
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/2025/06/13/%E5%B7%B4%E5%88%AB%E5%A1%94/%E7%A0%81%E6%9C%AF%E8%8B%91/week2/" rel="prev" title="Inheritance & Abstract Classes &  Polymorphism">
+      <i class="fa fa-chevron-left"></i> Inheritance & Abstract Classes &  Polymorphism
+    </a></div>
+      <div class="post-nav-item">
+    <a href="/2025/06/16/%E5%B7%B4%E5%88%AB%E5%A1%94/%E7%AE%97/maxmize_minimu_pairs/" rel="next" title="Leetcode 2616. Minimize the maximum difference of pairs">
+      Leetcode 2616. Minimize the maximum difference of pairs <i class="fa fa-chevron-right"></i>
+    </a></div>
     </div>
-  </div>
+      </footer>
+    
+  </article>
   
   
-  
-
   
 
 
@@ -288,6 +323,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Problem"><span class="nav-number">1.</span> <span class="nav-text">Problem</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Intuition"><span class="nav-number">2.</span> <span class="nav-text">Intuition</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#COOOOOOOOOOOOODING"><span class="nav-number">3.</span> <span class="nav-text">COOOOOOOOOOOOODING</span></a></li></ol></div>
       </div>
       <!--/noindex-->
 

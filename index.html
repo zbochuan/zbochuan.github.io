@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="CN">
+<html lang="zh-Hans">
 <head>
   <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
@@ -17,7 +17,7 @@
 
 <script id="hexo-configurations">
     var NexT = window.NexT || {};
-    var CONFIG = {"hostname":"bochuan.site","root":"/","scheme":"Muse","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}}};
+    var CONFIG = {"hostname":"bochuan.site","root":"/","scheme":"Muse","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
   </script>
   <meta property="og:type" content="website">
 <meta property="og:title" content="百川赴海">
@@ -36,7 +36,7 @@
     sidebar: "",
     isHome : true,
     isPost : false,
-    lang   : 'CN'
+    lang   : 'zh-Hans'
   };
 </script>
 
@@ -98,6 +98,7 @@
 
   <div class="site-nav-right">
     <div class="toggle popup-trigger">
+        <i class="fa fa-search fa-fw fa-lg"></i>
     </div>
   </div>
 </div>
@@ -122,11 +123,38 @@
     <a href="/friends" rel="section"><i class="fa fa-users fa-fw"></i>friends</a>
 
   </li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>Search
+        </a>
+      </li>
   </ul>
 </nav>
 
 
 
+  <div class="search-pop-overlay">
+    <div class="popup search-popup">
+        <div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocapitalize="off"
+           placeholder="Searching..." spellcheck="false"
+           type="search" class="search-input">
+  </div>
+  <span class="popup-btn-close">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div id="search-result">
+  <div id="no-result">
+    <i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>
+  </div>
+</div>
+
+    </div>
+  </div>
 
 </div>
     </header>
@@ -148,8 +176,8 @@
       
   
   
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="CN">
-    <link itemprop="mainEntityOfPage" href="http://bochuan.site/2025/06/13/%E5%B7%B4%E5%88%AB%E5%A1%94/%E7%AE%97/maxmize_minimu_pairs/">
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-Hans">
+    <link itemprop="mainEntityOfPage" href="http://bochuan.site/2025/06/16/%E5%B7%B4%E5%88%AB%E5%A1%94/%E5%8D%83%E6%9C%BA%E5%9B%BE(computer-architecture)/Multicycle_processor/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.gif">
@@ -163,7 +191,7 @@
       <header class="post-header">
         <h2 class="post-title" itemprop="name headline">
           
-            <a href="/2025/06/13/%E5%B7%B4%E5%88%AB%E5%A1%94/%E7%AE%97/maxmize_minimu_pairs/" class="post-title-link" itemprop="url">Leetcode 2616. Minimize the maximum difference of pairs</a>
+            <a href="/2025/06/16/%E5%B7%B4%E5%88%AB%E5%A1%94/%E5%8D%83%E6%9C%BA%E5%9B%BE(computer-architecture)/Multicycle_processor/" class="post-title-link" itemprop="url">Mul</a>
         </h2>
 
         <div class="post-meta">
@@ -174,7 +202,391 @@
               <span class="post-meta-item-text">Posted on</span>
               
 
-              <time title="Created: 2025-06-13 10:41:23 / Modified: 13:35:12" itemprop="dateCreated datePublished" datetime="2025-06-13T10:41:23+10:00">2025-06-13</time>
+              <time title="Created: 2025-06-16 11:18:461n / Modified: 11:34:561n" itemprop="dateCreated datePublished" datetime="2025-06-16T11:18:46+10:00">2025-06-16</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">In</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/babel-tower/" itemprop="url" rel="index"><span itemprop="name">巴别塔(babel-tower)</span></a>
+                </span>
+                  , 
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/babel-tower/computer-architecture/" itemprop="url" rel="index"><span itemprop="name">千机图(computer-architecture)</span></a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <p>In Single Cycle processor, we have a CPI of 1.</p>
+<p>The clock cycle is determine by the most time-wasting instruction</p>
+<p>We can partition the Single-cycle datapath. For each partition, we need to determine which register the datapath should be accessed.</p>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-Hans">
+    <link itemprop="mainEntityOfPage" href="http://bochuan.site/2025/06/16/%E5%B7%B4%E5%88%AB%E5%A1%94/%E7%AE%97/Max_diff_incresing_element/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="博川">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="百川赴海">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2025/06/16/%E5%B7%B4%E5%88%AB%E5%A1%94/%E7%AE%97/Max_diff_incresing_element/" class="post-title-link" itemprop="url">Leetcode2016 Maximum Difference Between Increasing Elements</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+              
+
+              <time title="Created: 2025-06-16 10:46:331n / Modified: 13:32:531n" itemprop="dateCreated datePublished" datetime="2025-06-16T10:46:33+10:00">2025-06-16</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">In</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/babel-tower/" itemprop="url" rel="index"><span itemprop="name">巴别塔(babel-tower)</span></a>
+                </span>
+                  , 
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/babel-tower/algorithm/" itemprop="url" rel="index"><span itemprop="name">算(hermes)</span></a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h2 id="Problem"><a href="#Problem" class="headerlink" title="Problem"></a>Problem</h2><p>Given a 0-indexed integer array <code>nums</code> of size <code>n</code>, find the maximum difference between <code>nums[i]</code> and <code>nums[j]</code> (i.e., <code>nums[j] - nums[i]</code>), such that <code>0 &lt;= i &lt; j &lt; n</code> and <code>nums[i] &lt; nums[j]</code>.</p>
+<p>Return the maximum difference. If no such i and j exists, return -1.</p>
+<h2 id="Intuition"><a href="#Intuition" class="headerlink" title="Intuition"></a>Intuition</h2><p>The brute solution is easy. We can have 2 pointers do iteration which would result in a time complexity of $O(n^2)$.</p>
+<p>That’s so dumb… Can we have a better solution?</p>
+<p>Consider how max difference come from? Now we have are in <code>num[i]</code>. The max diff show be updated  to <code>num[i]- min(num[0], num[i-1])</code> if <code>prefix_res &lt; res</code>. Nice! we may keep the track of min value in previous data.</p>
+<p>In each iteration, if <code>num[i] &lt; min(num[0], num[i-1])</code> then we update the minValue else we can update <code>res = max(res, num[i] - minValue)</code>. Sweeeeeet! We optimize it to $O(n)$.</p>
+<h2 id="Cooooooooding"><a href="#Cooooooooding" class="headerlink" title="Cooooooooding"></a>Cooooooooding</h2><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span> &#123;</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="type">int</span> <span class="title">maximumDifference</span><span class="params">(vector&lt;<span class="type">int</span>&gt;&amp; nums)</span> </span>&#123;</span><br><span class="line">        <span class="type">int</span> res = <span class="number">-1</span>;</span><br><span class="line">        <span class="type">int</span> min = nums[<span class="number">0</span>];</span><br><span class="line">        <span class="keyword">for</span>(<span class="type">int</span> i = <span class="number">1</span>; i &lt; num.<span class="built_in">size</span>(); i++)&#123;</span><br><span class="line">            <span class="keyword">if</span>(nums[i] &lt;= min)&#123;</span><br><span class="line">                min = nums[i]</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">else</span>&#123;</span><br><span class="line">                res = <span class="built_in">max</span>(nums[i] - min, res);</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> res;      </span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-Hans">
+    <link itemprop="mainEntityOfPage" href="http://bochuan.site/2025/06/16/%E5%B7%B4%E5%88%AB%E5%A1%94/%E7%AE%97/k-th_smallest/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="博川">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="百川赴海">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2025/06/16/%E5%B7%B4%E5%88%AB%E5%A1%94/%E7%AE%97/k-th_smallest/" class="post-title-link" itemprop="url">Leetcode 440. K-th Smallest in Lexographical order</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+
+              <time title="Created: 2025-06-16 10:44:31n" itemprop="dateCreated datePublished" datetime="2025-06-16T10:44:03+10:00">2025-06-16</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">In</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/babel-tower/" itemprop="url" rel="index"><span itemprop="name">巴别塔(babel-tower)</span></a>
+                </span>
+                  , 
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/babel-tower/algorithm/" itemprop="url" rel="index"><span itemprop="name">算(hermes)</span></a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h1 id="Problem"><a href="#Problem" class="headerlink" title="Problem"></a>Problem</h1><p>Give integers <strong>n</strong> and  <strong>k</strong>, list all numbers from 1 <strong>n</strong> in directory order, then return $k^{th}$ number in that list.</p>
+<h1 id="Logic"><a href="#Logic" class="headerlink" title="Logic"></a>Logic</h1><p> Intuitively, we can generate all numbers $[1..n]$, convert to string, sort, resulting to an $O(O log n)$.<br>Brutely, we can have the following code. </p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span> &#123;</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="type">int</span> <span class="title">findKthNumber</span><span class="params">(<span class="type">int</span> n, <span class="type">int</span> k)</span> </span>&#123;</span><br><span class="line">        vector&lt;string&gt; nums;</span><br><span class="line">        </span><br><span class="line">        <span class="keyword">for</span> (<span class="type">int</span> i = <span class="number">1</span>; i &lt;= n; i++) &#123;</span><br><span class="line">            nums.<span class="built_in">push_back</span>(<span class="built_in">to_string</span>(i));</span><br><span class="line">        &#125;</span><br><span class="line">        </span><br><span class="line">        <span class="built_in">sort</span>(nums.<span class="built_in">begin</span>(), nums.<span class="built_in">end</span>());</span><br><span class="line"></span><br><span class="line">        <span class="keyword">return</span> <span class="built_in">stoi</span>(nums[k - <span class="number">1</span>]);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+<p>No surprise, <strong>Time Limit Exceeded</strong>.</p>
+<p>The directory sequence corresponds to a 10-ary prefix tree of numbers. Each node <code>x</code> has children <code>x0, x1,...,x9</code>(of course if it still &lt;&#x3D;n ).</p>
+<p>We can count how many nodes are in each subtree and skip entire subtree when their size &lt; k.<br>we can have following solution.</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span> &#123;</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="type">int</span> <span class="title">findKthNumber</span><span class="params">(<span class="type">int</span> n, <span class="type">int</span> k)</span> </span>&#123;</span><br><span class="line">        <span class="type">int</span> curr = <span class="number">1</span>;</span><br><span class="line">        k--;<span class="comment">// 0-indexed</span></span><br><span class="line"></span><br><span class="line">        <span class="keyword">while</span>(k &gt; <span class="number">0</span>)&#123;</span><br><span class="line">                <span class="type">int</span> steps = <span class="built_in">countSteps</span>(n, curr, curr + <span class="number">1</span>);</span><br><span class="line">                <span class="keyword">if</span>(steps &lt;= k)&#123;</span><br><span class="line">                <span class="comment">//skip this subtree, go to next sibling</span></span><br><span class="line">                        curr++;</span><br><span class="line">                        k -= steps;</span><br><span class="line">                &#125;</span><br><span class="line">                <span class="keyword">else</span>&#123;</span><br><span class="line">                <span class="comment">//answer is in this subtree let&#x27;s go deeper</span></span><br><span class="line">                        curr *= <span class="number">10</span>;</span><br><span class="line">                        k--;</span><br><span class="line">                &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> curr;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+<p>countStep will calculate how many numbers exist with a prefix between ‘curr’ and ‘next’, and it should be &lt;&#x3D;n.</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="type">static</span> <span class="type">long</span> <span class="title">countSteps</span><span class="params">(<span class="type">long</span> <span class="type">long</span> curr, <span class="type">long</span> <span class="type">long</span> next, <span class="type">long</span> n)</span></span>&#123;</span><br><span class="line">      <span class="type">int</span> steps = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">while</span> (curr &lt;= n) &#123;</span><br><span class="line">            steps += <span class="built_in">min</span>((<span class="type">long</span> <span class="type">long</span>)n + <span class="number">1</span>, next) - curr;</span><br><span class="line">            curr *= <span class="number">10</span>;</span><br><span class="line">            next *= <span class="number">10</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> steps;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-Hans">
+    <link itemprop="mainEntityOfPage" href="http://bochuan.site/2025/06/16/%E5%B7%B4%E5%88%AB%E5%A1%94/%E7%AE%97/leetcode3421/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="博川">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="百川赴海">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2025/06/16/%E5%B7%B4%E5%88%AB%E5%A1%94/%E7%AE%97/leetcode3421/" class="post-title-link" itemprop="url">Leetcode 3423. MAX diff between adjacent Elements in a Circular Arrar</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+              
+
+              <time title="Created: 2025-06-16 10:44:31n / Modified: 13:31:481n" itemprop="dateCreated datePublished" datetime="2025-06-16T10:44:03+10:00">2025-06-16</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">In</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/babel-tower/" itemprop="url" rel="index"><span itemprop="name">巴别塔(babel-tower)</span></a>
+                </span>
+                  , 
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/babel-tower/algorithm/" itemprop="url" rel="index"><span itemprop="name">算(hermes)</span></a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <p><strong>Question</strong>:Given a circular array nums, find the maximum absolute difference between adjacent elements.</p>
+<p><strong>Note</strong>: In a circular array, the first and last elements are adjacent.</p>
+<p>Easy question directly answer</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span>&#123;</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">        <span class="function"><span class="type">int</span> <span class="title">maxAdjacentDistance</span><span class="params">(Vector&lt;<span class="type">int</span>&gt;&amp; nums)</span></span>&#123;</span><br><span class="line">                <span class="type">int</span> n = num.<span class="built_in">size</span>();</span><br><span class="line">                <span class="type">int</span> res = <span class="built_in">abs</span>(nums[<span class="number">0</span>] - nums[n<span class="number">-1</span>]);</span><br><span class="line">                <span class="keyword">for</span>(<span class="type">int</span> i = <span class="number">0</span>; i &lt;n<span class="number">-1</span>; i++)&#123;</span><br><span class="line">                        res = <span class="built_in">max</span>(res, <span class="built_in">abs</span>(nums[i] - nums[i<span class="number">+1</span>]));</span><br><span class="line">                &#125;</span><br><span class="line">                <span class="keyword">return</span> res;</span><br><span class="line">        &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-Hans">
+    <link itemprop="mainEntityOfPage" href="http://bochuan.site/2025/06/16/%E5%B7%B4%E5%88%AB%E5%A1%94/%E7%AE%97/maximux_difference_Remap/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="博川">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="百川赴海">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2025/06/16/%E5%B7%B4%E5%88%AB%E5%A1%94/%E7%AE%97/maximux_difference_Remap/" class="post-title-link" itemprop="url">Leetcode1431. Max Difference You Can Get From Changing an Integer</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+
+              <time title="Created: 2025-06-16 10:44:31n" itemprop="dateCreated datePublished" datetime="2025-06-16T10:44:03+10:00">2025-06-16</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">In</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/babel-tower/" itemprop="url" rel="index"><span itemprop="name">巴别塔(babel-tower)</span></a>
+                </span>
+                  , 
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/babel-tower/algorithm/" itemprop="url" rel="index"><span itemprop="name">算(hermes)</span></a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h2 id="Problem"><a href="#Problem" class="headerlink" title="Problem"></a>Problem</h2><p>You are given an integer <code>num</code>. Bob will sneakily remap one of the <code>10</code> possible digits(<code>0</code> to <code>9</code>) to another digit.</p>
+<p>Return the difference between the maximum and minimum value Bob can make by remap <strong>exactly one</strong> digit in <code>num</code>.</p>
+<p>Bob can remap a digit to it self.(not change)</p>
+<p>Resulting number after remapping can <strong>not</strong> contain leading zeros.</p>
+<h2 id="Intuition"><a href="#Intuition" class="headerlink" title="Intuition"></a>Intuition</h2><p>This problem is like to Leetcode2567, Yes…exactly the daily question in Leetcode yesterday. The only difference is that we canNOT have leading zeros today.<br>We need to consider how to get the minimum value. Is that replacing all first digit to 1? Apparently not, <code>11111</code> the min value should be <code>10000</code>.</p>
+<p>Can we do the same thing in the way of finding the max value? Replace the first non-1 digit to 0? No…. which breaks the rule no leading zero..</p>
+<p>Then maybe if the first digit is not <code>1</code>, we replace it to <code>1</code>. And for non-first digit, we change it to 0. </p>
+<h2 id="COOOOOOOOOOOOODING"><a href="#COOOOOOOOOOOOODING" class="headerlink" title="COOOOOOOOOOOOODING"></a>COOOOOOOOOOOOODING</h2><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span>&#123;</span><br><span class="line">    <span class="keyword">public</span>:</span><br><span class="line">        <span class="function"><span class="type">int</span> <span class="title">maxDIff</span><span class="params">(<span class="type">int</span> num)</span></span>&#123;</span><br><span class="line">            string s = <span class="built_in">to_string</span>(num);</span><br><span class="line">            <span class="type">int</span> index_max = <span class="number">-1</span>;</span><br><span class="line">            <span class="type">int</span> index_max = <span class="number">-1</span>;</span><br><span class="line"></span><br><span class="line">            <span class="keyword">for</span>(<span class="type">int</span> i = <span class="number">0</span>; i &lt;s.<span class="built_in">length</span>(); i++)&#123;</span><br><span class="line">                <span class="keyword">if</span>(s[i] != <span class="string">&#x27;9&#x27;</span> &amp;&amp; index_max == <span class="number">-1</span>)&#123;</span><br><span class="line">                    index_max = i;</span><br><span class="line">                &#125;</span><br><span class="line">                <span class="keyword">if</span>(index_min == <span class="number">-1</span>)&#123;</span><br><span class="line">                    <span class="keyword">if</span>(i == <span class="number">0</span> &amp;&amp; s[i] != <span class="string">&#x27;1&#x27;</span>) &#123;</span><br><span class="line">                        index_min = i;</span><br><span class="line">                    &#125;</span><br><span class="line">                    <span class="keyword">else</span> <span class="keyword">if</span>(i &gt; <span class="number">0</span> &amp;&amp; s[i] != <span class="string">&#x27;0&#x27;</span> &amp;&amp; s[i] != s[<span class="number">0</span>]) &#123;</span><br><span class="line">                        index_min = i;</span><br><span class="line">                    &#125;</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">        string s_max = s;</span><br><span class="line">        <span class="keyword">if</span>(index_max != <span class="number">-1</span>) &#123;</span><br><span class="line">            <span class="keyword">for</span>(<span class="type">char</span>&amp; ch : s_max) &#123;</span><br><span class="line">                <span class="keyword">if</span>(ch == s[index_max]) ch = <span class="string">&#x27;9&#x27;</span>;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        </span><br><span class="line">        string s_min = s;</span><br><span class="line">        <span class="keyword">if</span>(index_min != <span class="number">-1</span>) &#123;</span><br><span class="line">            <span class="type">char</span> replacement = (index_min == <span class="number">0</span>) ? <span class="string">&#x27;1&#x27;</span> : <span class="string">&#x27;0&#x27;</span>;</span><br><span class="line">            <span class="keyword">for</span>(<span class="type">char</span>&amp; ch : s_min) &#123;</span><br><span class="line">                <span class="keyword">if</span>(ch == s[index_min]) ch = replacement;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        </span><br><span class="line">        <span class="type">int</span> max_val = <span class="built_in">stoi</span>(s_max);</span><br><span class="line">        <span class="type">int</span> min_val = <span class="built_in">stoi</span>(s_min);</span><br><span class="line">        <span class="keyword">return</span> max_val - min_val;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-Hans">
+    <link itemprop="mainEntityOfPage" href="http://bochuan.site/2025/06/16/%E5%B7%B4%E5%88%AB%E5%A1%94/%E7%AE%97/maxmize_minimu_pairs/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="博川">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="百川赴海">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2025/06/16/%E5%B7%B4%E5%88%AB%E5%A1%94/%E7%AE%97/maxmize_minimu_pairs/" class="post-title-link" itemprop="url">Leetcode 2616. Minimize the maximum difference of pairs</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+
+              <time title="Created: 2025-06-16 10:44:31n" itemprop="dateCreated datePublished" datetime="2025-06-16T10:44:03+10:00">2025-06-16</time>
             </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -266,8 +678,8 @@
       
   
   
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="CN">
-    <link itemprop="mainEntityOfPage" href="http://bochuan.site/2025/06/12/%E5%B7%B4%E5%88%AB%E5%A1%94/%E7%AE%97/leetcode3421/">
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-Hans">
+    <link itemprop="mainEntityOfPage" href="http://bochuan.site/2025/06/16/%E5%B7%B4%E5%88%AB%E5%A1%94/%E7%AE%97/Maximum_Difference_Remap/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.gif">
@@ -281,7 +693,7 @@
       <header class="post-header">
         <h2 class="post-title" itemprop="name headline">
           
-            <a href="/2025/06/12/%E5%B7%B4%E5%88%AB%E5%A1%94/%E7%AE%97/leetcode3421/" class="post-title-link" itemprop="url">Leetcode 3423. MAX diff between adjacent Elements in a Circular Arrar</a>
+            <a href="/2025/06/16/%E5%B7%B4%E5%88%AB%E5%A1%94/%E7%AE%97/Maximum_Difference_Remap/" class="post-title-link" itemprop="url">Leetcode2566. Maximum Difference by Remapping a Digit</a>
         </h2>
 
         <div class="post-meta">
@@ -290,9 +702,8 @@
                 <i class="far fa-calendar"></i>
               </span>
               <span class="post-meta-item-text">Posted on</span>
-              
 
-              <time title="Created: 2025-06-12 11:03:37 / Modified: 11:13:32" itemprop="dateCreated datePublished" datetime="2025-06-12T11:03:37+10:00">2025-06-12</time>
+              <time title="Created: 2025-06-16 10:44:31n" itemprop="dateCreated datePublished" datetime="2025-06-16T10:44:03+10:00">2025-06-16</time>
             </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -319,10 +730,14 @@
     <div class="post-body" itemprop="articleBody">
 
       
-          <p><strong>Question</strong>:Given a circular array nums, find the maximum absolute difference between adjacent elements.</p>
-<p><strong>Note</strong>: In a circular array, the first and last elements are adjacent.</p>
-<p>Easy question directly answer</p>
-<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span>&#123;</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">        <span class="function"><span class="type">int</span> <span class="title">maxAdjacentDistance</span><span class="params">(Vector&lt;<span class="type">int</span>&gt;&amp; nums)</span></span>&#123;</span><br><span class="line">                <span class="type">int</span> n = num.<span class="built_in">size</span>();</span><br><span class="line">                <span class="type">int</span> res = <span class="built_in">abs</span>(nums[<span class="number">0</span>] - nums[n<span class="number">-1</span>]);</span><br><span class="line">                <span class="keyword">for</span>(<span class="type">int</span> i = <span class="number">0</span>; i &lt;n<span class="number">-1</span>; i++)&#123;</span><br><span class="line">                        res = <span class="built_in">max</span>(res, <span class="built_in">abs</span>(nums[i] - nums[i<span class="number">+1</span>]));</span><br><span class="line">                &#125;</span><br><span class="line">                <span class="keyword">return</span> res;</span><br><span class="line">        &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+          <h2 id="Problem"><a href="#Problem" class="headerlink" title="Problem"></a>Problem</h2><p>You are given an integer <code>num</code>. Bob will sneakily remap one of the <code>10</code> possible digits(<code>0</code> to <code>9</code>) to another digit.</p>
+<p>Return the difference between the maximum and minimum value Bob can make by remap <strong>exactly one</strong> digit in <code>num</code>.</p>
+<p>Bob can remap a digit to it self.(not change)</p>
+<p>Resulting number after remapping can contain leading zeros.</p>
+<h2 id="Intuition"><a href="#Intuition" class="headerlink" title="Intuition"></a>Intuition</h2><p>Consider the number <code>11891</code>, Bob can remap <code>1</code> to <code>9</code> to obtain the max <code>99899</code>, and remap <code>1</code> to <code>0</code> to obtain the min <code>00890</code>.</p>
+<p>Consider the number <code>99919</code>, Bob can remap <code>1</code> to <code>9</code> to obtain the max <code>99999</code>, and remap <code>9</code> to <code>0</code> to obtain the min <code>00010</code>.</p>
+<p>Hence we can observe that remap the first non-9 digit to <code>9</code> to yield the max value. And replace the first digit to <code>0</code> to yield the min value.</p>
+<h2 id="COOOOOOOOOOOOODING"><a href="#COOOOOOOOOOOOODING" class="headerlink" title="COOOOOOOOOOOOODING"></a>COOOOOOOOOOOOODING</h2><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span>&#123;</span><br><span class="line">    <span class="keyword">public</span>:</span><br><span class="line">        <span class="function"><span class="type">int</span> <span class="title">minMaxDifference</span><span class="params">(<span class="type">int</span> num)</span></span>&#123;</span><br><span class="line">            string s = <span class="built_in">to_string</span>(num);</span><br><span class="line">            <span class="type">int</span> i = <span class="number">0</span>;</span><br><span class="line">            <span class="keyword">while</span>(s[i] == <span class="string">&#x27;9&#x27;</span> &amp;&amp; i &lt; s.<span class="built_in">length</span>()<span class="number">-1</span>) i+=<span class="number">1</span>;</span><br><span class="line"></span><br><span class="line">            string max = s;</span><br><span class="line">            <span class="keyword">for</span>(<span class="type">char</span>&amp; ch:max) <span class="keyword">if</span>(ch==s[i]) ch=<span class="string">&#x27;9&#x27;</span>;</span><br><span class="line">            </span><br><span class="line">            string min = s;</span><br><span class="line">            <span class="keyword">for</span>(<span class="type">char</span>&amp; ch:min) <span class="keyword">if</span>(ch==s[<span class="number">0</span>]) ch=<span class="string">&#x27;0&#x27;</span>;</span><br><span class="line">            <span class="keyword">return</span> <span class="built_in">stoi</span>(max)-<span class="built_in">stoi</span>(mn);</span><br><span class="line">        &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
       
     </div>
 
@@ -340,8 +755,8 @@
       
   
   
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="CN">
-    <link itemprop="mainEntityOfPage" href="http://bochuan.site/2025/06/11/%E5%B7%B4%E5%88%AB%E5%A1%94/%E5%8D%83%E6%9C%BA%E5%9B%BE(computer-architecture)/Lab1/">
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-Hans">
+    <link itemprop="mainEntityOfPage" href="http://bochuan.site/2025/06/13/%E5%B7%B4%E5%88%AB%E5%A1%94/%E7%A0%81%E6%9C%AF%E8%8B%91/week2/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.gif">
@@ -355,7 +770,7 @@
       <header class="post-header">
         <h2 class="post-title" itemprop="name headline">
           
-            <a href="/2025/06/11/%E5%B7%B4%E5%88%AB%E5%A1%94/%E5%8D%83%E6%9C%BA%E5%9B%BE(computer-architecture)/Lab1/" class="post-title-link" itemprop="url">Accumulator of Bfloat16</a>
+            <a href="/2025/06/13/%E5%B7%B4%E5%88%AB%E5%A1%94/%E7%A0%81%E6%9C%AF%E8%8B%91/week2/" class="post-title-link" itemprop="url">Inheritance & Abstract Classes &  Polymorphism</a>
         </h2>
 
         <div class="post-meta">
@@ -365,347 +780,8 @@
               </span>
               <span class="post-meta-item-text">Posted on</span>
 
-              <time title="Created: 2025-06-11 19:22:07" itemprop="dateCreated datePublished" datetime="2025-06-11T19:22:07+10:00">2025-06-11</time>
+              <time title="Created: 2025-06-13 08:39:285n" itemprop="dateCreated datePublished" datetime="2025-06-13T08:39:28+10:00">2025-06-13</time>
             </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-folder"></i>
-              </span>
-              <span class="post-meta-item-text">In</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/babel-tower/" itemprop="url" rel="index"><span itemprop="name">巴别塔(babel-tower)</span></a>
-                </span>
-                  , 
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/babel-tower/computer-architecture/" itemprop="url" rel="index"><span itemprop="name">千机图(computer-architecture)</span></a>
-                </span>
-            </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <p>In this lab we are required to build a hardware model for accumulation of a sequence of <a target="_blank" rel="noopener" href="https://en.wikipedia.org/wiki/Bfloat16_floating-point_format">Bfloat16</a> values and implement it on the lab board.Here we assume all values are positive and no overflow will occur. Each input<br>Value is set by the switches and the accumulative result for each new input is displayed on the LED array.</p>
-<p>Since we have a bottom to make operation <strong>compute</strong>, we may need a FSM. Intuitively, we will only need 2 state “idle &amp; compute”.</p>
-<h2 id="Accumulator"><a href="#Accumulator" class="headerlink" title="Accumulator"></a>Accumulator</h2><p>In order to make accumulation for 2 Bfloat16 number we have the following number.<br>We have the following steps.</p>
-<ol>
-<li><p>Extract Component<br> Extract the current number to 2 field: Exponent &amp; Fraction.(Since no need for sign bits since all positive)<br> <figure class="highlight vhdl"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">exp_a &lt;= a(<span class="number">14</span> <span class="keyword">downto</span> <span class="number">7</span>);</span><br><span class="line">frac_a &lt;= a(<span class="number">6</span> <span class="keyword">downto</span> <span class="number">0</span>);</span><br></pre></td></tr></table></figure><br> If Exponent part is 0, then this number is 0;<br><br> <figure class="highlight vhdl"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">a_is_Zero &lt;= <span class="string">&#x27;1&#x27;</span> <span class="keyword">when</span> <span class="built_in">unsigned</span>(exp_a) = <span class="number">0</span> <span class="keyword">else</span> <span class="string">&#x27;0&#x27;</span>;</span><br></pre></td></tr></table></figure></p>
-</li>
-<li><pre><code> Align Frac Field
-</code></pre>
-</li>
-<li><p>third</p>
-</li>
-</ol>
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="CN">
-    <link itemprop="mainEntityOfPage" href="http://bochuan.site/2025/06/10/%E5%B7%B4%E5%88%AB%E5%A1%94/%E7%AE%97/k-th_smallest/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="博川">
-      <meta itemprop="description" content="">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="百川赴海">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2025/06/10/%E5%B7%B4%E5%88%AB%E5%A1%94/%E7%AE%97/k-th_smallest/" class="post-title-link" itemprop="url">Leetcode 440. K-th Smallest in Lexographical order</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">Posted on</span>
-
-              <time title="Created: 2025-06-10 10:45:11" itemprop="dateCreated datePublished" datetime="2025-06-10T10:45:11+10:00">2025-06-10</time>
-            </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-folder"></i>
-              </span>
-              <span class="post-meta-item-text">In</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/babel-tower/" itemprop="url" rel="index"><span itemprop="name">巴别塔(babel-tower)</span></a>
-                </span>
-                  , 
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/babel-tower/algorithm/" itemprop="url" rel="index"><span itemprop="name">算(hermes)</span></a>
-                </span>
-            </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <h1 id="Problem"><a href="#Problem" class="headerlink" title="Problem"></a>Problem</h1><p>Give integers <strong>n</strong> and  <strong>k</strong>, list all numbers from 1 <strong>n</strong> in directory order, then return $k^{th}$ number in that list.</p>
-<h1 id="Logic"><a href="#Logic" class="headerlink" title="Logic"></a>Logic</h1><p> Intuitively, we can generate all numbers $[1..n]$, convert to string, sort, resulting to an $O(O log n)$.<br>Brutely, we can have the following code. </p>
-<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span> &#123;</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="type">int</span> <span class="title">findKthNumber</span><span class="params">(<span class="type">int</span> n, <span class="type">int</span> k)</span> </span>&#123;</span><br><span class="line">        vector&lt;string&gt; nums;</span><br><span class="line">        </span><br><span class="line">        <span class="keyword">for</span> (<span class="type">int</span> i = <span class="number">1</span>; i &lt;= n; i++) &#123;</span><br><span class="line">            nums.<span class="built_in">push_back</span>(<span class="built_in">to_string</span>(i));</span><br><span class="line">        &#125;</span><br><span class="line">        </span><br><span class="line">        <span class="built_in">sort</span>(nums.<span class="built_in">begin</span>(), nums.<span class="built_in">end</span>());</span><br><span class="line"></span><br><span class="line">        <span class="keyword">return</span> <span class="built_in">stoi</span>(nums[k - <span class="number">1</span>]);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
-<p>No surprise, <strong>Time Limit Exceeded</strong>.</p>
-<p>The directory sequence corresponds to a 10-ary prefix tree of numbers. Each node <code>x</code> has children <code>x0, x1,...,x9</code>(of course if it still &lt;&#x3D;n ).</p>
-<p>We can count how many nodes are in each subtree and skip entire subtree when their size &lt; k.<br>we can have following solution.</p>
-<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span> &#123;</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="type">int</span> <span class="title">findKthNumber</span><span class="params">(<span class="type">int</span> n, <span class="type">int</span> k)</span> </span>&#123;</span><br><span class="line">        <span class="type">int</span> curr = <span class="number">1</span>;</span><br><span class="line">        k--;<span class="comment">// 0-indexed</span></span><br><span class="line"></span><br><span class="line">        <span class="keyword">while</span>(k &gt; <span class="number">0</span>)&#123;</span><br><span class="line">                <span class="type">int</span> steps = <span class="built_in">countSteps</span>(n, curr, curr + <span class="number">1</span>);</span><br><span class="line">                <span class="keyword">if</span>(steps &lt;= k)&#123;</span><br><span class="line">                <span class="comment">//skip this subtree, go to next sibling</span></span><br><span class="line">                        curr++;</span><br><span class="line">                        k -= steps;</span><br><span class="line">                &#125;</span><br><span class="line">                <span class="keyword">else</span>&#123;</span><br><span class="line">                <span class="comment">//answer is in this subtree let&#x27;s go deeper</span></span><br><span class="line">                        curr *= <span class="number">10</span>;</span><br><span class="line">                        k--;</span><br><span class="line">                &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> curr;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
-<p>countStep will calculate how many numbers exist with a prefix between ‘curr’ and ‘next’, and it should be &lt;&#x3D;n.</p>
-<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="type">static</span> <span class="type">long</span> <span class="title">countSteps</span><span class="params">(<span class="type">long</span> <span class="type">long</span> curr, <span class="type">long</span> <span class="type">long</span> next, <span class="type">long</span> n)</span></span>&#123;</span><br><span class="line">      <span class="type">int</span> steps = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">while</span> (curr &lt;= n) &#123;</span><br><span class="line">            steps += <span class="built_in">min</span>((<span class="type">long</span> <span class="type">long</span>)n + <span class="number">1</span>, next) - curr;</span><br><span class="line">            curr *= <span class="number">10</span>;</span><br><span class="line">            next *= <span class="number">10</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> steps;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="CN">
-    <link itemprop="mainEntityOfPage" href="http://bochuan.site/2025/06/10/%E5%B7%B4%E5%88%AB%E5%A1%94/%E5%8D%83%E6%9C%BA%E5%9B%BE(computer-architecture)/Performance/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="博川">
-      <meta itemprop="description" content="">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="百川赴海">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2025/06/10/%E5%B7%B4%E5%88%AB%E5%A1%94/%E5%8D%83%E6%9C%BA%E5%9B%BE(computer-architecture)/Performance/" class="post-title-link" itemprop="url">Performance</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">Posted on</span>
-              
-
-              <time title="Created: 2025-06-10 10:45:11 / Modified: 11:26:14" itemprop="dateCreated datePublished" datetime="2025-06-10T10:45:11+10:00">2025-06-10</time>
-            </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-folder"></i>
-              </span>
-              <span class="post-meta-item-text">In</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/babel-tower/" itemprop="url" rel="index"><span itemprop="name">巴别塔(babel-tower)</span></a>
-                </span>
-                  , 
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/babel-tower/computer-architecture/" itemprop="url" rel="index"><span itemprop="name">千机图(computer-architecture)</span></a>
-                </span>
-            </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <h2 id="Common-Performance-Metrics"><a href="#Common-Performance-Metrics" class="headerlink" title="Common Performance Metrics"></a>Common Performance Metrics</h2><ul>
-<li><p>Latency: response time, execution time, elapsed time</p>
-</li>
-<li><p>Throughout: Amount work per unit time<br>Ideally, for good Performance we want is  Latency minimized ad Throughout maximized</p>
-</li>
-</ul>
-<h2 id="CPU-time"><a href="#CPU-time" class="headerlink" title="CPU time"></a>CPU time</h2><p>cpu time is comprised of three components</p>
-<ul>
-<li>instruction count &#x3D; instructions&#x2F; program</li>
-<li>CPI &#x3D; average Cycles&#x2F; instruction</li>
-<li>clock period</li>
-</ul>
-<h2 id=""><a href="#" class="headerlink" title=""></a></h2>
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="CN">
-    <link itemprop="mainEntityOfPage" href="http://bochuan.site/2025/06/10/%E5%B7%B4%E5%88%AB%E5%A1%94/%E7%A0%81%E6%9C%AF%E8%8B%91/week1/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="博川">
-      <meta itemprop="description" content="">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="百川赴海">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2025/06/10/%E5%B7%B4%E5%88%AB%E5%A1%94/%E7%A0%81%E6%9C%AF%E8%8B%91/week1/" class="post-title-link" itemprop="url">intro to java and oop</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">Posted on</span>
-
-              <time title="Created: 2025-06-10 10:45:11" itemprop="dateCreated datePublished" datetime="2025-06-10T10:45:11+10:00">2025-06-10</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2025-06-13 09:00:54" itemprop="dateModified" datetime="2025-06-13T09:00:54+10:00">2025-06-13</time>
-              </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-folder"></i>
-              </span>
-              <span class="post-meta-item-text">In</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/babel-tower/" itemprop="url" rel="index"><span itemprop="name">巴别塔(babel-tower)</span></a>
-                </span>
-                  , 
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/babel-tower/software-design-architecture/" itemprop="url" rel="index"><span itemprop="name">码术苑(software-design-architecture)</span></a>
-                </span>
-            </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <h2 id="Objected-oriented-programming-OOP"><a href="#Objected-oriented-programming-OOP" class="headerlink" title="Objected oriented programming(OOP)"></a>Objected oriented programming(OOP)</h2><p>  In procedural programming languages(like C), programming like to be action-oriented, whereas in JAVA - programming is Object-oriented. </p>
-<p>  In OOP, programmer like to defined their own self-defined types, called classes.</p>
-<p>  Each class will contain the data and the set of the method that manipulate the data. </p>
-<p>  A user defined type(eg.class) is called a object.</p>
-<h2 id="Inheritance"><a href="#Inheritance" class="headerlink" title="Inheritance"></a>Inheritance</h2><p>  Inheritance relations form tree-like hierarchical structure.<br>  (eg. postgraduate students is a subclass of students)</p>
-<p>  In a “Is a” relationship, an object of a subclass may also be treated as an object<br>  of superclass. </p>
-<p>  In a “Has a” relationship,  a class object has an object of another class to store its<br>  state or do its work. It “has-a” reference to that other object.</p>
-<h2 id="Designing-a-Class"><a href="#Designing-a-Class" class="headerlink" title="Designing a Class"></a>Designing a Class</h2><ol>
-<li>Always try to keep data private</li>
-<li>Creating an object may require different actions such as initialization</li>
-<li>Break up class with many responsibilities</li>
-</ol>
-<h2 id=""><a href="#" class="headerlink" title=""></a></h2>
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="CN">
-    <link itemprop="mainEntityOfPage" href="http://bochuan.site/2025/06/08/%E5%B7%B4%E5%88%AB%E5%A1%94/%E7%A0%81%E6%9C%AF%E8%8B%91/week2/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="博川">
-      <meta itemprop="description" content="">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="百川赴海">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2025/06/08/%E5%B7%B4%E5%88%AB%E5%A1%94/%E7%A0%81%E6%9C%AF%E8%8B%91/week2/" class="post-title-link" itemprop="url">Inheritance & Abstract Classes &  Polymorphism</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">Posted on</span>
-
-              <time title="Created: 2025-06-08 12:30:14" itemprop="dateCreated datePublished" datetime="2025-06-08T12:30:14+10:00">2025-06-08</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2025-06-12 09:12:28" itemprop="dateModified" datetime="2025-06-12T09:12:28+10:00">2025-06-12</time>
-              </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
                 <i class="far fa-folder"></i>
@@ -767,8 +843,8 @@
       
   
   
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="CN">
-    <link itemprop="mainEntityOfPage" href="http://bochuan.site/2025/06/08/%E5%B7%B4%E5%88%AB%E5%A1%94/%E5%8D%83%E6%9C%BA%E5%9B%BE(computer-architecture)/MipsIntro/">
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-Hans">
+    <link itemprop="mainEntityOfPage" href="http://bochuan.site/2025/06/10/%E5%B7%B4%E5%88%AB%E5%A1%94/%E5%8D%83%E6%9C%BA%E5%9B%BE(computer-architecture)/Lab1/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.gif">
@@ -782,7 +858,7 @@
       <header class="post-header">
         <h2 class="post-title" itemprop="name headline">
           
-            <a href="/2025/06/08/%E5%B7%B4%E5%88%AB%E5%A1%94/%E5%8D%83%E6%9C%BA%E5%9B%BE(computer-architecture)/MipsIntro/" class="post-title-link" itemprop="url">An taste to MIPS ISA</a>
+            <a href="/2025/06/10/%E5%B7%B4%E5%88%AB%E5%A1%94/%E5%8D%83%E6%9C%BA%E5%9B%BE(computer-architecture)/Lab1/" class="post-title-link" itemprop="url">accumulator of bfloat16</a>
         </h2>
 
         <div class="post-meta">
@@ -792,8 +868,15 @@
               </span>
               <span class="post-meta-item-text">Posted on</span>
 
-              <time title="Created: 2025-06-08 10:29:50" itemprop="dateCreated datePublished" datetime="2025-06-08T10:29:50+10:00">2025-06-08</time>
+              <time title="Created: 2025-06-10 10:45:112n" itemprop="dateCreated datePublished" datetime="2025-06-10T10:45:11+10:00">2025-06-10</time>
             </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2025-06-16 11:18:591n" itemprop="dateModified" datetime="2025-06-16T11:18:59+10:00">2025-06-16</time>
+              </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
                 <i class="far fa-folder"></i>
@@ -819,70 +902,18 @@
     <div class="post-body" itemprop="articleBody">
 
       
-          <h2 id="Mips-interpretion"><a href="#Mips-interpretion" class="headerlink" title="Mips interpretion"></a>Mips interpretion</h2><p>Here is a traditional loop in C</p>
-<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">while</span>(save[i] == K)</span><br><span class="line">  i+= <span class="number">1</span>;</span><br></pre></td></tr></table></figure>
-<p>Assume that i and k correspond to registers <code>$s3</code> and <code>$s5</code> and the base of the  array save is in <code>$s6</code>. What is the MIPS assembly code corresponding to this  C segment?</p>
-<figure class="highlight mips"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="symbol">Loop:</span> <span class="keyword">sll </span> $<span class="built_in">t1</span> $<span class="built_in">s3</span> <span class="number">2</span> </span><br><span class="line">      <span class="keyword">add </span> $<span class="built_in">t1</span> $<span class="built_in">t1</span> $<span class="built_in">s6</span></span><br><span class="line">      <span class="keyword">lw </span>  $<span class="built_in">t0</span>,<span class="number">0</span>($<span class="built_in">t1</span>)</span><br><span class="line">      <span class="keyword">bne </span> $<span class="built_in">t0</span>,$<span class="built_in">s5</span>, Exit</span><br><span class="line">      <span class="keyword">addi </span>$<span class="built_in">s3</span>,$<span class="built_in">s3</span>, <span class="number">1</span></span><br><span class="line">      <span class="keyword">j </span>   loop</span><br><span class="line"><span class="symbol">Exit:</span></span><br></pre></td></tr></table></figure>
-
-<h2 id="Signed-Versus-Unsigned-Comparison"><a href="#Signed-Versus-Unsigned-Comparison" class="headerlink" title="Signed Versus Unsigned Comparison"></a>Signed Versus Unsigned Comparison</h2><p>Suppose register <code>$s0</code> has the binary number<br>$$ 1111\ 1111\ 1111\ 1111\ 1111\ 1111\  1111\  1111_{two}$$<br>and that register <code>$s1</code> has the binary number<br>$$ 0000\ 0000\ 0000\ 0000\ 0000\ 0000\  0000\  0001_{two}$$<br>where are the values pf registers <code>$t0</code> and <code>$t1</code> after these two instructions?</p>
-<figure class="highlight mips"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">slt </span>     $<span class="built_in">t0</span>, $<span class="built_in">s0</span>, $<span class="built_in">s1</span></span><br><span class="line"><span class="keyword">sltu </span>    $<span class="built_in">t1</span>, $<span class="built_in">s0</span>, $<span class="built_in">s1</span></span><br></pre></td></tr></table></figure>
-<p>The key spot of the question is <code>$s0</code> represents $-1_{ten}$ if it is a signed integer and $2^{32} - 1_{ten}$ if it is an unsigned integer. And the value in <code>$s1</code> represents $1_{ten}$ in either case.</p>
-<h2 id="Jump-opreation-in-MIPS"><a href="#Jump-opreation-in-MIPS" class="headerlink" title="Jump opreation in MIPS"></a>Jump opreation in MIPS</h2><table>
-<thead>
-<tr>
-<th>Instruction</th>
-<th>Syntax</th>
-<th>Address Source</th>
-<th>Saves Return Address</th>
-<th>Operation</th>
-<th>Common Use</th>
-</tr>
-</thead>
-<tbody><tr>
-<td><strong>J</strong></td>
-<td><code>j target</code></td>
-<td>26-bit immediate</td>
-<td>No</td>
-<td>PC &#x3D; (PC+4)[31:28] || target || 00</td>
-<td>Unconditional jumps, loops</td>
-</tr>
-<tr>
-<td><strong>JAL</strong></td>
-<td><code>jal target</code></td>
-<td>26-bit immediate</td>
-<td>Yes (in $ra)</td>
-<td>$ra &#x3D; PC + 4<br>PC &#x3D; (PC+4)[31:28] || target || 00</td>
-<td>Function calls</td>
-</tr>
-<tr>
-<td><strong>JR</strong></td>
-<td><code>jr $rs</code></td>
-<td>Register content</td>
-<td>No</td>
-<td>PC &#x3D; $rs</td>
-<td>Function returns, indirect jumps</td>
-</tr>
-</tbody></table>
-<p>The jump register instruction jumps to the address stored in register <code>$ra</code> which is just what we want. Thus, the calling program, or <em>caller</em>, puts the parameter  values in <code>$a0–$a3</code> and uses <code>jal X</code> to jump to procedure X (sometimes named  the <code>callee</code>). The callee then performs the calculations, places the results in <code>$v0</code> and  <code>$v1</code>, and returns control to the caller using <code>jr $ra</code>.</p>
-<h2 id="Using-more-registers"><a href="#Using-more-registers" class="headerlink" title="Using more registers"></a>Using more registers</h2><p>We may have such question, What if we have a procedure which require more than 4 arguments and 2 return value registers. This situation is an example in which we need to spill registers to memory.</p>
-<p>Here we need to use a data structure called stack. A stack needs a pointer to the most recently allocated address in the stack  to show where the next procedure should place the registers to be spilled or where  old register values are found.By historical precedent, stacks “grow” from higher addresses to lower addresses.</p>
-<p>Compiling a C Procedure That Doesn’t Call Another Procedure:</p>
-<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">int</span> <span class="title function_">leaf_example</span><span class="params">(<span class="type">int</span> g, <span class="type">int</span> h, <span class="type">int</span> i, <span class="type">int</span> j)</span> </span><br><span class="line">&#123;  </span><br><span class="line">  <span class="type">int</span> f;  </span><br><span class="line">  f = (g + h) – (i + j); </span><br><span class="line">  <span class="keyword">return</span> f; </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<figure class="highlight mips"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">addi </span>$<span class="built_in">sp</span>, $<span class="built_in">sp</span>, –<span class="number">12</span> </span><br><span class="line"><span class="keyword">sw </span>$<span class="built_in">t1</span>,<span class="number">8</span>($<span class="built_in">sp</span>) </span><br><span class="line"><span class="keyword">sw </span>$<span class="built_in">t0</span>,<span class="number">4</span>($<span class="built_in">sp</span>)  </span><br><span class="line"><span class="keyword">sw </span>$<span class="built_in">s0</span>,<span class="number">0</span>($<span class="built_in">sp</span>) </span><br><span class="line"></span><br><span class="line"><span class="keyword">add </span>$<span class="built_in">t0</span>,$<span class="built_in">a0</span>,$<span class="built_in">a1</span> </span><br><span class="line"><span class="keyword">add </span>$<span class="built_in">t1</span>,$<span class="built_in">a2</span>,$<span class="built_in">a3</span></span><br><span class="line"><span class="keyword">sub </span>$<span class="built_in">s0</span>,$<span class="built_in">t0</span>,$<span class="built_in">t1</span> </span><br><span class="line"></span><br><span class="line"><span class="keyword">add </span>$<span class="built_in">v0</span>,$<span class="built_in">s0</span>,$<span class="built_in">zero</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">lw </span>$<span class="built_in">s0</span>, <span class="number">0</span>($<span class="built_in">sp</span>)</span><br><span class="line"><span class="keyword">lw </span>$<span class="built_in">t0</span>, <span class="number">4</span>($<span class="built_in">sp</span>) </span><br><span class="line"><span class="keyword">lw </span>$<span class="built_in">t1</span>, <span class="number">8</span>($<span class="built_in">sp</span>)</span><br><span class="line"><span class="keyword">addi </span>$<span class="built_in">sp</span>,$<span class="built_in">sp</span>,<span class="number">12</span></span><br><span class="line"><span class="keyword">jr </span>$<span class="built_in">ra</span></span><br></pre></td></tr></table></figure>
-<h3 id="Decoding-machine-code"><a href="#Decoding-machine-code" class="headerlink" title="Decoding machine code"></a>Decoding machine code</h3><p>What is the assembly language statement corresponding to this machine  instruction?<br><code>00af8020hex</code></p>
-<p>The first step in converting hexadecimal to binary is to find the op fields:</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">0    0    a    f    8    0    2    0  </span><br><span class="line">0000 0000 1010 1111 0100 0000 0010 0000</span><br></pre></td></tr></table></figure>
-<p>op field is <code>000000</code> in op(31:26) rs is <code>00101</code> rt is <code>01111</code> rd is <code>10000</code> shamt is <code>00000</code> funct is <code>100000</code></p>
-<p>By look up table we can know it is<br><code>add $s0, $a1, $t7</code></p>
-<p>I. What is the range of addresses for conditional branches in MIPS (K &#x3D; 1024)? </p>
+          <p>In this lab we are required to build a hardware model for accumulation of a sequence of <a target="_blank" rel="noopener" href="https://en.wikipedia.org/wiki/Bfloat16_floating-point_format">Bfloat16</a> values and implement it on the lab board.Here we assume all values are positive and no overflow will occur. Each input<br>Value is set by the switches and the accumulative result for each new input is displayed on the LED array.</p>
+<p>Since we have a bottom to make operation <strong>compute</strong>, we may need a FSM. Intuitively, we will only need 2 state “idle &amp; compute”.</p>
+<h2 id="Accumulator"><a href="#Accumulator" class="headerlink" title="Accumulator"></a>Accumulator</h2><p>In order to make accumulation for 2 Bfloat16 number we have the following number.<br>We have the following steps.</p>
 <ol>
-<li>Addresses between 0 and 64K # 1 </li>
-<li>Addresses between 0 and 256K # 1 </li>
-<li>Addresses up to about 32K before the branch to about 32K after </li>
-<li>Addresses up to about 128K before the branch to about 128K after</li>
+<li><p>Extract Component<br> Extract the current number to 2 field: Exponent &amp; Fraction.(Since no need for sign bits since all positive)<br> <figure class="highlight vhdl"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">exp_a &lt;= a(<span class="number">14</span> <span class="keyword">downto</span> <span class="number">7</span>);</span><br><span class="line">frac_a &lt;= a(<span class="number">6</span> <span class="keyword">downto</span> <span class="number">0</span>);</span><br></pre></td></tr></table></figure><br> If Exponent part is 0, then this number is 0;<br><br> <figure class="highlight vhdl"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">a_is_Zero &lt;= <span class="string">&#x27;1&#x27;</span> <span class="keyword">when</span> <span class="built_in">unsigned</span>(exp_a) = <span class="number">0</span> <span class="keyword">else</span> <span class="string">&#x27;0&#x27;</span>;</span><br></pre></td></tr></table></figure></p>
+</li>
+<li><pre><code> Align Frac Field
+</code></pre>
+</li>
+<li><p>third</p>
+</li>
 </ol>
-<p>Conditional branches use I-type format<br> 16-bit immediate field for the branch offset<br> The offset is signed<br> The offset represents the number of words to branch not bytes<br> Hence it will be $2^{16}$ words, $2^{15}$ words, $2^{17}$ bytes ahead and  backward.<br> which is 128KB ahead and backward.</p>
 
       
     </div>
@@ -901,8 +932,8 @@
       
   
   
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="CN">
-    <link itemprop="mainEntityOfPage" href="http://bochuan.site/2025/06/08/%E5%B7%B4%E5%88%AB%E5%A1%94/%E5%8D%83%E6%9C%BA%E5%9B%BE(computer-architecture)/SingleCycleProcessor/">
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-Hans">
+    <link itemprop="mainEntityOfPage" href="http://bochuan.site/2025/06/10/%E5%B7%B4%E5%88%AB%E5%A1%94/%E5%8D%83%E6%9C%BA%E5%9B%BE(computer-architecture)/Performance/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.gif">
@@ -916,7 +947,7 @@
       <header class="post-header">
         <h2 class="post-title" itemprop="name headline">
           
-            <a href="/2025/06/08/%E5%B7%B4%E5%88%AB%E5%A1%94/%E5%8D%83%E6%9C%BA%E5%9B%BE(computer-architecture)/SingleCycleProcessor/" class="post-title-link" itemprop="url">Single Cycle Processor</a>
+            <a href="/2025/06/10/%E5%B7%B4%E5%88%AB%E5%A1%94/%E5%8D%83%E6%9C%BA%E5%9B%BE(computer-architecture)/Performance/" class="post-title-link" itemprop="url">Performance</a>
         </h2>
 
         <div class="post-meta">
@@ -925,8 +956,9 @@
                 <i class="far fa-calendar"></i>
               </span>
               <span class="post-meta-item-text">Posted on</span>
+              
 
-              <time title="Created: 2025-06-08 10:29:50" itemprop="dateCreated datePublished" datetime="2025-06-08T10:29:50+10:00">2025-06-08</time>
+              <time title="Created: 2025-06-10 10:45:112n / Modified: 11:26:142n" itemprop="dateCreated datePublished" datetime="2025-06-10T10:45:11+10:00">2025-06-10</time>
             </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -953,110 +985,19 @@
     <div class="post-body" itemprop="articleBody">
 
       
-          <h2 id="typical-steps-of-processor-design"><a href="#typical-steps-of-processor-design" class="headerlink" title="typical steps of processor design"></a>typical steps of processor design</h2><h3 id="For-datapath"><a href="#For-datapath" class="headerlink" title="For datapath"></a>For datapath</h3><ol>
-<li><p>Analyse instruction set to determine the datapath requirements</p>
+          <h2 id="Common-Performance-Metrics"><a href="#Common-Performance-Metrics" class="headerlink" title="Common Performance Metrics"></a>Common Performance Metrics</h2><ul>
+<li><p>Latency: response time, execution time, elapsed time</p>
 </li>
-<li><p>Select a set of hardware components for the datapath and establish clocking methodology</p>
+<li><p>Throughout: Amount work per unit time<br>Ideally, for good Performance we want is  Latency minimized ad Throughout maximized</p>
 </li>
-<li><p>Assemble datapath to meet the requirements</p>
-</li>
-</ol>
-<h3 id="For-control"><a href="#For-control" class="headerlink" title="For control"></a>For control</h3><ol start="4">
-<li><p>Analyse implementation of each instruction to determine control points&#x2F;signals on the datapath</p>
-</li>
-<li><p>Assemble the control logic</p>
-</li>
-</ol>
-<h3 id="step-1"><a href="#step-1" class="headerlink" title="step 1"></a>step 1</h3><p>  For each instruction, its requirement can be identified as a set of transfer operation.</p>
-<p>  Register lever language(<em>RTL</em>) is used to  describe the instruction execution.eg. </p>
-  <figure class="highlight mips"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$<span class="number">3</span> &lt;-- $<span class="number">2</span> + $<span class="number">1</span> is for <span class="keyword">ADDU </span>$<span class="number">3</span> $<span class="number">2</span> $<span class="number">1</span></span><br></pre></td></tr></table></figure>
-
-<p>Datapath mush support each transfer operation.</p>
-<p> All instruction start by fetching instruction. </p>
-<p> THen followed by different operation<br>All instruction should be followed with a </p>
-<figure class="highlight mips"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">PC &lt;- PC + <span class="number">4</span></span><br></pre></td></tr></table></figure>
-<p>eg</p>
-<figure class="highlight mips"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">BEQ </span></span><br><span class="line">If (R[rs] == R[rt]) then PC &lt;- PC +<span class="number">4</span> + sign_ext(Imm16) <span class="title">||</span> <span class="number">00</span> else  PC &lt;- PC + <span class="number">4</span></span><br></pre></td></tr></table></figure>
-
-<h3 id="step-2"><a href="#step-2" class="headerlink" title="step 2"></a>step 2</h3><p>  For combinational logical elements, we need adder, MUX, ALU obviously and </p>
-<p>  For storage  we need some registers (which is 32-bit input and output, and Write enable input) and memory(which is have 32 bit data in and 32 bit date out)</p>
-<p>  For simple and robust, we use Edge triggered clocking, all storage elements are usually clocked by the same clock edge.</p>
-<p>  We have 3 time issues need to be considered. Clock skew, setup time, hold time.</p>
-<p>  2 requirement<br>  $\text{cycle time} &gt;&#x3D; \text{clk to Q} + \text{longest delay path} + \text{setup} + |\text{clk skew}|$<br>  $\text{clk to Q} + \text{shortest delay path} - \text{clock skew} &gt; |\text{hold time}|$</p>
-<h3 id="step-3"><a href="#step-3" class="headerlink" title="step 3"></a>step 3</h3><p>  Put the selected components together</p>
-<h3 id="step-4"><a href="#step-4" class="headerlink" title="step 4"></a>step 4</h3><p>  instruction encoding defines how instruction and their argument are represented as binary values - machine instructions. 
-  </p>
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="CN">
-    <link itemprop="mainEntityOfPage" href="http://bochuan.site/2025/06/08/%E5%B7%B4%E5%88%AB%E5%A1%94/%E7%AE%97/leetcode/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="博川">
-      <meta itemprop="description" content="">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="百川赴海">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2025/06/08/%E5%B7%B4%E5%88%AB%E5%A1%94/%E7%AE%97/leetcode/" class="post-title-link" itemprop="url">Leetcode 3403. Find the Lexographically Largest String From the Box I</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">Posted on</span>
-
-              <time title="Created: 2025-06-08 10:29:50" itemprop="dateCreated datePublished" datetime="2025-06-08T10:29:50+10:00">2025-06-08</time>
-            </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-folder"></i>
-              </span>
-              <span class="post-meta-item-text">In</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/babel-tower/" itemprop="url" rel="index"><span itemprop="name">巴别塔(babel-tower)</span></a>
-                </span>
-                  , 
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/babel-tower/algorithm/" itemprop="url" rel="index"><span itemprop="name">算(hermes)</span></a>
-                </span>
-            </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <h2 id=""><a href="#" class="headerlink" title=""></a></h2>
+</ul>
+<h2 id="CPU-time"><a href="#CPU-time" class="headerlink" title="CPU time"></a>CPU time</h2><p>cpu time is comprised of three components</p>
+<ul>
+<li>instruction count &#x3D; instructions&#x2F; program</li>
+<li>CPI &#x3D; average Cycles&#x2F; instruction</li>
+<li>clock period</li>
+</ul>
+<h2 id=""><a href="#" class="headerlink" title=""></a></h2>
       
     </div>
 
@@ -1073,6 +1014,9 @@
 
 
   
+  <nav class="pagination">
+    <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="extend next" rel="next" href="/page/2/"><i class="fa fa-angle-right" aria-label="Next page"></i></a>
+  </nav>
 
 
 
@@ -1136,7 +1080,7 @@
   <nav class="site-state">
       <div class="site-state-item site-state-posts">
           <a href="/archives">
-          <span class="site-state-item-count">10</span>
+          <span class="site-state-item-count">14</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>
@@ -1145,6 +1089,10 @@
           
         <span class="site-state-item-count">4</span>
         <span class="site-state-item-name">categories</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+        <span class="site-state-item-count">5</span>
+        <span class="site-state-item-name">tags</span>
       </div>
   </nav>
 </div>
@@ -1240,6 +1188,10 @@
   
 
 
+
+
+  
+<script src="/js/local-search.js"></script>
 
 
 

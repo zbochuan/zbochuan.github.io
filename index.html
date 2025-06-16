@@ -177,80 +177,6 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-Hans">
-    <link itemprop="mainEntityOfPage" href="http://bochuan.site/2025/06/16/%E5%B7%B4%E5%88%AB%E5%A1%94/%E5%8D%83%E6%9C%BA%E5%9B%BE(computer-architecture)/Multicycle_processor/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="博川">
-      <meta itemprop="description" content="">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="百川赴海">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2025/06/16/%E5%B7%B4%E5%88%AB%E5%A1%94/%E5%8D%83%E6%9C%BA%E5%9B%BE(computer-architecture)/Multicycle_processor/" class="post-title-link" itemprop="url">Mul</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">Posted on</span>
-              
-
-              <time title="Created: 2025-06-16 11:18:461n / Modified: 11:34:561n" itemprop="dateCreated datePublished" datetime="2025-06-16T11:18:46+10:00">2025-06-16</time>
-            </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-folder"></i>
-              </span>
-              <span class="post-meta-item-text">In</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/babel-tower/" itemprop="url" rel="index"><span itemprop="name">巴别塔(babel-tower)</span></a>
-                </span>
-                  , 
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/babel-tower/computer-architecture/" itemprop="url" rel="index"><span itemprop="name">千机图(computer-architecture)</span></a>
-                </span>
-            </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <p>In Single Cycle processor, we have a CPI of 1.</p>
-<p>The clock cycle is determine by the most time-wasting instruction</p>
-<p>We can partition the Single-cycle datapath. For each partition, we need to determine which register the datapath should be accessed.</p>
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-Hans">
     <link itemprop="mainEntityOfPage" href="http://bochuan.site/2025/06/16/%E5%B7%B4%E5%88%AB%E5%A1%94/%E7%AE%97/k-th_smallest/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -312,6 +238,87 @@
 <figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span> &#123;</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="type">int</span> <span class="title">findKthNumber</span><span class="params">(<span class="type">int</span> n, <span class="type">int</span> k)</span> </span>&#123;</span><br><span class="line">        <span class="type">int</span> curr = <span class="number">1</span>;</span><br><span class="line">        k--;<span class="comment">// 0-indexed</span></span><br><span class="line"></span><br><span class="line">        <span class="keyword">while</span>(k &gt; <span class="number">0</span>)&#123;</span><br><span class="line">                <span class="type">int</span> steps = <span class="built_in">countSteps</span>(n, curr, curr + <span class="number">1</span>);</span><br><span class="line">                <span class="keyword">if</span>(steps &lt;= k)&#123;</span><br><span class="line">                <span class="comment">//skip this subtree, go to next sibling</span></span><br><span class="line">                        curr++;</span><br><span class="line">                        k -= steps;</span><br><span class="line">                &#125;</span><br><span class="line">                <span class="keyword">else</span>&#123;</span><br><span class="line">                <span class="comment">//answer is in this subtree let&#x27;s go deeper</span></span><br><span class="line">                        curr *= <span class="number">10</span>;</span><br><span class="line">                        k--;</span><br><span class="line">                &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> curr;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
 <p>countStep will calculate how many numbers exist with a prefix between ‘curr’ and ‘next’, and it should be &lt;&#x3D;n.</p>
 <figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="type">static</span> <span class="type">long</span> <span class="title">countSteps</span><span class="params">(<span class="type">long</span> <span class="type">long</span> curr, <span class="type">long</span> <span class="type">long</span> next, <span class="type">long</span> n)</span></span>&#123;</span><br><span class="line">      <span class="type">int</span> steps = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">while</span> (curr &lt;= n) &#123;</span><br><span class="line">            steps += <span class="built_in">min</span>((<span class="type">long</span> <span class="type">long</span>)n + <span class="number">1</span>, next) - curr;</span><br><span class="line">            curr *= <span class="number">10</span>;</span><br><span class="line">            next *= <span class="number">10</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> steps;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-Hans">
+    <link itemprop="mainEntityOfPage" href="http://bochuan.site/2025/06/16/%E5%B7%B4%E5%88%AB%E5%A1%94/%E5%8D%83%E6%9C%BA%E5%9B%BE(computer-architecture)/Multicycle_processor/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="博川">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="百川赴海">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2025/06/16/%E5%B7%B4%E5%88%AB%E5%A1%94/%E5%8D%83%E6%9C%BA%E5%9B%BE(computer-architecture)/Multicycle_processor/" class="post-title-link" itemprop="url">Multi-cycle Processor</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+              
+
+              <time title="Created: 2025-06-16 00:00:01n / Modified: 15:52:301n" itemprop="dateCreated datePublished" datetime="2025-06-16T00:00:00+10:00">2025-06-16</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">In</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/babel-tower/" itemprop="url" rel="index"><span itemprop="name">巴别塔(babel-tower)</span></a>
+                </span>
+                  , 
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/babel-tower/computer-architecture/" itemprop="url" rel="index"><span itemprop="name">千机图(computer-architecture)</span></a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <p>In Single Cycle processor, as its name, it should done one instruction in one clock cycle(which also means <code>CPI=1</code>). But it seems that the latencies varies from instruction to instruction. In order to guaranty every instruction finish, the clock cycle is determined by the longest instruction latency. Yes, that’s wasting lots of time.</p>
+<p>Can we have a better solution? We can partition each sub-instruction or(sub-behavior). In this section, we should try to balance the time spend in each section.</p>
+<p>For each partition, we need to determine some registers the datapath should be accessed. In other words, we need to <em>store</em> something from previous partition, and use them in current partition.</p>
+<p>We can have an example on I-type operation. It can be done in 4 clock cycle.</p>
+<ul>
+<li>IR &lt;- IM[PC]</li>
+<li>A &lt;- R[rs]</li>
+<li>s &lt;- a op zero_ext(imm) </li>
+<li>R[rt] &lt;- S; PC &lt;- PC+4</li>
+</ul>
+
       
     </div>
 
@@ -610,8 +617,15 @@
               </span>
               <span class="post-meta-item-text">Posted on</span>
 
-              <time title="Created: 2025-06-13 08:39:285n" itemprop="dateCreated datePublished" datetime="2025-06-13T08:39:28+10:00">2025-06-13</time>
+              <time title="Created: 2025-06-13 00:00:05n" itemprop="dateCreated datePublished" datetime="2025-06-13T00:00:00+10:00">2025-06-13</time>
             </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2025-06-17 09:42:142n" itemprop="dateModified" datetime="2025-06-17T09:42:14+10:00">2025-06-17</time>
+              </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
                 <i class="far fa-folder"></i>
@@ -654,7 +668,7 @@
 <p>One good example will be</p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">abstract</span> <span class="keyword">class</span> <span class="title class_">Shape</span> &#123;</span><br><span class="line"></span><br><span class="line">	<span class="keyword">public</span> <span class="keyword">abstract</span> <span class="type">double</span> <span class="title function_">area</span><span class="params">()</span>;</span><br><span class="line"></span><br><span class="line">	<span class="keyword">public</span> <span class="keyword">abstract</span> <span class="type">double</span> <span class="title function_">circumference</span><span class="params">()</span>;</span><br><span class="line"></span><br><span class="line">	<span class="keyword">protected</span> <span class="keyword">static</span> <span class="type">int</span> <span class="variable">count_shapes</span> <span class="operator">=</span> <span class="number">0</span>;</span><br><span class="line"></span><br><span class="line">	<span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">printArea</span><span class="params">()</span> &#123;</span><br><span class="line">		System.out.println(<span class="string">&quot; (from Shape abstract class, method printArea)&gt; area is: &quot;</span> + <span class="built_in">this</span>.area());</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">Rectangle</span> <span class="keyword">extends</span> <span class="title class_">Shape</span> &#123;</span><br><span class="line">	<span class="keyword">protected</span> <span class="type">double</span> width, height;</span><br><span class="line"></span><br><span class="line">	<span class="keyword">public</span> <span class="title function_">Rectangle</span><span class="params">()</span> &#123;</span><br><span class="line">		width = <span class="number">1.0</span>;</span><br><span class="line">		height = <span class="number">1.0</span>;</span><br><span class="line">		count_shapes++;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	<span class="keyword">public</span> <span class="title function_">Rectangle</span><span class="params">(<span class="type">double</span> w, <span class="type">double</span> h)</span> &#123;</span><br><span class="line">		<span class="built_in">this</span>.width = w;</span><br><span class="line">		<span class="built_in">this</span>.height = h;</span><br><span class="line">		count_shapes++;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	<span class="keyword">public</span> <span class="type">double</span> <span class="title function_">area</span><span class="params">()</span> &#123;</span><br><span class="line">		<span class="keyword">return</span> width * height;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	<span class="keyword">public</span> <span class="type">double</span> <span class="title function_">circumference</span><span class="params">()</span> &#123;</span><br><span class="line">		<span class="keyword">return</span> <span class="number">2</span> * (width + height);</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <p>We can also invoke<code>shapes[].area()</code>. Java will automatically use the implementation.</p>
-<h2 id="Interfaces-in-JAVA"><a href="#Interfaces-in-JAVA" class="headerlink" title="Interfaces in JAVA"></a>Interfaces in JAVA</h2><p>All the methods defined within an interface are <strong>implicitly abstract</strong>.</p>
+<h2 id="Interfaces-in-JAVA"><a href="#Interfaces-in-JAVA" class="headerlink" title="Interfaces in JAVA"></a>Interfaces in JAVA</h2><p>All the methods defined within an interface are <strong>implicitly abstract</strong>, which means that the class&#x2F;abstract class <strong>MUST</strong> have implementation for all of its method.</p>
 
       
     </div>
@@ -878,6 +892,95 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-Hans">
+    <link itemprop="mainEntityOfPage" href="http://bochuan.site/2025/06/10/%E5%B7%B4%E5%88%AB%E5%A1%94/%E7%A0%81%E6%9C%AF%E8%8B%91/week1/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="博川">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="百川赴海">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2025/06/10/%E5%B7%B4%E5%88%AB%E5%A1%94/%E7%A0%81%E6%9C%AF%E8%8B%91/week1/" class="post-title-link" itemprop="url">intro to java and oop</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+
+              <time title="Created: 2025-06-10 10:45:112n" itemprop="dateCreated datePublished" datetime="2025-06-10T10:45:11+10:00">2025-06-10</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2025-06-13 09:00:545n" itemprop="dateModified" datetime="2025-06-13T09:00:54+10:00">2025-06-13</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">In</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/babel-tower/" itemprop="url" rel="index"><span itemprop="name">巴别塔(babel-tower)</span></a>
+                </span>
+                  , 
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/babel-tower/software-design-architecture/" itemprop="url" rel="index"><span itemprop="name">码术苑(software-design-architecture)</span></a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h2 id="Objected-oriented-programming-OOP"><a href="#Objected-oriented-programming-OOP" class="headerlink" title="Objected oriented programming(OOP)"></a>Objected oriented programming(OOP)</h2><p>  In procedural programming languages(like C), programming like to be action-oriented, whereas in JAVA - programming is Object-oriented. </p>
+<p>  In OOP, programmer like to defined their own self-defined types, called classes.</p>
+<p>  Each class will contain the data and the set of the method that manipulate the data. </p>
+<p>  A user defined type(eg.class) is called a object.</p>
+<h2 id="Inheritance"><a href="#Inheritance" class="headerlink" title="Inheritance"></a>Inheritance</h2><p>  Inheritance relations form tree-like hierarchical structure.<br>  (eg. postgraduate students is a subclass of students)</p>
+<p>  In a “Is a” relationship, an object of a subclass may also be treated as an object<br>  of superclass. </p>
+<p>  In a “Has a” relationship,  a class object has an object of another class to store its<br>  state or do its work. It “has-a” reference to that other object.</p>
+<h2 id="Designing-a-Class"><a href="#Designing-a-Class" class="headerlink" title="Designing a Class"></a>Designing a Class</h2><ol>
+<li>Always try to keep data private</li>
+<li>Creating an object may require different actions such as initialization</li>
+<li>Break up class with many responsibilities</li>
+</ol>
+<h2 id=""><a href="#" class="headerlink" title=""></a></h2>
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-Hans">
     <link itemprop="mainEntityOfPage" href="http://bochuan.site/2025/06/10/%E5%B7%B4%E5%88%AB%E5%A1%94/%E5%8D%83%E6%9C%BA%E5%9B%BE(computer-architecture)/Lab1/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -948,97 +1051,6 @@
 <li><p>third</p>
 </li>
 </ol>
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-Hans">
-    <link itemprop="mainEntityOfPage" href="http://bochuan.site/2025/06/10/%E5%B7%B4%E5%88%AB%E5%A1%94/%E5%8D%83%E6%9C%BA%E5%9B%BE(computer-architecture)/Performance/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="博川">
-      <meta itemprop="description" content="">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="百川赴海">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2025/06/10/%E5%B7%B4%E5%88%AB%E5%A1%94/%E5%8D%83%E6%9C%BA%E5%9B%BE(computer-architecture)/Performance/" class="post-title-link" itemprop="url">Performance</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">Posted on</span>
-
-              <time title="Created: 2025-06-10 10:45:112n" itemprop="dateCreated datePublished" datetime="2025-06-10T10:45:11+10:00">2025-06-10</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2025-06-16 13:56:381n" itemprop="dateModified" datetime="2025-06-16T13:56:38+10:00">2025-06-16</time>
-              </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-folder"></i>
-              </span>
-              <span class="post-meta-item-text">In</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/babel-tower/" itemprop="url" rel="index"><span itemprop="name">巴别塔(babel-tower)</span></a>
-                </span>
-                  , 
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/babel-tower/computer-architecture/" itemprop="url" rel="index"><span itemprop="name">千机图(computer-architecture)</span></a>
-                </span>
-            </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <h2 id="Common-Performance-Metrics"><a href="#Common-Performance-Metrics" class="headerlink" title="Common Performance Metrics"></a>Common Performance Metrics</h2><ul>
-<li><p>Latency: response time, execution time, elapsed time</p>
-</li>
-<li><p>Throughout: Amount work per unit time<br>Ideally, for good Performance we want is  Latency minimized ad Throughout maximized</p>
-</li>
-</ul>
-<h2 id="CPU-time"><a href="#CPU-time" class="headerlink" title="CPU time"></a>CPU time</h2><p>CPU time is CPU spends on executing a program.<br>cpu time is comprised of three components<br>$$<br>\text{CPU time} &#x3D; \frac{\text{number of instructions}}{\text{program}} \times \frac{\text{cycles}}{\text{instructions}} \times \frac{\text{seconds}}{\text{cycle}}<br>$$</p>
-<ul>
-<li>instruction count &#x3D; instructions&#x2F; program</li>
-<li>CPI &#x3D; average Cycles&#x2F; instruction</li>
-<li>clock period(clock frequent &#x3D; 1&#x2F; clock period)</li>
-</ul>
-<h2 id="Amdahl’s-law"><a href="#Amdahl’s-law" class="headerlink" title="Amdahl’s law"></a>Amdahl’s law</h2><p>Suppose that enhancement (E) accelerates a  fraction (F) of a task by a factor (S) and the  remainder of the task is unaffected</p>
-<p>$$<br>\text{over all speedup} &#x3D; \frac{1}{1-F + \frac{F}{S}}<br>$$</p>
 
       
     </div>

@@ -26,8 +26,8 @@
 <meta property="og:site_name" content="百川赴海">
 <meta property="og:description" content="Super classes, Object, and Class Hierarchy Every class have a superclass If we don’t define the superclass, by default, it will be the class Object  Object class It is the only class that does not hav">
 <meta property="og:locale">
-<meta property="article:published_time" content="2025-06-12T22:39:28.334Z">
-<meta property="article:modified_time" content="2025-06-12T22:39:28.335Z">
+<meta property="article:published_time" content="2025-06-12T14:00:00.000Z">
+<meta property="article:modified_time" content="2025-06-16T23:42:14.864Z">
 <meta property="article:author" content="博川">
 <meta name="twitter:card" content="summary">
 
@@ -205,8 +205,15 @@
               </span>
               <span class="post-meta-item-text">Posted on</span>
 
-              <time title="Created: 2025-06-13 08:39:285n" itemprop="dateCreated datePublished" datetime="2025-06-13T08:39:28+10:00">2025-06-13</time>
+              <time title="Created: 2025-06-13 00:00:05n" itemprop="dateCreated datePublished" datetime="2025-06-13T00:00:00+10:00">2025-06-13</time>
             </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2025-06-17 09:42:142n" itemprop="dateModified" datetime="2025-06-17T09:42:14+10:00">2025-06-17</time>
+              </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
                 <i class="far fa-folder"></i>
@@ -249,7 +256,7 @@
 <p>One good example will be</p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">abstract</span> <span class="keyword">class</span> <span class="title class_">Shape</span> &#123;</span><br><span class="line"></span><br><span class="line">	<span class="keyword">public</span> <span class="keyword">abstract</span> <span class="type">double</span> <span class="title function_">area</span><span class="params">()</span>;</span><br><span class="line"></span><br><span class="line">	<span class="keyword">public</span> <span class="keyword">abstract</span> <span class="type">double</span> <span class="title function_">circumference</span><span class="params">()</span>;</span><br><span class="line"></span><br><span class="line">	<span class="keyword">protected</span> <span class="keyword">static</span> <span class="type">int</span> <span class="variable">count_shapes</span> <span class="operator">=</span> <span class="number">0</span>;</span><br><span class="line"></span><br><span class="line">	<span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">printArea</span><span class="params">()</span> &#123;</span><br><span class="line">		System.out.println(<span class="string">&quot; (from Shape abstract class, method printArea)&gt; area is: &quot;</span> + <span class="built_in">this</span>.area());</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">Rectangle</span> <span class="keyword">extends</span> <span class="title class_">Shape</span> &#123;</span><br><span class="line">	<span class="keyword">protected</span> <span class="type">double</span> width, height;</span><br><span class="line"></span><br><span class="line">	<span class="keyword">public</span> <span class="title function_">Rectangle</span><span class="params">()</span> &#123;</span><br><span class="line">		width = <span class="number">1.0</span>;</span><br><span class="line">		height = <span class="number">1.0</span>;</span><br><span class="line">		count_shapes++;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	<span class="keyword">public</span> <span class="title function_">Rectangle</span><span class="params">(<span class="type">double</span> w, <span class="type">double</span> h)</span> &#123;</span><br><span class="line">		<span class="built_in">this</span>.width = w;</span><br><span class="line">		<span class="built_in">this</span>.height = h;</span><br><span class="line">		count_shapes++;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	<span class="keyword">public</span> <span class="type">double</span> <span class="title function_">area</span><span class="params">()</span> &#123;</span><br><span class="line">		<span class="keyword">return</span> width * height;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	<span class="keyword">public</span> <span class="type">double</span> <span class="title function_">circumference</span><span class="params">()</span> &#123;</span><br><span class="line">		<span class="keyword">return</span> <span class="number">2</span> * (width + height);</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <p>We can also invoke<code>shapes[].area()</code>. Java will automatically use the implementation.</p>
-<h2 id="Interfaces-in-JAVA"><a href="#Interfaces-in-JAVA" class="headerlink" title="Interfaces in JAVA"></a>Interfaces in JAVA</h2><p>All the methods defined within an interface are <strong>implicitly abstract</strong>.</p>
+<h2 id="Interfaces-in-JAVA"><a href="#Interfaces-in-JAVA" class="headerlink" title="Interfaces in JAVA"></a>Interfaces in JAVA</h2><p>All the methods defined within an interface are <strong>implicitly abstract</strong>, which means that the class&#x2F;abstract class <strong>MUST</strong> have implementation for all of its method.</p>
 
     </div>
 

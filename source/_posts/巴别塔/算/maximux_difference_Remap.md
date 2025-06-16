@@ -2,6 +2,7 @@
 title: Leetcode1431. Max Difference You Can Get From Changing an Integer
 tags:
   - string
+date: 2025-06-15
 categories: [巴别塔(babel-tower),算(hermes)]
 ---
 ## Problem

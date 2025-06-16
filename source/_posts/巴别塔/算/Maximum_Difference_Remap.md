@@ -2,6 +2,7 @@
 title: Leetcode2566. Maximum Difference by Remapping a Digit
 tags:
   - string
+date: 2025-06-14
 categories: [巴别塔(babel-tower),算(hermes)]
 ---
 

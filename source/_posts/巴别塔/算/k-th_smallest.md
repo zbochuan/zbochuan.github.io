@@ -1,6 +1,7 @@
 ---
 title: Leetcode 440. K-th Smallest in Lexographical order
 categories: [巴别塔(babel-tower),算(hermes)]
+
 tags:
     - tries
 ---

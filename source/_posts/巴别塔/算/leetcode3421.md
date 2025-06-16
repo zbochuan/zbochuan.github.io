@@ -1,7 +1,9 @@
 ---
 title: Leetcode 3423. MAX diff between adjacent Elements in a Circular Arrar
 categories: [巴别塔(babel-tower),算(hermes)]
-tags: - array
+date: 2025-06-12
+tags: 
+        - array
 ---
 **Question**:Given a circular array nums, find the maximum absolute difference between adjacent elements.
 

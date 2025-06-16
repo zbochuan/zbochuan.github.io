@@ -1,5 +1,5 @@
 ---
-title: Accumulator of Bfloat16
+title: accumulator of bfloat16
 categories: [巴别塔(babel-tower),千机图(computer-architecture)]
 ---
 In this lab we are required to build a hardware model for accumulation of a sequence of [Bfloat16](https://en.wikipedia.org/wiki/Bfloat16_floating-point_format) values and implement it on the lab board.Here we assume all values are positive and no overflow will occur. Each input

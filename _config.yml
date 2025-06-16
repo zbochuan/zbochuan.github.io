@@ -83,6 +83,9 @@ search:
 # Metadata elements
 meta_generator: true
 
+mermaid:
+  enable: true
+
 # Date / Time format
 date_format: YYYY-MM-DD
 time_format: HH:mm:sen

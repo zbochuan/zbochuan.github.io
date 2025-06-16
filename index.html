@@ -956,10 +956,16 @@
                 <i class="far fa-calendar"></i>
               </span>
               <span class="post-meta-item-text">Posted on</span>
-              
 
-              <time title="Created: 2025-06-10 10:45:112n / Modified: 11:26:142n" itemprop="dateCreated datePublished" datetime="2025-06-10T10:45:11+10:00">2025-06-10</time>
+              <time title="Created: 2025-06-10 10:45:112n" itemprop="dateCreated datePublished" datetime="2025-06-10T10:45:11+10:00">2025-06-10</time>
             </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2025-06-16 13:56:381n" itemprop="dateModified" datetime="2025-06-16T13:56:38+10:00">2025-06-16</time>
+              </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
                 <i class="far fa-folder"></i>
@@ -991,13 +997,15 @@
 <li><p>Throughout: Amount work per unit time<br>Ideally, for good Performance we want is  Latency minimized ad Throughout maximized</p>
 </li>
 </ul>
-<h2 id="CPU-time"><a href="#CPU-time" class="headerlink" title="CPU time"></a>CPU time</h2><p>cpu time is comprised of three components</p>
+<h2 id="CPU-time"><a href="#CPU-time" class="headerlink" title="CPU time"></a>CPU time</h2><p>CPU time is CPU spends on executing a program.<br>cpu time is comprised of three components<br>$$<br>\text{CPU time} &#x3D; \frac{\text{number of instructions}}{\text{program}} \times \frac{\text{cycles}}{\text{instructions}} \times \frac{\text{seconds}}{\text{cycle}}<br>$$</p>
 <ul>
 <li>instruction count &#x3D; instructions&#x2F; program</li>
 <li>CPI &#x3D; average Cycles&#x2F; instruction</li>
-<li>clock period</li>
+<li>clock period(clock frequent &#x3D; 1&#x2F; clock period)</li>
 </ul>
-<h2 id=""><a href="#" class="headerlink" title=""></a></h2>
+<h2 id="Amdahl’s-law"><a href="#Amdahl’s-law" class="headerlink" title="Amdahl’s law"></a>Amdahl’s law</h2><p>Suppose that enhancement (E) accelerates a  fraction (F) of a task by a factor (S) and the  remainder of the task is unaffected</p>
+<p>$$<br>\text{over all speedup} &#x3D; \frac{1}{1-F + \frac{F}{S}}<br>$$</p>
+
       
     </div>
 

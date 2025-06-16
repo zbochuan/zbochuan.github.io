@@ -251,85 +251,6 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-Hans">
-    <link itemprop="mainEntityOfPage" href="http://bochuan.site/2025/06/16/%E5%B7%B4%E5%88%AB%E5%A1%94/%E7%AE%97/Max_diff_incresing_element/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="博川">
-      <meta itemprop="description" content="">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="百川赴海">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2025/06/16/%E5%B7%B4%E5%88%AB%E5%A1%94/%E7%AE%97/Max_diff_incresing_element/" class="post-title-link" itemprop="url">Leetcode2016 Maximum Difference Between Increasing Elements</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">Posted on</span>
-              
-
-              <time title="Created: 2025-06-16 10:46:331n / Modified: 13:32:531n" itemprop="dateCreated datePublished" datetime="2025-06-16T10:46:33+10:00">2025-06-16</time>
-            </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-folder"></i>
-              </span>
-              <span class="post-meta-item-text">In</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/babel-tower/" itemprop="url" rel="index"><span itemprop="name">巴别塔(babel-tower)</span></a>
-                </span>
-                  , 
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/babel-tower/algorithm/" itemprop="url" rel="index"><span itemprop="name">算(hermes)</span></a>
-                </span>
-            </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <h2 id="Problem"><a href="#Problem" class="headerlink" title="Problem"></a>Problem</h2><p>Given a 0-indexed integer array <code>nums</code> of size <code>n</code>, find the maximum difference between <code>nums[i]</code> and <code>nums[j]</code> (i.e., <code>nums[j] - nums[i]</code>), such that <code>0 &lt;= i &lt; j &lt; n</code> and <code>nums[i] &lt; nums[j]</code>.</p>
-<p>Return the maximum difference. If no such i and j exists, return -1.</p>
-<h2 id="Intuition"><a href="#Intuition" class="headerlink" title="Intuition"></a>Intuition</h2><p>The brute solution is easy. We can have 2 pointers do iteration which would result in a time complexity of $O(n^2)$.</p>
-<p>That’s so dumb… Can we have a better solution?</p>
-<p>Consider how max difference come from? Now we have are in <code>num[i]</code>. The max diff show be updated  to <code>num[i]- min(num[0], num[i-1])</code> if <code>prefix_res &lt; res</code>. Nice! we may keep the track of min value in previous data.</p>
-<p>In each iteration, if <code>num[i] &lt; min(num[0], num[i-1])</code> then we update the minValue else we can update <code>res = max(res, num[i] - minValue)</code>. Sweeeeeet! We optimize it to $O(n)$.</p>
-<h2 id="Cooooooooding"><a href="#Cooooooooding" class="headerlink" title="Cooooooooding"></a>Cooooooooding</h2><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span> &#123;</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="type">int</span> <span class="title">maximumDifference</span><span class="params">(vector&lt;<span class="type">int</span>&gt;&amp; nums)</span> </span>&#123;</span><br><span class="line">        <span class="type">int</span> res = <span class="number">-1</span>;</span><br><span class="line">        <span class="type">int</span> min = nums[<span class="number">0</span>];</span><br><span class="line">        <span class="keyword">for</span>(<span class="type">int</span> i = <span class="number">1</span>; i &lt; num.<span class="built_in">size</span>(); i++)&#123;</span><br><span class="line">            <span class="keyword">if</span>(nums[i] &lt;= min)&#123;</span><br><span class="line">                min = nums[i]</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">else</span>&#123;</span><br><span class="line">                res = <span class="built_in">max</span>(nums[i] - min, res);</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> res;      </span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
-
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-Hans">
     <link itemprop="mainEntityOfPage" href="http://bochuan.site/2025/06/16/%E5%B7%B4%E5%88%AB%E5%A1%94/%E7%AE%97/k-th_smallest/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -353,8 +274,9 @@
                 <i class="far fa-calendar"></i>
               </span>
               <span class="post-meta-item-text">Posted on</span>
+              
 
-              <time title="Created: 2025-06-16 10:44:31n" itemprop="dateCreated datePublished" datetime="2025-06-16T10:44:03+10:00">2025-06-16</time>
+              <time title="Created: 2025-06-16 10:44:31n / Modified: 14:18:311n" itemprop="dateCreated datePublished" datetime="2025-06-16T10:44:03+10:00">2025-06-16</time>
             </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -408,7 +330,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-Hans">
-    <link itemprop="mainEntityOfPage" href="http://bochuan.site/2025/06/16/%E5%B7%B4%E5%88%AB%E5%A1%94/%E7%AE%97/leetcode3421/">
+    <link itemprop="mainEntityOfPage" href="http://bochuan.site/2025/06/15/%E5%B7%B4%E5%88%AB%E5%A1%94/%E7%AE%97/Max_diff_incresing_element/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.gif">
@@ -422,7 +344,7 @@
       <header class="post-header">
         <h2 class="post-title" itemprop="name headline">
           
-            <a href="/2025/06/16/%E5%B7%B4%E5%88%AB%E5%A1%94/%E7%AE%97/leetcode3421/" class="post-title-link" itemprop="url">Leetcode 3423. MAX diff between adjacent Elements in a Circular Arrar</a>
+            <a href="/2025/06/15/%E5%B7%B4%E5%88%AB%E5%A1%94/%E7%AE%97/Max_diff_incresing_element/" class="post-title-link" itemprop="url">Leetcode2016 Maximum Difference Between Increasing Elements</a>
         </h2>
 
         <div class="post-meta">
@@ -431,10 +353,16 @@
                 <i class="far fa-calendar"></i>
               </span>
               <span class="post-meta-item-text">Posted on</span>
-              
 
-              <time title="Created: 2025-06-16 10:44:31n / Modified: 13:31:481n" itemprop="dateCreated datePublished" datetime="2025-06-16T10:44:03+10:00">2025-06-16</time>
+              <time title="Created: 2025-06-15 00:00:00n" itemprop="dateCreated datePublished" datetime="2025-06-15T00:00:00+10:00">2025-06-15</time>
             </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2025-06-16 14:18:181n" itemprop="dateModified" datetime="2025-06-16T14:18:18+10:00">2025-06-16</time>
+              </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
                 <i class="far fa-folder"></i>
@@ -460,10 +388,15 @@
     <div class="post-body" itemprop="articleBody">
 
       
-          <p><strong>Question</strong>:Given a circular array nums, find the maximum absolute difference between adjacent elements.</p>
-<p><strong>Note</strong>: In a circular array, the first and last elements are adjacent.</p>
-<p>Easy question directly answer</p>
-<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span>&#123;</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">        <span class="function"><span class="type">int</span> <span class="title">maxAdjacentDistance</span><span class="params">(Vector&lt;<span class="type">int</span>&gt;&amp; nums)</span></span>&#123;</span><br><span class="line">                <span class="type">int</span> n = num.<span class="built_in">size</span>();</span><br><span class="line">                <span class="type">int</span> res = <span class="built_in">abs</span>(nums[<span class="number">0</span>] - nums[n<span class="number">-1</span>]);</span><br><span class="line">                <span class="keyword">for</span>(<span class="type">int</span> i = <span class="number">0</span>; i &lt;n<span class="number">-1</span>; i++)&#123;</span><br><span class="line">                        res = <span class="built_in">max</span>(res, <span class="built_in">abs</span>(nums[i] - nums[i<span class="number">+1</span>]));</span><br><span class="line">                &#125;</span><br><span class="line">                <span class="keyword">return</span> res;</span><br><span class="line">        &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+          <h2 id="Problem"><a href="#Problem" class="headerlink" title="Problem"></a>Problem</h2><p>Given a 0-indexed integer array <code>nums</code> of size <code>n</code>, find the maximum difference between <code>nums[i]</code> and <code>nums[j]</code> (i.e., <code>nums[j] - nums[i]</code>), such that <code>0 &lt;= i &lt; j &lt; n</code> and <code>nums[i] &lt; nums[j]</code>.</p>
+<p>Return the maximum difference. If no such i and j exists, return -1.</p>
+<h2 id="Intuition"><a href="#Intuition" class="headerlink" title="Intuition"></a>Intuition</h2><p>The brute solution is easy. We can have 2 pointers do iteration which would result in a time complexity of $O(n^2)$.</p>
+<p>That’s so dumb… Can we have a better solution?</p>
+<p>Consider how max difference come from? Now we have are in <code>num[i]</code>. The max diff show be updated  to <code>num[i]- min(num[0], num[i-1])</code> if <code>prefix_res &lt; res</code>. Nice! we may keep the track of min value in previous data.</p>
+<p>In each iteration, if <code>num[i] &lt; min(num[0], num[i-1])</code> then we update the minValue else we can update <code>res = max(res, num[i] - minValue)</code>. Sweeeeeet! We optimize it to $O(n)$.</p>
+<h2 id="Cooooooooding"><a href="#Cooooooooding" class="headerlink" title="Cooooooooding"></a>Cooooooooding</h2><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span> &#123;</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="type">int</span> <span class="title">maximumDifference</span><span class="params">(vector&lt;<span class="type">int</span>&gt;&amp; nums)</span> </span>&#123;</span><br><span class="line">        <span class="type">int</span> res = <span class="number">-1</span>;</span><br><span class="line">        <span class="type">int</span> min = nums[<span class="number">0</span>];</span><br><span class="line">        <span class="keyword">for</span>(<span class="type">int</span> i = <span class="number">1</span>; i &lt; num.<span class="built_in">size</span>(); i++)&#123;</span><br><span class="line">            <span class="keyword">if</span>(nums[i] &lt;= min)&#123;</span><br><span class="line">                min = nums[i]</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">else</span>&#123;</span><br><span class="line">                res = <span class="built_in">max</span>(nums[i] - min, res);</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> res;      </span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+
       
     </div>
 
@@ -482,7 +415,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-Hans">
-    <link itemprop="mainEntityOfPage" href="http://bochuan.site/2025/06/16/%E5%B7%B4%E5%88%AB%E5%A1%94/%E7%AE%97/maximux_difference_Remap/">
+    <link itemprop="mainEntityOfPage" href="http://bochuan.site/2025/06/15/%E5%B7%B4%E5%88%AB%E5%A1%94/%E7%AE%97/maximux_difference_Remap/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.gif">
@@ -496,7 +429,7 @@
       <header class="post-header">
         <h2 class="post-title" itemprop="name headline">
           
-            <a href="/2025/06/16/%E5%B7%B4%E5%88%AB%E5%A1%94/%E7%AE%97/maximux_difference_Remap/" class="post-title-link" itemprop="url">Leetcode1431. Max Difference You Can Get From Changing an Integer</a>
+            <a href="/2025/06/15/%E5%B7%B4%E5%88%AB%E5%A1%94/%E7%AE%97/maximux_difference_Remap/" class="post-title-link" itemprop="url">Leetcode1431. Max Difference You Can Get From Changing an Integer</a>
         </h2>
 
         <div class="post-meta">
@@ -506,8 +439,15 @@
               </span>
               <span class="post-meta-item-text">Posted on</span>
 
-              <time title="Created: 2025-06-16 10:44:31n" itemprop="dateCreated datePublished" datetime="2025-06-16T10:44:03+10:00">2025-06-16</time>
+              <time title="Created: 2025-06-15 00:00:00n" itemprop="dateCreated datePublished" datetime="2025-06-15T00:00:00+10:00">2025-06-15</time>
             </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2025-06-16 14:17:201n" itemprop="dateModified" datetime="2025-06-16T14:17:20+10:00">2025-06-16</time>
+              </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
                 <i class="far fa-folder"></i>
@@ -562,7 +502,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-Hans">
-    <link itemprop="mainEntityOfPage" href="http://bochuan.site/2025/06/16/%E5%B7%B4%E5%88%AB%E5%A1%94/%E7%AE%97/maxmize_minimu_pairs/">
+    <link itemprop="mainEntityOfPage" href="http://bochuan.site/2025/06/14/%E5%B7%B4%E5%88%AB%E5%A1%94/%E7%AE%97/Maximum_Difference_Remap/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.gif">
@@ -576,7 +516,7 @@
       <header class="post-header">
         <h2 class="post-title" itemprop="name headline">
           
-            <a href="/2025/06/16/%E5%B7%B4%E5%88%AB%E5%A1%94/%E7%AE%97/maxmize_minimu_pairs/" class="post-title-link" itemprop="url">Leetcode 2616. Minimize the maximum difference of pairs</a>
+            <a href="/2025/06/14/%E5%B7%B4%E5%88%AB%E5%A1%94/%E7%AE%97/Maximum_Difference_Remap/" class="post-title-link" itemprop="url">Leetcode2566. Maximum Difference by Remapping a Digit</a>
         </h2>
 
         <div class="post-meta">
@@ -586,125 +526,15 @@
               </span>
               <span class="post-meta-item-text">Posted on</span>
 
-              <time title="Created: 2025-06-16 10:44:31n" itemprop="dateCreated datePublished" datetime="2025-06-16T10:44:03+10:00">2025-06-16</time>
+              <time title="Created: 2025-06-14 00:00:06n" itemprop="dateCreated datePublished" datetime="2025-06-14T00:00:00+10:00">2025-06-14</time>
             </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-folder"></i>
-              </span>
-              <span class="post-meta-item-text">In</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/babel-tower/" itemprop="url" rel="index"><span itemprop="name">巴别塔(babel-tower)</span></a>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
                 </span>
-                  , 
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/babel-tower/algorithm/" itemprop="url" rel="index"><span itemprop="name">算(hermes)</span></a>
-                </span>
-            </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <h2 id="Approach-binary-greedy"><a href="#Approach-binary-greedy" class="headerlink" title="Approach: binary + greedy"></a>Approach: binary + greedy</h2><p>Intuitively, we do a sort for this array.</p>
-<p>Since we are looking to minimize the maximum difference, one brute force approach is to start from a threshold (a maximum difference) of ‘0’ and incrementally try all possible thresholds</p>
-<ol>
-<li>Try to find ‘p’ pairs with difference of ‘0’ </li>
-<li>if not possible then we try to find ‘p’ pairs with difference of ‘1’</li>
-<li>and so on,  until we find a threshold that succeeds.</li>
-</ol>
-<p>As you may notice, this will cost a linear time for each threshold. Do we have a better solution?<br>We observe that</p>
-<ul>
-<li>If we can find p pairs with threshold of x, then we can definitely find p pairs of  with a threshold of x+1</li>
-<li>If we can <strong>NOT</strong> find p pairs with threshold of x, we definitely can not find p pairs with threshold of x-1</li>
-</ul>
-<p>This splits the number line into two sections: one section where the task is possible, and one where the task is impossible. Therefore, we can use binary search to quickly narrow down the search space until we find the dividing point, which is the minimum threshold.</p>
-<p>Now we go to next question, how do we determine if there exist  at least p valid pairs.</p>
-<p>How about greedy? We do iteration to nums[]. check each <code>abs(nums[i] - nums[i+1]) &lt;= &#39;threshold</code>, if is true then simply check num[i+2] and num[i+3].</p>
-<p>But I will question myself. Does greedy solution will fail and another solution will succeeds? </p>
-<ol>
-<li><strong>Suppose</strong> greedy fails but some better strategy succeeds</li>
-<li><strong>Then</strong> at first difference, greedy pairs <code>(nums[i], num[i+1])</code> but optimal way dosen’t</li>
-<li><strong>In the potimal solution</strong>, <code>num[i]</code> either:</li>
-</ol>
-<ul>
-<li>pairs with <code>num[j]</code> where <code>j &gt; i+1</code> then difference must greater or equal to nums[i+1] -nums[i] (worse!)</li>
-<li>unpaired (worse, cuz we lost a pair)<br>&#96;</li>
-</ul>
-<ol start="4">
-<li>We can always “exchange” the optimal pairing to use <code>(nums[i], nums[i+1])</code> instead</li>
-<li><strong>Same or better solution</strong>, contradicting that optimal was better</li>
-</ol>
-<p>OK now The greedy approach will always yield the maximum number of valid pairs.</p>
-<h2 id="Let’s-do-COOOOOOOOOOOOODING"><a href="#Let’s-do-COOOOOOOOOOOOODING" class="headerlink" title="Let’s do COOOOOOOOOOOOODING"></a>Let’s do COOOOOOOOOOOOODING</h2><ol>
-<li>Define <code>countValidPairs(threshold)</code> to find the number of pairs having a threshold of threshold in nums. Let <code>n</code> be the size of <code>nums</code>.</li>
-</ol>
-<ul>
-<li>set count &#x3D; 0</li>
-<li>Iterate over <code>nums</code> from <code>index = 0</code>to <code>index = n - 2</code>. If <code>nums[index + 1] - nums[index] &lt;= threshold</code>, increment <code>count</code> by <code>1</code>, and skip both indices. Otherwise, skip the current index.</li>
-<li>Return <code>count</code></li>
-</ul>
-<ol start="2">
-<li>sort <code>nums</code></li>
-<li>Initialize the searching space as left &#x3D; 0 and right &#x3D; nums[n -1]  - nums[0], the max difference in the array.</li>
-<li>while <code>left &lt; right</code> , we do</li>
-<li>Get the middle value as mid &#x3D; left + (right - left)&#x2F;2</li>
-<li>invoke <code>countValidPairs(mid)</code></li>
-<li>if <code>countValidPairs(mid)</code>, continue with the left half by setting(right &#x3D; mid). Otherwise, continue with the right half by setting <code>left = mid -1</code>Repeat step 4  </li>
-<li>Return left<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span> &#123;</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="comment">// Find the number of valid pairs by greedy approach</span></span><br><span class="line">    <span class="function"><span class="type">int</span> <span class="title">countValidPairs</span><span class="params">(vector&lt;<span class="type">int</span>&gt;&amp; nums, <span class="type">int</span> threshold)</span> </span>&#123;</span><br><span class="line">        <span class="type">int</span> index = <span class="number">0</span>, count = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">while</span> (index &lt; nums.<span class="built_in">size</span>() - <span class="number">1</span>) &#123;</span><br><span class="line">            <span class="comment">// If a valid pair is found, skip both numbers.</span></span><br><span class="line">            <span class="keyword">if</span> (nums[index + <span class="number">1</span>] - nums[index] &lt;= threshold) &#123;</span><br><span class="line">                count++;</span><br><span class="line">                index++;</span><br><span class="line">            &#125;</span><br><span class="line">            index++;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> count;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="type">int</span> <span class="title">minimizeMax</span><span class="params">(vector&lt;<span class="type">int</span>&gt;&amp; nums, <span class="type">int</span> p)</span> </span>&#123;</span><br><span class="line">        <span class="built_in">sort</span>(nums.<span class="built_in">begin</span>(), nums.<span class="built_in">end</span>());</span><br><span class="line">        <span class="type">int</span> n = nums.<span class="built_in">size</span>();</span><br><span class="line">        <span class="type">int</span> left = <span class="number">0</span>, right = nums[n - <span class="number">1</span>] - nums[<span class="number">0</span>];</span><br><span class="line"></span><br><span class="line">        <span class="keyword">while</span> (left &lt; right) &#123;</span><br><span class="line">            <span class="type">int</span> mid = left + (right - left) / <span class="number">2</span>;</span><br><span class="line"></span><br><span class="line">            <span class="comment">// If there are enough pairs, look for a smaller threshold.</span></span><br><span class="line">            <span class="comment">// Otherwise, look for a larger threshold.</span></span><br><span class="line">            <span class="keyword">if</span> (<span class="built_in">countValidPairs</span>(nums, mid) &gt;= p) &#123;</span><br><span class="line">                right = mid;</span><br><span class="line">            &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">                left = mid + <span class="number">1</span>;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> left;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure></li>
-</ol>
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-Hans">
-    <link itemprop="mainEntityOfPage" href="http://bochuan.site/2025/06/16/%E5%B7%B4%E5%88%AB%E5%A1%94/%E7%AE%97/Maximum_Difference_Remap/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="博川">
-      <meta itemprop="description" content="">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="百川赴海">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2025/06/16/%E5%B7%B4%E5%88%AB%E5%A1%94/%E7%AE%97/Maximum_Difference_Remap/" class="post-title-link" itemprop="url">Leetcode2566. Maximum Difference by Remapping a Digit</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2025-06-16 14:19:111n" itemprop="dateModified" datetime="2025-06-16T14:19:11+10:00">2025-06-16</time>
               </span>
-              <span class="post-meta-item-text">Posted on</span>
-
-              <time title="Created: 2025-06-16 10:44:31n" itemprop="dateCreated datePublished" datetime="2025-06-16T10:44:03+10:00">2025-06-16</time>
-            </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
                 <i class="far fa-folder"></i>
@@ -826,6 +656,210 @@
 <p>We can also invoke<code>shapes[].area()</code>. Java will automatically use the implementation.</p>
 <h2 id="Interfaces-in-JAVA"><a href="#Interfaces-in-JAVA" class="headerlink" title="Interfaces in JAVA"></a>Interfaces in JAVA</h2><p>All the methods defined within an interface are <strong>implicitly abstract</strong>.</p>
 
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-Hans">
+    <link itemprop="mainEntityOfPage" href="http://bochuan.site/2025/06/13/%E5%B7%B4%E5%88%AB%E5%A1%94/%E7%AE%97/maxmize_minimu_pairs/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="博川">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="百川赴海">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2025/06/13/%E5%B7%B4%E5%88%AB%E5%A1%94/%E7%AE%97/maxmize_minimu_pairs/" class="post-title-link" itemprop="url">Leetcode 2616. Minimize the maximum difference of pairs</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+
+              <time title="Created: 2025-06-13 00:00:05n" itemprop="dateCreated datePublished" datetime="2025-06-13T00:00:00+10:00">2025-06-13</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2025-06-16 14:19:91n" itemprop="dateModified" datetime="2025-06-16T14:19:09+10:00">2025-06-16</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">In</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/babel-tower/" itemprop="url" rel="index"><span itemprop="name">巴别塔(babel-tower)</span></a>
+                </span>
+                  , 
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/babel-tower/algorithm/" itemprop="url" rel="index"><span itemprop="name">算(hermes)</span></a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h2 id="Approach-binary-greedy"><a href="#Approach-binary-greedy" class="headerlink" title="Approach: binary + greedy"></a>Approach: binary + greedy</h2><p>Intuitively, we do a sort for this array.</p>
+<p>Since we are looking to minimize the maximum difference, one brute force approach is to start from a threshold (a maximum difference) of ‘0’ and incrementally try all possible thresholds</p>
+<ol>
+<li>Try to find ‘p’ pairs with difference of ‘0’ </li>
+<li>if not possible then we try to find ‘p’ pairs with difference of ‘1’</li>
+<li>and so on,  until we find a threshold that succeeds.</li>
+</ol>
+<p>As you may notice, this will cost a linear time for each threshold. Do we have a better solution?<br>We observe that</p>
+<ul>
+<li>If we can find p pairs with threshold of x, then we can definitely find p pairs of  with a threshold of x+1</li>
+<li>If we can <strong>NOT</strong> find p pairs with threshold of x, we definitely can not find p pairs with threshold of x-1</li>
+</ul>
+<p>This splits the number line into two sections: one section where the task is possible, and one where the task is impossible. Therefore, we can use binary search to quickly narrow down the search space until we find the dividing point, which is the minimum threshold.</p>
+<p>Now we go to next question, how do we determine if there exist  at least p valid pairs.</p>
+<p>How about greedy? We do iteration to nums[]. check each <code>abs(nums[i] - nums[i+1]) &lt;= &#39;threshold</code>, if is true then simply check num[i+2] and num[i+3].</p>
+<p>But I will question myself. Does greedy solution will fail and another solution will succeeds? </p>
+<ol>
+<li><strong>Suppose</strong> greedy fails but some better strategy succeeds</li>
+<li><strong>Then</strong> at first difference, greedy pairs <code>(nums[i], num[i+1])</code> but optimal way dosen’t</li>
+<li><strong>In the potimal solution</strong>, <code>num[i]</code> either:</li>
+</ol>
+<ul>
+<li>pairs with <code>num[j]</code> where <code>j &gt; i+1</code> then difference must greater or equal to nums[i+1] -nums[i] (worse!)</li>
+<li>unpaired (worse, cuz we lost a pair)<br>&#96;</li>
+</ul>
+<ol start="4">
+<li>We can always “exchange” the optimal pairing to use <code>(nums[i], nums[i+1])</code> instead</li>
+<li><strong>Same or better solution</strong>, contradicting that optimal was better</li>
+</ol>
+<p>OK now The greedy approach will always yield the maximum number of valid pairs.</p>
+<h2 id="Let’s-do-COOOOOOOOOOOOODING"><a href="#Let’s-do-COOOOOOOOOOOOODING" class="headerlink" title="Let’s do COOOOOOOOOOOOODING"></a>Let’s do COOOOOOOOOOOOODING</h2><ol>
+<li>Define <code>countValidPairs(threshold)</code> to find the number of pairs having a threshold of threshold in nums. Let <code>n</code> be the size of <code>nums</code>.</li>
+</ol>
+<ul>
+<li>set count &#x3D; 0</li>
+<li>Iterate over <code>nums</code> from <code>index = 0</code>to <code>index = n - 2</code>. If <code>nums[index + 1] - nums[index] &lt;= threshold</code>, increment <code>count</code> by <code>1</code>, and skip both indices. Otherwise, skip the current index.</li>
+<li>Return <code>count</code></li>
+</ul>
+<ol start="2">
+<li>sort <code>nums</code></li>
+<li>Initialize the searching space as left &#x3D; 0 and right &#x3D; nums[n -1]  - nums[0], the max difference in the array.</li>
+<li>while <code>left &lt; right</code> , we do</li>
+<li>Get the middle value as mid &#x3D; left + (right - left)&#x2F;2</li>
+<li>invoke <code>countValidPairs(mid)</code></li>
+<li>if <code>countValidPairs(mid)</code>, continue with the left half by setting(right &#x3D; mid). Otherwise, continue with the right half by setting <code>left = mid -1</code>Repeat step 4  </li>
+<li>Return left<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span> &#123;</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="comment">// Find the number of valid pairs by greedy approach</span></span><br><span class="line">    <span class="function"><span class="type">int</span> <span class="title">countValidPairs</span><span class="params">(vector&lt;<span class="type">int</span>&gt;&amp; nums, <span class="type">int</span> threshold)</span> </span>&#123;</span><br><span class="line">        <span class="type">int</span> index = <span class="number">0</span>, count = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">while</span> (index &lt; nums.<span class="built_in">size</span>() - <span class="number">1</span>) &#123;</span><br><span class="line">            <span class="comment">// If a valid pair is found, skip both numbers.</span></span><br><span class="line">            <span class="keyword">if</span> (nums[index + <span class="number">1</span>] - nums[index] &lt;= threshold) &#123;</span><br><span class="line">                count++;</span><br><span class="line">                index++;</span><br><span class="line">            &#125;</span><br><span class="line">            index++;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> count;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="type">int</span> <span class="title">minimizeMax</span><span class="params">(vector&lt;<span class="type">int</span>&gt;&amp; nums, <span class="type">int</span> p)</span> </span>&#123;</span><br><span class="line">        <span class="built_in">sort</span>(nums.<span class="built_in">begin</span>(), nums.<span class="built_in">end</span>());</span><br><span class="line">        <span class="type">int</span> n = nums.<span class="built_in">size</span>();</span><br><span class="line">        <span class="type">int</span> left = <span class="number">0</span>, right = nums[n - <span class="number">1</span>] - nums[<span class="number">0</span>];</span><br><span class="line"></span><br><span class="line">        <span class="keyword">while</span> (left &lt; right) &#123;</span><br><span class="line">            <span class="type">int</span> mid = left + (right - left) / <span class="number">2</span>;</span><br><span class="line"></span><br><span class="line">            <span class="comment">// If there are enough pairs, look for a smaller threshold.</span></span><br><span class="line">            <span class="comment">// Otherwise, look for a larger threshold.</span></span><br><span class="line">            <span class="keyword">if</span> (<span class="built_in">countValidPairs</span>(nums, mid) &gt;= p) &#123;</span><br><span class="line">                right = mid;</span><br><span class="line">            &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">                left = mid + <span class="number">1</span>;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> left;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure></li>
+</ol>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-Hans">
+    <link itemprop="mainEntityOfPage" href="http://bochuan.site/2025/06/12/%E5%B7%B4%E5%88%AB%E5%A1%94/%E7%AE%97/leetcode3421/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="博川">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="百川赴海">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2025/06/12/%E5%B7%B4%E5%88%AB%E5%A1%94/%E7%AE%97/leetcode3421/" class="post-title-link" itemprop="url">Leetcode 3423. MAX diff between adjacent Elements in a Circular Arrar</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+
+              <time title="Created: 2025-06-12 00:00:04n" itemprop="dateCreated datePublished" datetime="2025-06-12T00:00:00+10:00">2025-06-12</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2025-06-16 14:19:531n" itemprop="dateModified" datetime="2025-06-16T14:19:53+10:00">2025-06-16</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">In</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/babel-tower/" itemprop="url" rel="index"><span itemprop="name">巴别塔(babel-tower)</span></a>
+                </span>
+                  , 
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/babel-tower/algorithm/" itemprop="url" rel="index"><span itemprop="name">算(hermes)</span></a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <p><strong>Question</strong>:Given a circular array nums, find the maximum absolute difference between adjacent elements.</p>
+<p><strong>Note</strong>: In a circular array, the first and last elements are adjacent.</p>
+<p>Easy question directly answer</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span>&#123;</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">        <span class="function"><span class="type">int</span> <span class="title">maxAdjacentDistance</span><span class="params">(Vector&lt;<span class="type">int</span>&gt;&amp; nums)</span></span>&#123;</span><br><span class="line">                <span class="type">int</span> n = num.<span class="built_in">size</span>();</span><br><span class="line">                <span class="type">int</span> res = <span class="built_in">abs</span>(nums[<span class="number">0</span>] - nums[n<span class="number">-1</span>]);</span><br><span class="line">                <span class="keyword">for</span>(<span class="type">int</span> i = <span class="number">0</span>; i &lt;n<span class="number">-1</span>; i++)&#123;</span><br><span class="line">                        res = <span class="built_in">max</span>(res, <span class="built_in">abs</span>(nums[i] - nums[i<span class="number">+1</span>]));</span><br><span class="line">                &#125;</span><br><span class="line">                <span class="keyword">return</span> res;</span><br><span class="line">        &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
       
     </div>
 
@@ -1088,7 +1122,7 @@
   <nav class="site-state">
       <div class="site-state-item site-state-posts">
           <a href="/archives">
-          <span class="site-state-item-count">14</span>
+          <span class="site-state-item-count">13</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>

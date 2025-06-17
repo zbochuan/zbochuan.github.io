@@ -19,15 +19,23 @@
     var NexT = window.NexT || {};
     var CONFIG = {"hostname":"bochuan.site","root":"/","scheme":"Muse","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
   </script>
-  <meta property="og:type" content="website">
-<meta property="og:title" content="百川赴海">
-<meta property="og:url" content="http://bochuan.site/categories/babel-tower/software-design-architecture/index.html">
+  <meta name="description" content="What is pipeline?Pipelining attempts to keep every part of the processor busy with some instruction by dividing incoming instructions into a series of sequential steps (the eponymous “pipeline”) perfo">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Pipeline processor">
+<meta property="og:url" content="http://bochuan.site/2025/06/17/%E5%B7%B4%E5%88%AB%E5%A1%94/%E5%8D%83%E6%9C%BA%E5%9B%BE(computer-architecture)/pipeline_processor/index.html">
 <meta property="og:site_name" content="百川赴海">
+<meta property="og:description" content="What is pipeline?Pipelining attempts to keep every part of the processor busy with some instruction by dividing incoming instructions into a series of sequential steps (the eponymous “pipeline”) perfo">
 <meta property="og:locale">
+<meta property="og:image" content="http://bochuan.site/images/stages_show.png">
+<meta property="og:image" content="http://bochuan.site/images/pipeline_processor_datapath.png">
+<meta property="og:image" content="http://bochuan.site/images/piplined_control.png">
+<meta property="article:published_time" content="2025-06-16T14:00:00.000Z">
+<meta property="article:modified_time" content="2025-06-17T03:27:47.542Z">
 <meta property="article:author" content="博川">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://bochuan.site/images/stages_show.png">
 
-<link rel="canonical" href="http://bochuan.site/categories/babel-tower/software-design-architecture/">
+<link rel="canonical" href="http://bochuan.site/2025/06/17/%E5%B7%B4%E5%88%AB%E5%A1%94/%E5%8D%83%E6%9C%BA%E5%9B%BE(computer-architecture)/pipeline_processor/">
 
 
 <script id="page-configurations">
@@ -35,12 +43,12 @@
   CONFIG.page = {
     sidebar: "",
     isHome : false,
-    isPost : false,
+    isPost : true,
     lang   : 'zh-Hans'
   };
 </script>
 
-  <title>Category: 码术苑(software-design-architecture) | 百川赴海</title>
+  <title>Pipeline processor | 百川赴海</title>
   
 
 
@@ -171,71 +179,111 @@
         <div class="content-wrap">
           
 
-          <div class="content category">
+          <div class="content post posts-expand">
             
 
+    
   
   
-  
-  <div class="post-block">
-    <div class="posts-collapse">
-      <div class="collection-title">
-        <h2 class="collection-header">码术苑(software-design-architecture)
-          <small>Category</small>
-        </h2>
-      </div>
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-Hans">
+    <link itemprop="mainEntityOfPage" href="http://bochuan.site/2025/06/17/%E5%B7%B4%E5%88%AB%E5%A1%94/%E5%8D%83%E6%9C%BA%E5%9B%BE(computer-architecture)/pipeline_processor/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="博川">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="百川赴海">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          Pipeline processor
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+              
+
+              <time title="Created: 2025-06-17 00:00:02n / Modified: 13:27:472n" itemprop="dateCreated datePublished" datetime="2025-06-17T00:00:00+10:00">2025-06-17</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">In</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/babel-tower/" itemprop="url" rel="index"><span itemprop="name">巴别塔(babel-tower)</span></a>
+                </span>
+                  , 
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/babel-tower/computer-architecture/" itemprop="url" rel="index"><span itemprop="name">千机图(computer-architecture)</span></a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
 
       
-    <div class="collection-year">
-      <span class="collection-header">2025</span>
-    </div>
-
-  <article itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <div class="post-meta">
-        <time itemprop="dateCreated"
-              datetime="2025-06-13T00:00:00+10:00"
-              content="2025-06-13">
-          06-13
-        </time>
-      </div>
-
-      <div class="post-title">
-          <a class="post-title-link" href="/2025/06/13/%E5%B7%B4%E5%88%AB%E5%A1%94/%E7%A0%81%E6%9C%AF%E8%8B%91/week2/" itemprop="url">
-            <span itemprop="name">Inheritance & Abstract Classes &  Polymorphism</span>
-          </a>
-      </div>
-
-    </header>
-  </article>
-
-  <article itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <div class="post-meta">
-        <time itemprop="dateCreated"
-              datetime="2025-06-10T10:45:11+10:00"
-              content="2025-06-10">
-          06-10
-        </time>
-      </div>
-
-      <div class="post-title">
-          <a class="post-title-link" href="/2025/06/10/%E5%B7%B4%E5%88%AB%E5%A1%94/%E7%A0%81%E6%9C%AF%E8%8B%91/week1/" itemprop="url">
-            <span itemprop="name">intro to java and oop</span>
-          </a>
-      </div>
-
-    </header>
-  </article>
+        <h2 id="What-is-pipeline"><a href="#What-is-pipeline" class="headerlink" title="What is pipeline?"></a>What is pipeline?</h2><p>Pipelining attempts to keep every part of the processor busy with some instruction by dividing incoming instructions into a series of sequential steps (the eponymous “pipeline”) performed by different processor units with different parts of instructions processed in parallel.</p>
+<h2 id="MIPS-is-Designed-for-Pipeline"><a href="#MIPS-is-Designed-for-Pipeline" class="headerlink" title="MIPS is Designed for Pipeline"></a>MIPS is Designed for Pipeline</h2><ul>
+<li>ALl instruction is 32-bit<br>  It means that easier to fetch instruction</li>
+<li>Only 3 types of instruction format<br>  Decode and read registers in one step</li>
+<li>Load&#x2F;store(or reg-reg) architecture<br>  Can calculate address in an early stage, access memory in a late stage?</li>
+<li>Alignment of memory operands</li>
+</ul>
+<h2 id="5-stages"><a href="#5-stages" class="headerlink" title="5 stages"></a>5 stages</h2><ol>
+<li>IF: Instruction Fetch</li>
+<li>ID: Instruction decode &amp; registers read</li>
+<li>EX: Execute operation ro calculate address </li>
+<li>MEM: access memory</li>
+<li>WB: write back to registers</li>
+</ol>
+<p><img src="/images/stages_show.png" alt="5 stages"></p>
+<h2 id="General-Idea"><a href="#General-Idea" class="headerlink" title="General Idea"></a>General Idea</h2><p>Partition the single cycle datapath into sections.  Each section forms a pipeline stage</p>
+<p>Try to make data flow in the same direction(main on write back and pc update operation)</p>
+<h2 id="registers"><a href="#registers" class="headerlink" title="registers"></a>registers</h2><p>The registers inserted between the pipeline stages are called pipeline stage register, or simply pipeline register</p>
+<p>Each pipeline register is named after the two stages separated by that register</p>
+<p>All instructions advance from one stage to the next stage in one clock cycle.</p>
+<h2 id="Datapath-Design"><a href="#Datapath-Design" class="headerlink" title="Datapath Design"></a>Datapath Design</h2><p><img src="/images/pipeline_processor_datapath.png" alt="Pipeline Processor datapath"><br>Why <strong>Write register</strong> signal is changed? Yes, if we stick on previous design, the signal represent the register which should be written in next a few(3 exactly) instructions.(Remember, now the all the component is working in parallel)</p>
+<h2 id="Control-Unit"><a href="#Control-Unit" class="headerlink" title="Control Unit"></a>Control Unit</h2><p>Pipeline is used in dataPath design. Then in each stage, control unit should output it corresponding signal. A smart design is that control units output all the required signal in  ID stage and save all of them to stage register. In each stage, data path get required signal Hierarchically.<br><img src="/images/piplined_control.png" alt="pipelined control unit"></p>
 
     </div>
-  </div>
-  
-  
-  
 
+    
+    
+    
+
+      <footer class="post-footer">
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/2025/06/16/%E5%B7%B4%E5%88%AB%E5%A1%94/%E7%AE%97/k-th_smallest/" rel="prev" title="Leetcode 440. K-th Smallest in Lexographical order">
+      <i class="fa fa-chevron-left"></i> Leetcode 440. K-th Smallest in Lexographical order
+    </a></div>
+      <div class="post-nav-item"></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
   
 
 
@@ -288,6 +336,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#What-is-pipeline"><span class="nav-number">1.</span> <span class="nav-text">What is pipeline?</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#MIPS-is-Designed-for-Pipeline"><span class="nav-number">2.</span> <span class="nav-text">MIPS is Designed for Pipeline</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#5-stages"><span class="nav-number">3.</span> <span class="nav-text">5 stages</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#General-Idea"><span class="nav-number">4.</span> <span class="nav-text">General Idea</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#registers"><span class="nav-number">5.</span> <span class="nav-text">registers</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Datapath-Design"><span class="nav-number">6.</span> <span class="nav-text">Datapath Design</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Control-Unit"><span class="nav-number">7.</span> <span class="nav-text">Control Unit</span></a></li></ol></div>
       </div>
       <!--/noindex-->
 

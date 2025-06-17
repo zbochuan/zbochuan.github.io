@@ -26,10 +26,13 @@
 <meta property="og:site_name" content="百川赴海">
 <meta property="og:description" content="In Single Cycle processor, as its name, it should done one instruction in one clock cycle(which also means CPI&#x3D;1). But it seems that the latencies varies from instruction to instruction. In order to g">
 <meta property="og:locale">
+<meta property="og:image" content="http://bochuan.site/images/single_cycle_processor.png">
+<meta property="og:image" content="http://bochuan.site/images/multi_cycle_processor.png">
 <meta property="article:published_time" content="2025-06-15T14:00:00.000Z">
-<meta property="article:modified_time" content="2025-06-16T05:52:30.909Z">
+<meta property="article:modified_time" content="2025-06-17T01:06:08.689Z">
 <meta property="article:author" content="博川">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://bochuan.site/images/single_cycle_processor.png">
 
 <link rel="canonical" href="http://bochuan.site/2025/06/16/%E5%B7%B4%E5%88%AB%E5%A1%94/%E5%8D%83%E6%9C%BA%E5%9B%BE(computer-architecture)/Multicycle_processor/">
 
@@ -204,10 +207,16 @@
                 <i class="far fa-calendar"></i>
               </span>
               <span class="post-meta-item-text">Posted on</span>
-              
 
-              <time title="Created: 2025-06-16 00:00:01n / Modified: 15:52:301n" itemprop="dateCreated datePublished" datetime="2025-06-16T00:00:00+10:00">2025-06-16</time>
+              <time title="Created: 2025-06-16 00:00:01n" itemprop="dateCreated datePublished" datetime="2025-06-16T00:00:00+10:00">2025-06-16</time>
             </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2025-06-17 11:06:82n" itemprop="dateModified" datetime="2025-06-17T11:06:08+10:00">2025-06-17</time>
+              </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
                 <i class="far fa-folder"></i>
@@ -243,6 +252,9 @@
 <li>s &lt;- a op zero_ext(imm) </li>
 <li>R[rt] &lt;- S; PC &lt;- PC+4</li>
 </ul>
+<p><img src="/images/single_cycle_processor.png"></p>
+<p><img src="/images/multi_cycle_processor.png"><br>Comparing 2 picture above, we can observe multiCycle Processor has a much complexer control unit(FSM). And some registers are added to design, dividing a Processor to several part. The main reason of FMS has more signal output is the increased number of registers.</p>
+<p>However, consider we have are doing an I-type operation. When we are doing A &lt;- R[rs], the previous part(instruction registers) is unused. That’s a kind of resource waste. To solve it we can design a Pipeline processor.</p>
 
     </div>
 
@@ -335,7 +347,7 @@
   <nav class="site-state">
       <div class="site-state-item site-state-posts">
           <a href="/archives">
-          <span class="site-state-item-count">13</span>
+          <span class="site-state-item-count">14</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>

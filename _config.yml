@@ -42,12 +42,18 @@ post_asset_folder: true
 relative_link: false
 future: true
 syntax_highlighter: highlight.js
-highlight:
-  line_number: true
-  auto_detect: false
-  tab_replace: ''
-  wrap: true
-  hljs: false
+
+# highlight:
+#   line_number: true
+#   auto_detect: false
+#   tab_replace: ''
+#   wrap: true
+#   hljs: false
+
+marked:
+  prependRoot: true
+  postAsset: true
+
 prismjs:
   preprocess: true
   line_number: true

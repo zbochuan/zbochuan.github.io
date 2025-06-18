@@ -1,0 +1,87 @@
+/* Nord主题风格 */
+.shiki {
+  background-color: #2e3440;
+  color: #d8dee9;
+  padding: 1.5rem;
+  border-radius: 8px;
+  overflow-x: auto;
+  font-family: 'JetBrains Mono', 'Fira Code', 'Cascadia Code', Consolas, monospace;
+  font-size: 14px;
+  line-height: 1.6;
+  margin: 1.5rem 0;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+}
+
+.shiki code {
+  background: transparent;
+  padding: 0;
+  border-radius: 0;
+  font-family: inherit;
+  color: inherit;
+}
+
+/* 语法高亮颜色 */
+.token.keyword {
+  color: #81a1c1;
+  font-weight: 600;
+}
+
+.token.string {
+  color: #a3be8c;
+}
+
+.token.comment {
+  color: #616e88;
+  font-style: italic;
+}
+
+.token.number {
+  color: #b48ead;
+}
+
+.token.boolean {
+  color: #81a1c1;
+}
+
+.token.function {
+  color: #88c0d0;
+}
+
+.token.operator {
+  color: #81a1c1;
+}
+
+.token.punctuation {
+  color: #eceff4;
+}
+
+/* 行高亮效果 */
+.shiki .line {
+  display: block;
+}
+
+.shiki .line.highlight {
+  background-color: rgba(136, 192, 208, 0.1);
+  margin: 0 -1.5rem;
+  padding: 0 1.5rem;
+  border-left: 3px solid #88c0d0;
+}
+
+/* 滚动条样式 */
+.shiki::-webkit-scrollbar {
+  height: 8px;
+}
+
+.shiki::-webkit-scrollbar-track {
+  background: #3b4252;
+  border-radius: 4px;
+}
+
+.shiki::-webkit-scrollbar-thumb {
+  background: #4c566a;
+  border-radius: 4px;
+}
+
+.shiki::-webkit-scrollbar-thumb:hover {
+  background: #5e81ac;
+}

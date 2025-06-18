@@ -14,3 +14,11 @@ We can have an example on I-type operation. It can be done in 4 clock cycle.
 - A <- R[rs]
 - s <- a op zero_ext(imm) 
 - R[rt] <- S; PC <- PC+4
+
+![](/images/single_cycle_processor.png)
+
+![](/images/multi_cycle_processor.png)
+Comparing 2 picture above, we can observe multiCycle Processor has a much complexer control unit(FSM). And some registers are added to design, dividing a Processor to several part. The main reason of FMS has more signal output is the increased number of registers.
+
+However, consider we have are doing an I-type operation. When we are doing A <- R[rs], the previous part(instruction registers) is unused. That's a kind of resource waste. To solve it we can design a Pipeline processor.
+

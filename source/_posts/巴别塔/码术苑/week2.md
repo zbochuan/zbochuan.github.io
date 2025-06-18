@@ -1,6 +1,7 @@
 ---
 title: Inheritance & Abstract Classes &  Polymorphism
 categories: [巴别塔(babel-tower),码术苑(software-design-architecture)]
+date: 2025-06-13
 ---
 ## Super classes, Object, and Class Hierarchy
 
@@ -65,5 +66,6 @@ We can also invoke`shapes[].area()`. Java will automatically use the implementat
 
 ## Interfaces in JAVA
 
-All the methods defined within an interface are **implicitly abstract**.
+All the methods defined within an interface are **implicitly abstract**, which means that the class/abstract class **MUST** have implementation for all of its method.
+
 

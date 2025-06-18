@@ -3,7 +3,7 @@ title: Leetcode 3405. Count the number of Arrays with K matching adjacent Elemen
 categories: [巴别塔(babel-tower),算(hermes)]
 date: 2025-06-17
 tags: 
-    - array
+    - math
 ---
 
 ## Problem

@@ -19,19 +19,20 @@
     var NexT = window.NexT || {};
     var CONFIG = {"hostname":"bochuan.site","root":"/","scheme":"Muse","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
   </script>
-  <meta name="description" content="Common Performance Metrics Latency: response time, execution time, elapsed time  Throughout: Amount work per unit timeIdeally, for good Performance we want is  Latency minimized ad Throughout maximize">
+  <meta name="description" content="ProblemYou are given a string s consisting of the characters ‘N’, ‘S’, ‘E’, and ‘W’, where s[i] indicates movements in an infinite grid: ‘N’ : Move north by 1 unit.‘S’ : Move south by 1 unit.‘E’ : Mov">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Performance">
-<meta property="og:url" content="http://bochuan.site/2025/06/10/%E5%B7%B4%E5%88%AB%E5%A1%94/%E5%8D%83%E6%9C%BA%E5%9B%BE(computer-architecture)/Performance/index.html">
+<meta property="og:title" content="Leetcode 3443, Max Manhattan distance after change K dirctions">
+<meta property="og:url" content="http://bochuan.site/2025/06/20/%E5%B7%B4%E5%88%AB%E5%A1%94/%E7%AE%97/leetcode3443/index.html">
 <meta property="og:site_name" content="百川赴海">
-<meta property="og:description" content="Common Performance Metrics Latency: response time, execution time, elapsed time  Throughout: Amount work per unit timeIdeally, for good Performance we want is  Latency minimized ad Throughout maximize">
+<meta property="og:description" content="ProblemYou are given a string s consisting of the characters ‘N’, ‘S’, ‘E’, and ‘W’, where s[i] indicates movements in an infinite grid: ‘N’ : Move north by 1 unit.‘S’ : Move south by 1 unit.‘E’ : Mov">
 <meta property="og:locale">
-<meta property="article:published_time" content="2025-06-10T00:45:11.867Z">
-<meta property="article:modified_time" content="2025-06-16T03:56:38.741Z">
+<meta property="article:published_time" content="2025-06-19T14:00:00.000Z">
+<meta property="article:modified_time" content="2025-06-20T04:27:55.253Z">
 <meta property="article:author" content="博川">
+<meta property="article:tag" content="math">
 <meta name="twitter:card" content="summary">
 
-<link rel="canonical" href="http://bochuan.site/2025/06/10/%E5%B7%B4%E5%88%AB%E5%A1%94/%E5%8D%83%E6%9C%BA%E5%9B%BE(computer-architecture)/Performance/">
+<link rel="canonical" href="http://bochuan.site/2025/06/20/%E5%B7%B4%E5%88%AB%E5%A1%94/%E7%AE%97/leetcode3443/">
 
 
 <script id="page-configurations">
@@ -44,7 +45,7 @@
   };
 </script>
 
-  <title>Performance | 百川赴海</title>
+  <title>Leetcode 3443, Max Manhattan distance after change K dirctions | 百川赴海</title>
   
 
 
@@ -182,7 +183,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-Hans">
-    <link itemprop="mainEntityOfPage" href="http://bochuan.site/2025/06/10/%E5%B7%B4%E5%88%AB%E5%A1%94/%E5%8D%83%E6%9C%BA%E5%9B%BE(computer-architecture)/Performance/">
+    <link itemprop="mainEntityOfPage" href="http://bochuan.site/2025/06/20/%E5%B7%B4%E5%88%AB%E5%A1%94/%E7%AE%97/leetcode3443/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.gif">
@@ -195,7 +196,7 @@
     </span>
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
-          Performance
+          Leetcode 3443, Max Manhattan distance after change K dirctions
         </h1>
 
         <div class="post-meta">
@@ -204,16 +205,10 @@
                 <i class="far fa-calendar"></i>
               </span>
               <span class="post-meta-item-text">Posted on</span>
+              
 
-              <time title="Created: 2025-06-10 10:45:112n" itemprop="dateCreated datePublished" datetime="2025-06-10T10:45:11+10:00">2025-06-10</time>
+              <time title="Created: 2025-06-20 00:00:05n / Modified: 14:27:555n" itemprop="dateCreated datePublished" datetime="2025-06-20T00:00:00+10:00">2025-06-20</time>
             </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2025-06-16 13:56:381n" itemprop="dateModified" datetime="2025-06-16T13:56:38+10:00">2025-06-16</time>
-              </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
                 <i class="far fa-folder"></i>
@@ -224,7 +219,7 @@
                 </span>
                   , 
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/babel-tower/computer-architecture/" itemprop="url" rel="index"><span itemprop="name">千机图(computer-architecture)</span></a>
+                  <a href="/categories/babel-tower/algorithm/" itemprop="url" rel="index"><span itemprop="name">算(hermes)</span></a>
                 </span>
             </span>
 
@@ -239,20 +234,17 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        <h2 id="Common-Performance-Metrics"><a href="#Common-Performance-Metrics" class="headerlink" title="Common Performance Metrics"></a>Common Performance Metrics</h2><ul>
-<li><p>Latency: response time, execution time, elapsed time</p>
-</li>
-<li><p>Throughout: Amount work per unit time<br>Ideally, for good Performance we want is  Latency minimized ad Throughout maximized</p>
-</li>
-</ul>
-<h2 id="CPU-time"><a href="#CPU-time" class="headerlink" title="CPU time"></a>CPU time</h2><p>CPU time is CPU spends on executing a program.<br>cpu time is comprised of three components<br>$$<br>\text{CPU time} &#x3D; \frac{\text{number of instructions}}{\text{program}} \times \frac{\text{cycles}}{\text{instructions}} \times \frac{\text{seconds}}{\text{cycle}}<br>$$</p>
-<ul>
-<li>instruction count &#x3D; instructions&#x2F; program</li>
-<li>CPI &#x3D; average Cycles&#x2F; instruction</li>
-<li>clock period(clock frequent &#x3D; 1&#x2F; clock period)</li>
-</ul>
-<h2 id="Amdahl’s-law"><a href="#Amdahl’s-law" class="headerlink" title="Amdahl’s law"></a>Amdahl’s law</h2><p>Suppose that enhancement (E) accelerates a  fraction (F) of a task by a factor (S) and the  remainder of the task is unaffected</p>
-<p>$$<br>\text{over all speedup} &#x3D; \frac{1}{1-F + \frac{F}{S}}<br>$$</p>
+        <h2 id="Problem"><a href="#Problem" class="headerlink" title="Problem"></a>Problem</h2><p>You are given a string s consisting of the characters ‘N’, ‘S’, ‘E’, and ‘W’, where <code>s[i]</code> indicates movements in an infinite grid:</p>
+<p>‘N’ : Move north by 1 unit.<br>‘S’ : Move south by 1 unit.<br>‘E’ : Move east by 1 unit.<br>‘W’ : Move west by 1 unit.<br>Initially, you are at the origin <code>(0, 0)</code>. You can change at most <code>k</code> characters to any of the four directions.</p>
+<p>Find the maximum Manhattan distance from the origin that can be achieved at any time while performing the movements in order.</p>
+<p>The Manhattan Distance between two cells <code>(xi, yi)</code> and <code>(xj, yj)</code> is <code>|xi - xj| + |yi - yj|</code>.</p>
+<h2 id="Examples"><a href="#Examples" class="headerlink" title="Examples"></a>Examples</h2><h3 id="Example-1"><a href="#Example-1" class="headerlink" title="Example 1"></a>Example 1</h3><figure class="highlight console"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">Input: s = &quot;NWSE&quot;, k = 1</span><br><span class="line"></span><br><span class="line">Output: 3</span><br><span class="line"></span><br><span class="line">Explanation:</span><br><span class="line"></span><br><span class="line">Change `s[2]` from &#x27;S&#x27; to &#x27;N&#x27;. The string s becomes &quot;NWNE&quot;.</span><br></pre></td></tr></table></figure>
+<h3 id="Example-2"><a href="#Example-2" class="headerlink" title="Example 2"></a>Example 2</h3><figure class="highlight console"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">Input: s = &quot;NSWWEW&quot;, k = 3</span><br><span class="line"></span><br><span class="line">Output: 6</span><br><span class="line"></span><br><span class="line">Explanation:</span><br><span class="line">Change `s[1]` from &#x27;S&#x27; to &#x27;N&#x27;, and s[4] from &#x27;E&#x27; to &#x27;W&#x27;. The string s becomes &quot;NNWWWW&quot;.</span><br></pre></td></tr></table></figure>
+
+<h2 id="Intuition"><a href="#Intuition" class="headerlink" title="Intuition"></a>Intuition</h2><p>Intuitively, that is a easy question. what we should do is made modification on the direction which appear less. </p>
+<p>After that we can handle the vertical direction(of course you can do horizontal one first if you want to ). Flipping the direction which has more occurrences leads to an immediate increment of 2. If the number of occurrences is less than <code>k</code>, we can will keep the chance to made modification on horizontal direction.</p>
+<h2 id="COOOOOOOOOOOOODING"><a href="#COOOOOOOOOOOOODING" class="headerlink" title="COOOOOOOOOOOOODING"></a>COOOOOOOOOOOOODING</h2><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span> &#123;</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="type">int</span> <span class="title">maxDistance</span><span class="params">(string s, <span class="type">int</span> k)</span> </span>&#123;</span><br><span class="line">        <span class="type">int</span> ans = <span class="number">0</span>;</span><br><span class="line">        <span class="type">int</span> north = <span class="number">0</span>, south = <span class="number">0</span>, east = <span class="number">0</span>,west = <span class="number">0</span>;        </span><br><span class="line">        <span class="keyword">for</span>(<span class="type">char</span> direction: s)&#123;</span><br><span class="line">            <span class="keyword">switch</span>(direction)&#123;</span><br><span class="line">                <span class="keyword">case</span> <span class="string">&quot;N&quot;</span></span><br><span class="line">                    north++;</span><br><span class="line">                    <span class="keyword">break</span>;</span><br><span class="line"></span><br><span class="line">                <span class="keyword">case</span> <span class="string">&quot;S&quot;</span></span><br><span class="line">                    south++;</span><br><span class="line">                <span class="keyword">break</span>;</span><br><span class="line"></span><br><span class="line">                <span class="keyword">case</span> <span class="string">&quot;E&quot;</span></span><br><span class="line">                    east++;</span><br><span class="line">                <span class="keyword">break</span>;</span><br><span class="line"></span><br><span class="line">                <span class="keyword">case</span> <span class="string">&quot;E&quot;</span></span><br><span class="line">                    west++;</span><br><span class="line">                <span class="keyword">break</span>;</span><br><span class="line">            &#125;</span><br><span class="line">        <span class="type">int</span> vertical = <span class="built_in">min</span>(&#123;north,south,k&#125;);</span><br><span class="line">        <span class="type">int</span> hori = <span class="built_in">min</span>(&#123;east,west, k-times1&#125;);</span><br><span class="line">        ans = <span class="built_in">max</span>(ans, <span class="built_in">cal</span>(north, south, vertical) + <span class="built_in">cal</span>(east, west, hori));</span><br><span class="line">        &#125;</span><br><span class="line">    <span class="keyword">return</span> ans;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="function"><span class="type">int</span> <span class="title">cal</span><span class="params">(<span class="type">int</span> dir1, <span class="type">int</span> dirt2, <span class="type">int</span> times)</span></span>&#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="built_in">abs</span>(dir1 - dir2) + <span class="number">2</span>*times</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+
 
     </div>
 
@@ -261,6 +253,9 @@
     
 
       <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/math/" rel="tag"># math</a>
+          </div>
 
         
 
@@ -268,13 +263,10 @@
         
     <div class="post-nav">
       <div class="post-nav-item">
-    <a href="/2025/06/10/%E5%B7%B4%E5%88%AB%E5%A1%94/%E7%A0%81%E6%9C%AF%E8%8B%91/week1/" rel="prev" title="intro to java and oop">
-      <i class="fa fa-chevron-left"></i> intro to java and oop
+    <a href="/2025/06/18/%E5%B7%B4%E5%88%AB%E5%A1%94/%E7%AE%97/leetcode2966/" rel="prev" title="Leetcode 2966 Divied array to Arrays  with max difference">
+      <i class="fa fa-chevron-left"></i> Leetcode 2966 Divied array to Arrays  with max difference
     </a></div>
-      <div class="post-nav-item">
-    <a href="/2025/06/10/%E5%B7%B4%E5%88%AB%E5%A1%94/%E5%8D%83%E6%9C%BA%E5%9B%BE(computer-architecture)/Lab1/" rel="next" title="accumulator of bfloat16">
-      accumulator of bfloat16 <i class="fa fa-chevron-right"></i>
-    </a></div>
+      <div class="post-nav-item"></div>
     </div>
       </footer>
     
@@ -333,7 +325,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Common-Performance-Metrics"><span class="nav-number">1.</span> <span class="nav-text">Common Performance Metrics</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#CPU-time"><span class="nav-number">2.</span> <span class="nav-text">CPU time</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Amdahl%E2%80%99s-law"><span class="nav-number">3.</span> <span class="nav-text">Amdahl’s law</span></a></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Problem"><span class="nav-number">1.</span> <span class="nav-text">Problem</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Examples"><span class="nav-number">2.</span> <span class="nav-text">Examples</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Example-1"><span class="nav-number">2.1.</span> <span class="nav-text">Example 1</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Example-2"><span class="nav-number">2.2.</span> <span class="nav-text">Example 2</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Intuition"><span class="nav-number">3.</span> <span class="nav-text">Intuition</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#COOOOOOOOOOOOODING"><span class="nav-number">4.</span> <span class="nav-text">COOOOOOOOOOOOODING</span></a></li></ol></div>
       </div>
       <!--/noindex-->
 

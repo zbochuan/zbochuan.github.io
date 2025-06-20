@@ -177,6 +177,225 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-Hans">
+    <link itemprop="mainEntityOfPage" href="http://bochuan.site/2025/06/13/%E5%B7%B4%E5%88%AB%E5%A1%94/%E7%A0%81%E6%9C%AF%E8%8B%91/week2/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="博川">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="百川赴海">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2025/06/13/%E5%B7%B4%E5%88%AB%E5%A1%94/%E7%A0%81%E6%9C%AF%E8%8B%91/week2/" class="post-title-link" itemprop="url">Inheritance & Abstract Classes &  Polymorphism</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+
+              <time title="Created: 2025-06-13 00:00:05n" itemprop="dateCreated datePublished" datetime="2025-06-13T00:00:00+10:00">2025-06-13</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2025-06-17 09:42:142n" itemprop="dateModified" datetime="2025-06-17T09:42:14+10:00">2025-06-17</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">In</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/babel-tower/" itemprop="url" rel="index"><span itemprop="name">巴别塔(babel-tower)</span></a>
+                </span>
+                  , 
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/babel-tower/software-design-architecture/" itemprop="url" rel="index"><span itemprop="name">码术苑(software-design-architecture)</span></a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h2 id="Super-classes-Object-and-Class-Hierarchy"><a href="#Super-classes-Object-and-Class-Hierarchy" class="headerlink" title="Super classes, Object, and Class Hierarchy"></a>Super classes, Object, and Class Hierarchy</h2><ul>
+<li>Every class have a superclass</li>
+<li>If we don’t define the superclass, by default, it will be the class Object</li>
+</ul>
+<h3 id="Object-class"><a href="#Object-class" class="headerlink" title="Object class"></a><strong>Object</strong> class</h3><ul>
+<li>It is the only class that does not have a superclass</li>
+</ul>
+<p>Often we need to <strong>override</strong> the following methods</p>
+<ul>
+<li>toString()</li>
+<li>equals()</li>
+<li>hasCode()</li>
+</ul>
+<h2 id="Abstract-classes"><a href="#Abstract-classes" class="headerlink" title="Abstract classes"></a>Abstract classes</h2><p>Using Abstract classes, we can declare classes that define ONLY part of implementation, leaving extended classes to provide specific implementation of some or all the methods</p>
+<p>One good example will be</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">abstract</span> <span class="keyword">class</span> <span class="title class_">Shape</span> &#123;</span><br><span class="line"></span><br><span class="line">	<span class="keyword">public</span> <span class="keyword">abstract</span> <span class="type">double</span> <span class="title function_">area</span><span class="params">()</span>;</span><br><span class="line"></span><br><span class="line">	<span class="keyword">public</span> <span class="keyword">abstract</span> <span class="type">double</span> <span class="title function_">circumference</span><span class="params">()</span>;</span><br><span class="line"></span><br><span class="line">	<span class="keyword">protected</span> <span class="keyword">static</span> <span class="type">int</span> <span class="variable">count_shapes</span> <span class="operator">=</span> <span class="number">0</span>;</span><br><span class="line"></span><br><span class="line">	<span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">printArea</span><span class="params">()</span> &#123;</span><br><span class="line">		System.out.println(<span class="string">&quot; (from Shape abstract class, method printArea)&gt; area is: &quot;</span> + <span class="built_in">this</span>.area());</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">Rectangle</span> <span class="keyword">extends</span> <span class="title class_">Shape</span> &#123;</span><br><span class="line">	<span class="keyword">protected</span> <span class="type">double</span> width, height;</span><br><span class="line"></span><br><span class="line">	<span class="keyword">public</span> <span class="title function_">Rectangle</span><span class="params">()</span> &#123;</span><br><span class="line">		width = <span class="number">1.0</span>;</span><br><span class="line">		height = <span class="number">1.0</span>;</span><br><span class="line">		count_shapes++;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	<span class="keyword">public</span> <span class="title function_">Rectangle</span><span class="params">(<span class="type">double</span> w, <span class="type">double</span> h)</span> &#123;</span><br><span class="line">		<span class="built_in">this</span>.width = w;</span><br><span class="line">		<span class="built_in">this</span>.height = h;</span><br><span class="line">		count_shapes++;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	<span class="keyword">public</span> <span class="type">double</span> <span class="title function_">area</span><span class="params">()</span> &#123;</span><br><span class="line">		<span class="keyword">return</span> width * height;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	<span class="keyword">public</span> <span class="type">double</span> <span class="title function_">circumference</span><span class="params">()</span> &#123;</span><br><span class="line">		<span class="keyword">return</span> <span class="number">2</span> * (width + height);</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>We can also invoke<code>shapes[].area()</code>. Java will automatically use the implementation.</p>
+<h2 id="Interfaces-in-JAVA"><a href="#Interfaces-in-JAVA" class="headerlink" title="Interfaces in JAVA"></a>Interfaces in JAVA</h2><p>All the methods defined within an interface are <strong>implicitly abstract</strong>, which means that the class&#x2F;abstract class <strong>MUST</strong> have implementation for all of its method.</p>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-Hans">
+    <link itemprop="mainEntityOfPage" href="http://bochuan.site/2025/06/13/%E5%B7%B4%E5%88%AB%E5%A1%94/%E7%AE%97/maxmize_minimu_pairs/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="博川">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="百川赴海">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2025/06/13/%E5%B7%B4%E5%88%AB%E5%A1%94/%E7%AE%97/maxmize_minimu_pairs/" class="post-title-link" itemprop="url">Leetcode 2616. Minimize the maximum difference of pairs</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+
+              <time title="Created: 2025-06-13 00:00:05n" itemprop="dateCreated datePublished" datetime="2025-06-13T00:00:00+10:00">2025-06-13</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2025-06-16 14:19:91n" itemprop="dateModified" datetime="2025-06-16T14:19:09+10:00">2025-06-16</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">In</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/babel-tower/" itemprop="url" rel="index"><span itemprop="name">巴别塔(babel-tower)</span></a>
+                </span>
+                  , 
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/babel-tower/algorithm/" itemprop="url" rel="index"><span itemprop="name">算(hermes)</span></a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h2 id="Approach-binary-greedy"><a href="#Approach-binary-greedy" class="headerlink" title="Approach: binary + greedy"></a>Approach: binary + greedy</h2><p>Intuitively, we do a sort for this array.</p>
+<p>Since we are looking to minimize the maximum difference, one brute force approach is to start from a threshold (a maximum difference) of ‘0’ and incrementally try all possible thresholds</p>
+<ol>
+<li>Try to find ‘p’ pairs with difference of ‘0’ </li>
+<li>if not possible then we try to find ‘p’ pairs with difference of ‘1’</li>
+<li>and so on,  until we find a threshold that succeeds.</li>
+</ol>
+<p>As you may notice, this will cost a linear time for each threshold. Do we have a better solution?<br>We observe that</p>
+<ul>
+<li>If we can find p pairs with threshold of x, then we can definitely find p pairs of  with a threshold of x+1</li>
+<li>If we can <strong>NOT</strong> find p pairs with threshold of x, we definitely can not find p pairs with threshold of x-1</li>
+</ul>
+<p>This splits the number line into two sections: one section where the task is possible, and one where the task is impossible. Therefore, we can use binary search to quickly narrow down the search space until we find the dividing point, which is the minimum threshold.</p>
+<p>Now we go to next question, how do we determine if there exist  at least p valid pairs.</p>
+<p>How about greedy? We do iteration to nums[]. check each <code>abs(nums[i] - nums[i+1]) &lt;= &#39;threshold</code>, if is true then simply check num[i+2] and num[i+3].</p>
+<p>But I will question myself. Does greedy solution will fail and another solution will succeeds? </p>
+<ol>
+<li><strong>Suppose</strong> greedy fails but some better strategy succeeds</li>
+<li><strong>Then</strong> at first difference, greedy pairs <code>(nums[i], num[i+1])</code> but optimal way dosen’t</li>
+<li><strong>In the potimal solution</strong>, <code>num[i]</code> either:</li>
+</ol>
+<ul>
+<li>pairs with <code>num[j]</code> where <code>j &gt; i+1</code> then difference must greater or equal to nums[i+1] -nums[i] (worse!)</li>
+<li>unpaired (worse, cuz we lost a pair)<br>&#96;</li>
+</ul>
+<ol start="4">
+<li>We can always “exchange” the optimal pairing to use <code>(nums[i], nums[i+1])</code> instead</li>
+<li><strong>Same or better solution</strong>, contradicting that optimal was better</li>
+</ol>
+<p>OK now The greedy approach will always yield the maximum number of valid pairs.</p>
+<h2 id="Let’s-do-COOOOOOOOOOOOODING"><a href="#Let’s-do-COOOOOOOOOOOOODING" class="headerlink" title="Let’s do COOOOOOOOOOOOODING"></a>Let’s do COOOOOOOOOOOOODING</h2><ol>
+<li>Define <code>countValidPairs(threshold)</code> to find the number of pairs having a threshold of threshold in nums. Let <code>n</code> be the size of <code>nums</code>.</li>
+</ol>
+<ul>
+<li>set count &#x3D; 0</li>
+<li>Iterate over <code>nums</code> from <code>index = 0</code>to <code>index = n - 2</code>. If <code>nums[index + 1] - nums[index] &lt;= threshold</code>, increment <code>count</code> by <code>1</code>, and skip both indices. Otherwise, skip the current index.</li>
+<li>Return <code>count</code></li>
+</ul>
+<ol start="2">
+<li>sort <code>nums</code></li>
+<li>Initialize the searching space as left &#x3D; 0 and right &#x3D; nums[n -1]  - nums[0], the max difference in the array.</li>
+<li>while <code>left &lt; right</code> , we do</li>
+<li>Get the middle value as mid &#x3D; left + (right - left)&#x2F;2</li>
+<li>invoke <code>countValidPairs(mid)</code></li>
+<li>if <code>countValidPairs(mid)</code>, continue with the left half by setting(right &#x3D; mid). Otherwise, continue with the right half by setting <code>left = mid -1</code>Repeat step 4  </li>
+<li>Return left<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span> &#123;</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="comment">// Find the number of valid pairs by greedy approach</span></span><br><span class="line">    <span class="function"><span class="type">int</span> <span class="title">countValidPairs</span><span class="params">(vector&lt;<span class="type">int</span>&gt;&amp; nums, <span class="type">int</span> threshold)</span> </span>&#123;</span><br><span class="line">        <span class="type">int</span> index = <span class="number">0</span>, count = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">while</span> (index &lt; nums.<span class="built_in">size</span>() - <span class="number">1</span>) &#123;</span><br><span class="line">            <span class="comment">// If a valid pair is found, skip both numbers.</span></span><br><span class="line">            <span class="keyword">if</span> (nums[index + <span class="number">1</span>] - nums[index] &lt;= threshold) &#123;</span><br><span class="line">                count++;</span><br><span class="line">                index++;</span><br><span class="line">            &#125;</span><br><span class="line">            index++;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> count;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="type">int</span> <span class="title">minimizeMax</span><span class="params">(vector&lt;<span class="type">int</span>&gt;&amp; nums, <span class="type">int</span> p)</span> </span>&#123;</span><br><span class="line">        <span class="built_in">sort</span>(nums.<span class="built_in">begin</span>(), nums.<span class="built_in">end</span>());</span><br><span class="line">        <span class="type">int</span> n = nums.<span class="built_in">size</span>();</span><br><span class="line">        <span class="type">int</span> left = <span class="number">0</span>, right = nums[n - <span class="number">1</span>] - nums[<span class="number">0</span>];</span><br><span class="line"></span><br><span class="line">        <span class="keyword">while</span> (left &lt; right) &#123;</span><br><span class="line">            <span class="type">int</span> mid = left + (right - left) / <span class="number">2</span>;</span><br><span class="line"></span><br><span class="line">            <span class="comment">// If there are enough pairs, look for a smaller threshold.</span></span><br><span class="line">            <span class="comment">// Otherwise, look for a larger threshold.</span></span><br><span class="line">            <span class="keyword">if</span> (<span class="built_in">countValidPairs</span>(nums, mid) &gt;= p) &#123;</span><br><span class="line">                right = mid;</span><br><span class="line">            &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">                left = mid + <span class="number">1</span>;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> left;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure></li>
+</ol>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-Hans">
     <link itemprop="mainEntityOfPage" href="http://bochuan.site/2025/06/12/%E5%B7%B4%E5%88%AB%E5%A1%94/%E7%AE%97/leetcode3421/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -827,7 +1046,7 @@
   <nav class="site-state">
       <div class="site-state-item site-state-posts">
           <a href="/archives">
-          <span class="site-state-item-count">16</span>
+          <span class="site-state-item-count">18</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>
@@ -838,7 +1057,7 @@
         <span class="site-state-item-name">categories</span></a>
       </div>
       <div class="site-state-item site-state-tags">
-        <span class="site-state-item-count">6</span>
+        <span class="site-state-item-count">7</span>
         <span class="site-state-item-name">tags</span>
       </div>
   </nav>

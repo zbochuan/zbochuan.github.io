@@ -30,7 +30,7 @@
 <meta property="og:image" content="http://bochuan.site/images/pipeline_processor_datapath.png">
 <meta property="og:image" content="http://bochuan.site/images/piplined_control.png">
 <meta property="article:published_time" content="2025-06-16T14:00:00.000Z">
-<meta property="article:modified_time" content="2025-06-17T03:27:47.542Z">
+<meta property="article:modified_time" content="2025-06-24T01:46:11.738Z">
 <meta property="article:author" content="博川">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:image" content="http://bochuan.site/images/stages_show.png">
@@ -208,10 +208,16 @@
                 <i class="far fa-calendar"></i>
               </span>
               <span class="post-meta-item-text">Posted on</span>
-              
 
-              <time title="Created: 2025-06-17 00:00:02n / Modified: 13:27:472n" itemprop="dateCreated datePublished" datetime="2025-06-17T00:00:00+10:00">2025-06-17</time>
+              <time title="Created: 2025-06-17 00:00:02n" itemprop="dateCreated datePublished" datetime="2025-06-17T00:00:00+10:00">2025-06-17</time>
             </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2025-06-24 11:46:112n" itemprop="dateModified" datetime="2025-06-24T11:46:11+10:00">2025-06-24</time>
+              </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
                 <i class="far fa-folder"></i>
@@ -259,6 +265,31 @@
 <p>All instructions advance from one stage to the next stage in one clock cycle.</p>
 <h2 id="Datapath-Design"><a href="#Datapath-Design" class="headerlink" title="Datapath Design"></a>Datapath Design</h2><p><img src="/images/pipeline_processor_datapath.png" alt="Pipeline Processor datapath"><br>Why <strong>Write register</strong> signal is changed? Yes, if we stick on previous design, the signal represent the register which should be written in next a few(3 exactly) instructions.(Remember, now the all the component is working in parallel)</p>
 <h2 id="Control-Unit"><a href="#Control-Unit" class="headerlink" title="Control Unit"></a>Control Unit</h2><p>Pipeline is used in dataPath design. Then in each stage, control unit should output it corresponding signal. A smart design is that control units output all the required signal in  ID stage and save all of them to stage register. In each stage, data path get required signal Hierarchically.<br><img src="/images/piplined_control.png" alt="pipelined control unit"></p>
+<h2 id="Hazards"><a href="#Hazards" class="headerlink" title="Hazards"></a>Hazards</h2><p>Pipeline hazards are the situations where instruction execution cannot proceed in the pipeline.</p>
+<ul>
+<li>Structural hazard</li>
+<li>Data hazard</li>
+<li>Control hazard<br>Mainly due to something required is currently not available.</li>
+</ul>
+<h3 id="Structural-hazard"><a href="#Structural-hazard" class="headerlink" title="Structural hazard"></a>Structural hazard</h3><p>A structural hazard occurs when one resource is to be used by more than one instruction in one clock cycle.<br>Solutions: Never access a resource more than once per clock cycle</p>
+<ul>
+<li>Allocate each resource to a single pipeline stage.</li>
+<li>Every instruction must follow the same execution stage sequence</li>
+</ul>
+<h3 id="Data-hazard"><a href="#Data-hazard" class="headerlink" title="Data hazard"></a>Data hazard</h3><p>Data hazards are caused by data dependency<br>Four kinds of data hazard</p>
+<ul>
+<li>RAR</li>
+<li>WAW</li>
+<li>RAW</li>
+<li>WAR<br>A basic solution is stalling pipeline. which is just wait.<br>Another one is forwarding. In some cases, circuit can “detect” the data hazard and get the value from previous instruction “middle register”.</li>
+</ul>
+<p>Source register data of the instruction in the Ex stage is dependent on the destination register data of its preceding instruction in the MEM stage</p>
+<p>Source register data of the instruction in the Ex stage is dependent on the destination register data of its preceding instruction in the WB stage</p>
+<h3 id="control-hazard"><a href="#control-hazard" class="headerlink" title="control hazard"></a>control hazard</h3><h3 id="branch-prediction"><a href="#branch-prediction" class="headerlink" title="branch prediction"></a>branch prediction</h3><ul>
+<li>static prediction<br>Misprediction lead to pipeline flush.(3 instructions has been wasted).<br>We can calculate the target address in ID stage. check conition in ID stage(use XOR to compare the register contents).Require forwarding to ID stage and hazard detection.</li>
+<li>dynamic prediction<br>The history is stored in a table, called branch history table or branch prediction table.</li>
+<li>third</li>
+</ul>
 
     </div>
 
@@ -274,12 +305,12 @@
         
     <div class="post-nav">
       <div class="post-nav-item">
-    <a href="/2025/06/17/%E5%B7%B4%E5%88%AB%E5%A1%94/%E7%AE%97/leetcode3405/" rel="prev" title="Leetcode 3405. Count the number of Arrays with K matching adjacent Elements">
-      <i class="fa fa-chevron-left"></i> Leetcode 3405. Count the number of Arrays with K matching adjacent Elements
+    <a href="/2025/06/17/%E5%B7%B4%E5%88%AB%E5%A1%94/%E7%A0%81%E6%9C%AF%E8%8B%91/Expection/" rel="prev" title="Expections">
+      <i class="fa fa-chevron-left"></i> Expections
     </a></div>
       <div class="post-nav-item">
-    <a href="/2025/06/17/%E5%B7%B4%E5%88%AB%E5%A1%94/%E7%A0%81%E6%9C%AF%E8%8B%91/Expection/" rel="next" title="Expections">
-      Expections <i class="fa fa-chevron-right"></i>
+    <a href="/2025/06/18/%E5%B7%B4%E5%88%AB%E5%A1%94/%E7%AE%97/leetcode2966/" rel="next" title="Leetcode 2966 Divied array to Arrays  with max difference">
+      Leetcode 2966 Divied array to Arrays  with max difference <i class="fa fa-chevron-right"></i>
     </a></div>
     </div>
       </footer>
@@ -339,7 +370,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#What-is-pipeline"><span class="nav-number">1.</span> <span class="nav-text">What is pipeline?</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#MIPS-is-Designed-for-Pipeline"><span class="nav-number">2.</span> <span class="nav-text">MIPS is Designed for Pipeline</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#5-stages"><span class="nav-number">3.</span> <span class="nav-text">5 stages</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#General-Idea"><span class="nav-number">4.</span> <span class="nav-text">General Idea</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#registers"><span class="nav-number">5.</span> <span class="nav-text">registers</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Datapath-Design"><span class="nav-number">6.</span> <span class="nav-text">Datapath Design</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Control-Unit"><span class="nav-number">7.</span> <span class="nav-text">Control Unit</span></a></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#What-is-pipeline"><span class="nav-number">1.</span> <span class="nav-text">What is pipeline?</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#MIPS-is-Designed-for-Pipeline"><span class="nav-number">2.</span> <span class="nav-text">MIPS is Designed for Pipeline</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#5-stages"><span class="nav-number">3.</span> <span class="nav-text">5 stages</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#General-Idea"><span class="nav-number">4.</span> <span class="nav-text">General Idea</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#registers"><span class="nav-number">5.</span> <span class="nav-text">registers</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Datapath-Design"><span class="nav-number">6.</span> <span class="nav-text">Datapath Design</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Control-Unit"><span class="nav-number">7.</span> <span class="nav-text">Control Unit</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Hazards"><span class="nav-number">8.</span> <span class="nav-text">Hazards</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Structural-hazard"><span class="nav-number">8.1.</span> <span class="nav-text">Structural hazard</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Data-hazard"><span class="nav-number">8.2.</span> <span class="nav-text">Data hazard</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#control-hazard"><span class="nav-number">8.3.</span> <span class="nav-text">control hazard</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#branch-prediction"><span class="nav-number">8.4.</span> <span class="nav-text">branch prediction</span></a></li></ol></li></ol></div>
       </div>
       <!--/noindex-->
 
@@ -352,7 +383,7 @@
   <nav class="site-state">
       <div class="site-state-item site-state-posts">
           <a href="/archives">
-          <span class="site-state-item-count">18</span>
+          <span class="site-state-item-count">24</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>

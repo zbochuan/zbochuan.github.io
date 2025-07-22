@@ -117,29 +117,6 @@
       </categories>
   </entry>
   <entry>
-    <title>Performance</title>
-    <url>/2025/06/10/%E5%B7%B4%E5%88%AB%E5%A1%94/%E5%8D%83%E6%9C%BA%E5%9B%BE(computer-architecture)/Performance/</url>
-    <content><![CDATA[<h2 id="Common-Performance-Metrics"><a href="#Common-Performance-Metrics" class="headerlink" title="Common Performance Metrics"></a>Common Performance Metrics</h2><ul>
-<li><p>Latency: response time, execution time, elapsed time</p>
-</li>
-<li><p>Throughout: Amount work per unit time<br>Ideally, for good Performance we want is  Latency minimized ad Throughout maximized</p>
-</li>
-</ul>
-<h2 id="CPU-time"><a href="#CPU-time" class="headerlink" title="CPU time"></a>CPU time</h2><p>CPU time is CPU spends on executing a program.<br>cpu time is comprised of three components<br>$$<br>\text{CPU time} &#x3D; \frac{\text{number of instructions}}{\text{program}} \times \frac{\text{cycles}}{\text{instructions}} \times \frac{\text{seconds}}{\text{cycle}}<br>$$</p>
-<ul>
-<li>instruction count &#x3D; instructions&#x2F; program</li>
-<li>CPI &#x3D; average Cycles&#x2F; instruction</li>
-<li>clock period(clock frequent &#x3D; 1&#x2F; clock period)</li>
-</ul>
-<h2 id="Amdahl’s-law"><a href="#Amdahl’s-law" class="headerlink" title="Amdahl’s law"></a>Amdahl’s law</h2><p>Suppose that enhancement (E) accelerates a  fraction (F) of a task by a factor (S) and the  remainder of the task is unaffected</p>
-<p>$$<br>\text{over all speedup} &#x3D; \frac{1}{1-F + \frac{F}{S}}<br>$$</p>
-]]></content>
-      <categories>
-        <category>巴别塔(babel-tower)</category>
-        <category>千机图(computer-architecture)</category>
-      </categories>
-  </entry>
-  <entry>
     <title>Single Cycle Processor</title>
     <url>/2025/06/08/%E5%B7%B4%E5%88%AB%E5%A1%94/%E5%8D%83%E6%9C%BA%E5%9B%BE(computer-architecture)/SingleCycleProcessor/</url>
     <content><![CDATA[<h2 id="typical-steps-of-processor-design"><a href="#typical-steps-of-processor-design" class="headerlink" title="typical steps of processor design"></a>typical steps of processor design</h2><h3 id="For-datapath"><a href="#For-datapath" class="headerlink" title="For datapath"></a>For datapath</h3><ol>
@@ -182,29 +159,80 @@
       </categories>
   </entry>
   <entry>
-    <title>Expections</title>
-    <url>/2025/06/17/%E5%B7%B4%E5%88%AB%E5%A1%94/%E7%A0%81%E6%9C%AF%E8%8B%91/Expection/</url>
-    <content><![CDATA[<p>An exception is an event, which occurs during the execution of a program, that disrupts the<br>normal flow of the program’s instructions. When error occurs, an exception object is created and given to the runtime system, this is called <strong>throw</strong> an exception. The runtime system searches the call stack for a method that contains a block of code that can<br>handle the exception.<br>The exception handler chosen is said to <strong>catch</strong> the exception</p>
-<h2 id="Types-of-Expections"><a href="#Types-of-Expections" class="headerlink" title="Types of Expections"></a>Types of Expections</h2><ul>
-<li>Checked Expection<br>  (IOException, SQLException, etc.)</li>
-<li>runtime Expection<br>  (ArraylndexOutOfBoundsExceptions, ArithmeticException, etc.)</li>
-<li>Error<br>  (VirtualMachineError, OutOfMemoryError, etc.)</li>
+    <title>Virtual Memory</title>
+    <url>/2025/07/22/%E5%B7%B4%E5%88%AB%E5%A1%94/%E5%8D%83%E6%9C%BA%E5%9B%BE(computer-architecture)/bus/</url>
+    <content><![CDATA[<p>A bus is a communication system that transfers data between components connected.</p>
+<h2 id="Star-Bus"><a href="#Star-Bus" class="headerlink" title="Star Bus"></a>Star Bus</h2><p>All devices connect directly to a central hub&#x2F;switch</p>
+<h2 id="Ring-bus"><a href="#Ring-bus" class="headerlink" title="Ring bus"></a>Ring bus</h2><p>Devices connected in a loop. Each device<br>forwards data to the next<br>-: High latency, fault-sensitive<br>+: predictable latency</p>
+<h2 id="Crossbar-bus"><a href="#Crossbar-bus" class="headerlink" title="Crossbar bus"></a>Crossbar bus</h2><p>Every device has a dedicated path to every other (via a matrix of switches)<br>+: Maximum throughput<br>-: Expensive, large area in hardware</p>
+<h2 id="Tree-Hierarchical-bus"><a href="#Tree-Hierarchical-bus" class="headerlink" title="Tree (Hierarchical) bus"></a>Tree (Hierarchical) bus</h2><p>Devices are connected in a layered tree<br>structure<br>+: Structured scalable:<br>-: Upper levels are bottlenecks(Hard to communicate with same level node )</p>
+<h2 id="Typical-Bus-Types"><a href="#Typical-Bus-Types" class="headerlink" title="Typical Bus Types"></a>Typical Bus Types</h2><h3 id="system-buses"><a href="#system-buses" class="headerlink" title="system buses"></a>system buses</h3><p>Connect processor to other components<br>General communication backbone inside the computer</p>
+<h3 id="Memory-buses"><a href="#Memory-buses" class="headerlink" title="Memory buses"></a>Memory buses</h3><p>Dedicated to connecting processor to memory</p>
+<h3 id="I-O-buses"><a href="#I-O-buses" class="headerlink" title="I&#x2F;O buses"></a>I&#x2F;O buses</h3><p>Connect processor to I&#x2F;O devices</p>
+<h2 id="BUS"><a href="#BUS" class="headerlink" title="BUS"></a>BUS</h2><p>A communication system consisting of<br>• a set of wires to which multiple components<br>connected, and<br>• a control design to control data transferred between<br>the connected components.</p>
+<p>Only one component can transfer data on the<br>shared bus at any given time</p>
+<h3 id="Arbiter"><a href="#Arbiter" class="headerlink" title="Arbiter"></a>Arbiter</h3><p>Controls access to the shared bus<br>• Uses an arbitration scheme to grant a master the<br>access to bus</p>
+<h4 id="Random-scheme"><a href="#Random-scheme" class="headerlink" title="Random scheme"></a>Random scheme</h4><p>A master is randomly selected among other masters who are currently requesting access to bus.</p>
+<ul>
+<li>simple to implement</li>
+<li>statically fair</li>
 </ul>
-<h2 id="Uncheck-exceptions-VS-Checked-exceptions"><a href="#Uncheck-exceptions-VS-Checked-exceptions" class="headerlink" title="Uncheck exceptions VS Checked exceptions"></a>Uncheck exceptions VS Checked exceptions</h2><p>All classes that are subclasses of RuntimeException (typically caused by defects in your program’s code) or Error (typically ‘system’ issues) are <strong>unchecked exceptions</strong>.</p>
-<p>All classes that inherit from class Exception but not directly or indirectly from class.<br><strong>RuntimeException</strong> are considered to be checked exceptions.</p>
-<h2 id="User-defined-Exception"><a href="#User-defined-Exception" class="headerlink" title="User-defined Exception"></a>User-defined Exception</h2><p>A checked exception need to extend the Exception class, but not directly or indirectly from class RuntimeException. </p>
-<p>An unchecked exception (like a runtime exception) need to extend the RuntimeException class.<br>Normally we define a checked exception, by extending the Exception class. Like in the following code </p>
-<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">MyExpection</span> <span class="keyword">extends</span> <span class="title class_">Exception</span> &#123;</span><br><span class="line">    <span class="keyword">public</span> <span class="title function_">MyExpection</span><span class="params">(String message)</span>&#123;</span><br><span class="line">        <span class="built_in">super</span>(message).</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p><a href="http://docs.oracle.com/javase/8/docs/api/java/lang/Exception.html">Java Expections</a></p>
+<ul>
+<li>Inefficient</li>
+</ul>
+<h4 id="Round-Robin"><a href="#Round-Robin" class="headerlink" title="Round Robin"></a>Round Robin</h4><p>Each master is granted access to the bus for a fixed amount of time in a cyclical order</p>
+<ul>
+<li>Simple to implementent</li>
+</ul>
+<h4 id="Static-priority"><a href="#Static-priority" class="headerlink" title="Static priority"></a>Static priority</h4><p>The grant signal is chained through masters.<br>The master that is closer to the arbiter has a<br>higher priority.</p>
+<h4 id="Dynamic-priority"><a href="#Dynamic-priority" class="headerlink" title="Dynamic priority"></a>Dynamic priority</h4><p>The priority of a master is dynamically changed<br>during application execution</p>
+<ul>
+<li>High bus utilization and efficiency</li>
+</ul>
+<ul>
+<li>High implementation cost</li>
+<li>Requiring additional logic to analyze traffic at run time to adapt to dynamic traffic</li>
+<li>Requiring registers to track priorities and traffic profile</li>
+</ul>
+<h4 id="Programmable-priority"><a href="#Programmable-priority" class="headerlink" title="Programmable priority"></a>Programmable priority</h4><p>Simpler variant of dynamic priority scheme<br>Programmable registers in arbiter allow software to change priority</p>
+<h3 id="Decoding"><a href="#Decoding" class="headerlink" title="Decoding"></a>Decoding</h3><p>determines the target for any transfer initiated by a<br>master</p>
+<p>Both Arbiter and Decoder can be centralize or distributed.</p>
+<h2 id="Bus-clocking"><a href="#Bus-clocking" class="headerlink" title="Bus clocking"></a>Bus clocking</h2><p>Asynchronous bus</p>
+<ul>
+<li>No clock</li>
+<li>Requiring a handshaking protocol</li>
+</ul>
 ]]></content>
       <categories>
         <category>巴别塔(babel-tower)</category>
-        <category>码术苑(software-design-architecture)</category>
+        <category>千机图(computer-architecture)</category>
       </categories>
-      <tags>
-        <tag>OOP</tag>
-      </tags>
+  </entry>
+  <entry>
+    <title>Cache Design</title>
+    <url>/2025/07/14/%E5%B7%B4%E5%88%AB%E5%A1%94/%E5%8D%83%E6%9C%BA%E5%9B%BE(computer-architecture)/cache/</url>
+    <content><![CDATA[<h2 id="How-to-realize-the-date-transfer-between-cache-and-memory"><a href="#How-to-realize-the-date-transfer-between-cache-and-memory" class="headerlink" title="How to realize the date transfer between cache and memory"></a>How to realize the date transfer between cache and memory</h2><p>Cache is a hardware component in the processor system.</p>
+<h2 id="Cache-structure"><a href="#Cache-structure" class="headerlink" title="Cache structure"></a>Cache structure</h2><p>For a cache of $2^m$ blocks, a memory block with address X maps to the cache location $x mod 2$</p>
+<p>In binary the memory address of <code>00001</code> would be stored in cache index of <code>001</code>, which means any memory address that share the same least significant <code>m</code> bit  will map to the same cache location.</p>
+]]></content>
+      <categories>
+        <category>巴别塔(babel-tower)</category>
+        <category>千机图(computer-architecture)</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>Introduction to memory system</title>
+    <url>/2025/06/30/%E5%B7%B4%E5%88%AB%E5%A1%94/%E5%8D%83%E6%9C%BA%E5%9B%BE(computer-architecture)/memory_system/</url>
+    <content><![CDATA[<h2 id="Typical-memory-technologies"><a href="#Typical-memory-technologies" class="headerlink" title="Typical memory technologies"></a>Typical memory technologies</h2><h3 id="volatile-Memory"><a href="#volatile-Memory" class="headerlink" title="volatile Memory"></a>volatile Memory</h3><p>Power is needed to maintain the stored information </p>
+<ul>
+<li>SRAM<br>Static Random Access Memory</li>
+<li>DRAM<br>Dynamic Random Access Memory, much more storage capacity than SRAM.</li>
+</ul>
+]]></content>
+      <categories>
+        <category>巴别塔(babel-tower)</category>
+        <category>千机图(computer-architecture)</category>
+      </categories>
   </entry>
   <entry>
     <title>Pipeline processor</title>
@@ -231,6 +259,31 @@
 <p>All instructions advance from one stage to the next stage in one clock cycle.</p>
 <h2 id="Datapath-Design"><a href="#Datapath-Design" class="headerlink" title="Datapath Design"></a>Datapath Design</h2><p><img src="/images/pipeline_processor_datapath.png" alt="Pipeline Processor datapath"><br>Why <strong>Write register</strong> signal is changed? Yes, if we stick on previous design, the signal represent the register which should be written in next a few(3 exactly) instructions.(Remember, now the all the component is working in parallel)</p>
 <h2 id="Control-Unit"><a href="#Control-Unit" class="headerlink" title="Control Unit"></a>Control Unit</h2><p>Pipeline is used in dataPath design. Then in each stage, control unit should output it corresponding signal. A smart design is that control units output all the required signal in  ID stage and save all of them to stage register. In each stage, data path get required signal Hierarchically.<br><img src="/images/piplined_control.png" alt="pipelined control unit"></p>
+<h2 id="Hazards"><a href="#Hazards" class="headerlink" title="Hazards"></a>Hazards</h2><p>Pipeline hazards are the situations where instruction execution cannot proceed in the pipeline.</p>
+<ul>
+<li>Structural hazard</li>
+<li>Data hazard</li>
+<li>Control hazard<br>Mainly due to something required is currently not available.</li>
+</ul>
+<h3 id="Structural-hazard"><a href="#Structural-hazard" class="headerlink" title="Structural hazard"></a>Structural hazard</h3><p>A structural hazard occurs when one resource is to be used by more than one instruction in one clock cycle.<br>Solutions: Never access a resource more than once per clock cycle</p>
+<ul>
+<li>Allocate each resource to a single pipeline stage.</li>
+<li>Every instruction must follow the same execution stage sequence</li>
+</ul>
+<h3 id="Data-hazard"><a href="#Data-hazard" class="headerlink" title="Data hazard"></a>Data hazard</h3><p>Data hazards are caused by data dependency<br>Four kinds of data hazard</p>
+<ul>
+<li>RAR</li>
+<li>WAW</li>
+<li>RAW</li>
+<li>WAR<br>A basic solution is stalling pipeline. which is just wait.<br>Another one is forwarding. In some cases, circuit can “detect” the data hazard and get the value from previous instruction “middle register”.</li>
+</ul>
+<p>Source register data of the instruction in the Ex stage is dependent on the destination register data of its preceding instruction in the MEM stage</p>
+<p>Source register data of the instruction in the Ex stage is dependent on the destination register data of its preceding instruction in the WB stage</p>
+<h3 id="control-hazard"><a href="#control-hazard" class="headerlink" title="control hazard"></a>control hazard</h3><h3 id="branch-prediction"><a href="#branch-prediction" class="headerlink" title="branch prediction"></a>branch prediction</h3><ul>
+<li>static prediction<br>Misprediction lead to pipeline flush.(3 instructions has been wasted).<br>We can calculate the target address in ID stage. check conition in ID stage(use XOR to compare the register contents).Require forwarding to ID stage and hazard detection.</li>
+<li>dynamic prediction<br>The history is stored in a table, called branch history table or branch prediction table.</li>
+<li>third</li>
+</ul>
 ]]></content>
       <categories>
         <category>巴别塔(babel-tower)</category>
@@ -238,25 +291,94 @@
       </categories>
   </entry>
   <entry>
-    <title>intro to java and oop</title>
-    <url>/2025/06/10/%E5%B7%B4%E5%88%AB%E5%A1%94/%E7%A0%81%E6%9C%AF%E8%8B%91/week1/</url>
-    <content><![CDATA[<h2 id="Objected-oriented-programming-OOP"><a href="#Objected-oriented-programming-OOP" class="headerlink" title="Objected oriented programming(OOP)"></a>Objected oriented programming(OOP)</h2><p>  In procedural programming languages(like C), programming like to be action-oriented, whereas in JAVA - programming is Object-oriented. </p>
-<p>  In OOP, programmer like to defined their own self-defined types, called classes.</p>
-<p>  Each class will contain the data and the set of the method that manipulate the data. </p>
-<p>  A user defined type(eg.class) is called a object.</p>
-<h2 id="Inheritance"><a href="#Inheritance" class="headerlink" title="Inheritance"></a>Inheritance</h2><p>  Inheritance relations form tree-like hierarchical structure.<br>  (eg. postgraduate students is a subclass of students)</p>
-<p>  In a “Is a” relationship, an object of a subclass may also be treated as an object<br>  of superclass. </p>
-<p>  In a “Has a” relationship,  a class object has an object of another class to store its<br>  state or do its work. It “has-a” reference to that other object.</p>
-<h2 id="Designing-a-Class"><a href="#Designing-a-Class" class="headerlink" title="Designing a Class"></a>Designing a Class</h2><ol>
-<li>Always try to keep data private</li>
-<li>Creating an object may require different actions such as initialization</li>
-<li>Break up class with many responsibilities</li>
-</ol>
-<h2 id=""><a href="#" class="headerlink" title=""></a></h2>]]></content>
+    <title>Performance</title>
+    <url>/2025/06/10/%E5%B7%B4%E5%88%AB%E5%A1%94/%E5%8D%83%E6%9C%BA%E5%9B%BE(computer-architecture)/Performance/</url>
+    <content><![CDATA[<h2 id="Common-Performance-Metrics"><a href="#Common-Performance-Metrics" class="headerlink" title="Common Performance Metrics"></a>Common Performance Metrics</h2><ul>
+<li><p>Latency: response time, execution time, elapsed time</p>
+</li>
+<li><p>Throughout: Amount work per unit time<br>Ideally, for good Performance we want is  Latency minimized ad Throughout maximized</p>
+</li>
+</ul>
+<h2 id="CPU-time"><a href="#CPU-time" class="headerlink" title="CPU time"></a>CPU time</h2><p>CPU time is CPU spends on executing a program.<br>cpu time is comprised of three components<br>$$<br>\text{CPU time} &#x3D; \frac{\text{number of instructions}}{\text{program}} \times \frac{\text{cycles}}{\text{instructions}} \times \frac{\text{seconds}}{\text{cycle}}<br>$$</p>
+<ul>
+<li>instruction count &#x3D; instructions&#x2F; program</li>
+<li>CPI &#x3D; average Cycles&#x2F; instruction</li>
+<li>clock period(clock frequent &#x3D; 1&#x2F; clock period)</li>
+</ul>
+<h2 id="Amdahl’s-law"><a href="#Amdahl’s-law" class="headerlink" title="Amdahl’s law"></a>Amdahl’s law</h2><p>Suppose that enhancement (E) accelerates a  fraction (F) of a task by a factor (S) and the  remainder of the task is unaffected</p>
+<p>$$<br>\text{over all speedup} &#x3D; \frac{1}{1-F + \frac{F}{S}}<br>$$</p>
+]]></content>
+      <categories>
+        <category>巴别塔(babel-tower)</category>
+        <category>千机图(computer-architecture)</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>Virtual Memory</title>
+    <url>/2025/07/21/%E5%B7%B4%E5%88%AB%E5%A1%94/%E5%8D%83%E6%9C%BA%E5%9B%BE(computer-architecture)/virtual_memory/</url>
+    <content><![CDATA[<h2 id="Virtual-Memory-is-a-memory-management-technique"><a href="#Virtual-Memory-is-a-memory-management-technique" class="headerlink" title="Virtual Memory is a memory management technique"></a>Virtual Memory is a memory management technique</h2><p>Uses main memory and disk to create an illusion of very large and contiguous main memory to the user, which allows the execution of programs that are larger than the physical memory.</p>
+<ul>
+<li>Programs have separate virtual memory spaces.</li>
+<li>Processes share the main (physical) memory</li>
+</ul>
+<h2 id="Terms"><a href="#Terms" class="headerlink" title="Terms"></a>Terms</h2><ul>
+<li>Page<br>A virtual block transferred between the main memory and disk</li>
+<li>Page hit<br>Data accessed are in the main memory</li>
+<li>Page fault<br>Data accessed are not in the main memory</li>
+</ul>
+<h2 id="Four-design-problem"><a href="#Four-design-problem" class="headerlink" title="Four design problem"></a>Four design problem</h2><ul>
+<li>Where to place a page?<br>Fully associative or highly associative</li>
+<li>How to find a page?<br>Address translation</li>
+<li>Which page should be replaced on a page fault?<br>Sophisticated (e.g. LRU + the working set model)</li>
+<li>What happens when writing data to (virtual) memory?<br>Always write-back and write allocate<br><em>disk reads&#x2F;writes take millions of clock cycles</em></li>
+</ul>
+<h2 id="Address-translation"><a href="#Address-translation" class="headerlink" title="Address translation"></a>Address translation</h2><p>Translation between virtual address and physical address, this will be handled by MMU</p>
+<p>Using the slack time  in an pipeline stage execution.<br> Makeing TLB accesses overlapped with another Processsor1</p>
+]]></content>
+      <categories>
+        <category>巴别塔(babel-tower)</category>
+        <category>千机图(computer-architecture)</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>architecture style</title>
+    <url>/2025/07/22/%E5%B7%B4%E5%88%AB%E5%A1%94/%E7%A0%81%E6%9C%AF%E8%8B%91/ArchitectureStyle/</url>
+    <content><![CDATA[<h2 id="Two-main-categories"><a href="#Two-main-categories" class="headerlink" title="Two main categories"></a>Two main categories</h2><h3 id="Partitioning"><a href="#Partitioning" class="headerlink" title="Partitioning"></a>Partitioning</h3><p>Technical vs. Domain-based</p>
+<h2 id="Partitioning-by-Technical-Concerns"><a href="#Partitioning-by-Technical-Concerns" class="headerlink" title="Partitioning by Technical Concerns"></a>Partitioning by Technical Concerns</h2><p>Code organized by functional roles or Technical layers<br>eg. Backend and frontend</p>
+<h2 id="Partitioning-by-Domain-Concerns"><a href="#Partitioning-by-Domain-Concerns" class="headerlink" title="Partitioning by Domain Concerns"></a>Partitioning by Domain Concerns</h2><p>code organized around business Domains or problem areas<br>eg. separated teams for loads, investments, account management</p>
+<h3 id="deployment"><a href="#deployment" class="headerlink" title="deployment"></a>deployment</h3><p>Monolithic vs. Distributed</p>
+<h3 id="Monolithic-architecture"><a href="#Monolithic-architecture" class="headerlink" title="Monolithic architecture"></a>Monolithic architecture</h3><p>single deployment unit<br>+: easier initial develop<br>+: simplified debugging<br>-: difficult to scale independently<br>-: single bug can propotage to whole system</p>
+<h3 id="Distributed-architecture"><a href="#Distributed-architecture" class="headerlink" title="Distributed architecture"></a>Distributed architecture</h3><p>+: High complexity due to network dependence<br>-: network latency<br>-: Bandwidth is finite<br>-: The network is not secure<br>-: RollBacks can fail to<br>Multiple deplorable units communication over networks</p>
+]]></content>
       <categories>
         <category>巴别塔(babel-tower)</category>
         <category>码术苑(software-design-architecture)</category>
       </categories>
+  </entry>
+  <entry>
+    <title>Expections</title>
+    <url>/2025/06/17/%E5%B7%B4%E5%88%AB%E5%A1%94/%E7%A0%81%E6%9C%AF%E8%8B%91/Expection/</url>
+    <content><![CDATA[<p>An exception is an event, which occurs during the execution of a program, that disrupts the<br>normal flow of the program’s instructions. When error occurs, an exception object is created and given to the runtime system, this is called <strong>throw</strong> an exception. The runtime system searches the call stack for a method that contains a block of code that can<br>handle the exception.<br>The exception handler chosen is said to <strong>catch</strong> the exception</p>
+<h2 id="Types-of-Expections"><a href="#Types-of-Expections" class="headerlink" title="Types of Expections"></a>Types of Expections</h2><ul>
+<li>Checked Expection<br>  (IOException, SQLException, etc.)</li>
+<li>runtime Expection<br>  (ArraylndexOutOfBoundsExceptions, ArithmeticException, etc.)</li>
+<li>Error<br>  (VirtualMachineError, OutOfMemoryError, etc.)</li>
+</ul>
+<h2 id="Uncheck-exceptions-VS-Checked-exceptions"><a href="#Uncheck-exceptions-VS-Checked-exceptions" class="headerlink" title="Uncheck exceptions VS Checked exceptions"></a>Uncheck exceptions VS Checked exceptions</h2><p>All classes that are subclasses of RuntimeException (typically caused by defects in your program’s code) or Error (typically ‘system’ issues) are <strong>unchecked exceptions</strong>.</p>
+<p>All classes that inherit from class Exception but not directly or indirectly from class.<br><strong>RuntimeException</strong> are considered to be checked exceptions.</p>
+<h2 id="User-defined-Exception"><a href="#User-defined-Exception" class="headerlink" title="User-defined Exception"></a>User-defined Exception</h2><p>A checked exception need to extend the Exception class, but not directly or indirectly from class RuntimeException. </p>
+<p>An unchecked exception (like a runtime exception) need to extend the RuntimeException class.<br>Normally we define a checked exception, by extending the Exception class. Like in the following code </p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">MyExpection</span> <span class="keyword">extends</span> <span class="title class_">Exception</span> &#123;</span><br><span class="line">    <span class="keyword">public</span> <span class="title function_">MyExpection</span><span class="params">(String message)</span>&#123;</span><br><span class="line">        <span class="built_in">super</span>(message).</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p><a href="http://docs.oracle.com/javase/8/docs/api/java/lang/Exception.html">Java Expections</a></p>
+]]></content>
+      <categories>
+        <category>巴别塔(babel-tower)</category>
+        <category>码术苑(software-design-architecture)</category>
+      </categories>
+      <tags>
+        <tag>OOP</tag>
+      </tags>
   </entry>
   <entry>
     <title>Inheritance &amp; Abstract Classes &amp;  Polymorphism</title>
@@ -286,23 +408,25 @@
       </categories>
   </entry>
   <entry>
-    <title>Leetcode2566. Maximum Difference by Remapping a Digit</title>
-    <url>/2025/06/14/%E5%B7%B4%E5%88%AB%E5%A1%94/%E7%AE%97/Maximum_Difference_Remap/</url>
-    <content><![CDATA[<h2 id="Problem"><a href="#Problem" class="headerlink" title="Problem"></a>Problem</h2><p>You are given an integer <code>num</code>. Bob will sneakily remap one of the <code>10</code> possible digits(<code>0</code> to <code>9</code>) to another digit.</p>
-<p>Return the difference between the maximum and minimum value Bob can make by remap <strong>exactly one</strong> digit in <code>num</code>.</p>
-<p>Bob can remap a digit to it self.(not change)</p>
-<p>Resulting number after remapping can contain leading zeros.</p>
-<h2 id="Intuition"><a href="#Intuition" class="headerlink" title="Intuition"></a>Intuition</h2><p>Consider the number <code>11891</code>, Bob can remap <code>1</code> to <code>9</code> to obtain the max <code>99899</code>, and remap <code>1</code> to <code>0</code> to obtain the min <code>00890</code>.</p>
-<p>Consider the number <code>99919</code>, Bob can remap <code>1</code> to <code>9</code> to obtain the max <code>99999</code>, and remap <code>9</code> to <code>0</code> to obtain the min <code>00010</code>.</p>
-<p>Hence we can observe that remap the first non-9 digit to <code>9</code> to yield the max value. And replace the first digit to <code>0</code> to yield the min value.</p>
-<h2 id="COOOOOOOOOOOOODING"><a href="#COOOOOOOOOOOOODING" class="headerlink" title="COOOOOOOOOOOOODING"></a>COOOOOOOOOOOOODING</h2><figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span>&#123;</span><br><span class="line">    <span class="keyword">public</span>:</span><br><span class="line">        <span class="function"><span class="type">int</span> <span class="title">minMaxDifference</span><span class="params">(<span class="type">int</span> num)</span></span>&#123;</span><br><span class="line">            string s = <span class="built_in">to_string</span>(num);</span><br><span class="line">            <span class="type">int</span> i = <span class="number">0</span>;</span><br><span class="line">            <span class="keyword">while</span>(s[i] == <span class="string">&#x27;9&#x27;</span> &amp;&amp; i &lt; s.<span class="built_in">length</span>()<span class="number">-1</span>) i+=<span class="number">1</span>;</span><br><span class="line"></span><br><span class="line">            string max = s;</span><br><span class="line">            <span class="keyword">for</span>(<span class="type">char</span>&amp; ch:max) <span class="keyword">if</span>(ch==s[i]) ch=<span class="string">&#x27;9&#x27;</span>;</span><br><span class="line">            </span><br><span class="line">            string min = s;</span><br><span class="line">            <span class="keyword">for</span>(<span class="type">char</span>&amp; ch:min) <span class="keyword">if</span>(ch==s[<span class="number">0</span>]) ch=<span class="string">&#x27;0&#x27;</span>;</span><br><span class="line">            <span class="keyword">return</span> <span class="built_in">stoi</span>(max)-<span class="built_in">stoi</span>(mn);</span><br><span class="line">        &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>]]></content>
+    <title>intro to java and oop</title>
+    <url>/2025/06/10/%E5%B7%B4%E5%88%AB%E5%A1%94/%E7%A0%81%E6%9C%AF%E8%8B%91/week1/</url>
+    <content><![CDATA[<h2 id="Objected-oriented-programming-OOP"><a href="#Objected-oriented-programming-OOP" class="headerlink" title="Objected oriented programming(OOP)"></a>Objected oriented programming(OOP)</h2><p>  In procedural programming languages(like C), programming like to be action-oriented, whereas in JAVA - programming is Object-oriented. </p>
+<p>  In OOP, programmer like to defined their own self-defined types, called classes.</p>
+<p>  Each class will contain the data and the set of the method that manipulate the data. </p>
+<p>  A user defined type(eg.class) is called a object.</p>
+<h2 id="Inheritance"><a href="#Inheritance" class="headerlink" title="Inheritance"></a>Inheritance</h2><p>  Inheritance relations form tree-like hierarchical structure.<br>  (eg. postgraduate students is a subclass of students)</p>
+<p>  In a “Is a” relationship, an object of a subclass may also be treated as an object<br>  of superclass. </p>
+<p>  In a “Has a” relationship,  a class object has an object of another class to store its<br>  state or do its work. It “has-a” reference to that other object.</p>
+<h2 id="Designing-a-Class"><a href="#Designing-a-Class" class="headerlink" title="Designing a Class"></a>Designing a Class</h2><ol>
+<li>Always try to keep data private</li>
+<li>Creating an object may require different actions such as initialization</li>
+<li>Break up class with many responsibilities</li>
+</ol>
+<h2 id=""><a href="#" class="headerlink" title=""></a></h2>]]></content>
       <categories>
         <category>巴别塔(babel-tower)</category>
-        <category>算(hermes)</category>
+        <category>码术苑(software-design-architecture)</category>
       </categories>
-      <tags>
-        <tag>string</tag>
-      </tags>
   </entry>
   <entry>
     <title>Leetcode2016 Maximum Difference Between Increasing Elements</title>
@@ -322,6 +446,25 @@
       </categories>
       <tags>
         <tag>array</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Leetcode2566. Maximum Difference by Remapping a Digit</title>
+    <url>/2025/06/14/%E5%B7%B4%E5%88%AB%E5%A1%94/%E7%AE%97/Maximum_Difference_Remap/</url>
+    <content><![CDATA[<h2 id="Problem"><a href="#Problem" class="headerlink" title="Problem"></a>Problem</h2><p>You are given an integer <code>num</code>. Bob will sneakily remap one of the <code>10</code> possible digits(<code>0</code> to <code>9</code>) to another digit.</p>
+<p>Return the difference between the maximum and minimum value Bob can make by remap <strong>exactly one</strong> digit in <code>num</code>.</p>
+<p>Bob can remap a digit to it self.(not change)</p>
+<p>Resulting number after remapping can contain leading zeros.</p>
+<h2 id="Intuition"><a href="#Intuition" class="headerlink" title="Intuition"></a>Intuition</h2><p>Consider the number <code>11891</code>, Bob can remap <code>1</code> to <code>9</code> to obtain the max <code>99899</code>, and remap <code>1</code> to <code>0</code> to obtain the min <code>00890</code>.</p>
+<p>Consider the number <code>99919</code>, Bob can remap <code>1</code> to <code>9</code> to obtain the max <code>99999</code>, and remap <code>9</code> to <code>0</code> to obtain the min <code>00010</code>.</p>
+<p>Hence we can observe that remap the first non-9 digit to <code>9</code> to yield the max value. And replace the first digit to <code>0</code> to yield the min value.</p>
+<h2 id="COOOOOOOOOOOOODING"><a href="#COOOOOOOOOOOOODING" class="headerlink" title="COOOOOOOOOOOOODING"></a>COOOOOOOOOOOOODING</h2><figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span>&#123;</span><br><span class="line">    <span class="keyword">public</span>:</span><br><span class="line">        <span class="function"><span class="type">int</span> <span class="title">minMaxDifference</span><span class="params">(<span class="type">int</span> num)</span></span>&#123;</span><br><span class="line">            string s = <span class="built_in">to_string</span>(num);</span><br><span class="line">            <span class="type">int</span> i = <span class="number">0</span>;</span><br><span class="line">            <span class="keyword">while</span>(s[i] == <span class="string">&#x27;9&#x27;</span> &amp;&amp; i &lt; s.<span class="built_in">length</span>()<span class="number">-1</span>) i+=<span class="number">1</span>;</span><br><span class="line"></span><br><span class="line">            string max = s;</span><br><span class="line">            <span class="keyword">for</span>(<span class="type">char</span>&amp; ch:max) <span class="keyword">if</span>(ch==s[i]) ch=<span class="string">&#x27;9&#x27;</span>;</span><br><span class="line">            </span><br><span class="line">            string min = s;</span><br><span class="line">            <span class="keyword">for</span>(<span class="type">char</span>&amp; ch:min) <span class="keyword">if</span>(ch==s[<span class="number">0</span>]) ch=<span class="string">&#x27;0&#x27;</span>;</span><br><span class="line">            <span class="keyword">return</span> <span class="built_in">stoi</span>(max)-<span class="built_in">stoi</span>(mn);</span><br><span class="line">        &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>]]></content>
+      <categories>
+        <category>巴别塔(babel-tower)</category>
+        <category>算(hermes)</category>
+      </categories>
+      <tags>
+        <tag>string</tag>
       </tags>
   </entry>
   <entry>
@@ -345,18 +488,38 @@
       </tags>
   </entry>
   <entry>
-    <title>Leetcode 3423. MAX diff between adjacent Elements in a Circular Arrar</title>
-    <url>/2025/06/12/%E5%B7%B4%E5%88%AB%E5%A1%94/%E7%AE%97/leetcode3421/</url>
-    <content><![CDATA[<p><strong>Question</strong>:Given a circular array nums, find the maximum absolute difference between adjacent elements.</p>
-<p><strong>Note</strong>: In a circular array, the first and last elements are adjacent.</p>
-<p>Easy question directly answer</p>
-<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span>&#123;</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">        <span class="function"><span class="type">int</span> <span class="title">maxAdjacentDistance</span><span class="params">(Vector&lt;<span class="type">int</span>&gt;&amp; nums)</span></span>&#123;</span><br><span class="line">                <span class="type">int</span> n = num.<span class="built_in">size</span>();</span><br><span class="line">                <span class="type">int</span> res = <span class="built_in">abs</span>(nums[<span class="number">0</span>] - nums[n<span class="number">-1</span>]);</span><br><span class="line">                <span class="keyword">for</span>(<span class="type">int</span> i = <span class="number">0</span>; i &lt;n<span class="number">-1</span>; i++)&#123;</span><br><span class="line">                        res = <span class="built_in">max</span>(res, <span class="built_in">abs</span>(nums[i] - nums[i<span class="number">+1</span>]));</span><br><span class="line">                &#125;</span><br><span class="line">                <span class="keyword">return</span> res;</span><br><span class="line">        &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>]]></content>
+    <title>Leetcode 2081. Sum of k-mirror numbers</title>
+    <url>/2025/06/23/%E5%B7%B4%E5%88%AB%E5%A1%94/%E7%AE%97/leetcode2081/</url>
+    <content><![CDATA[<h2 id="Problem"><a href="#Problem" class="headerlink" title="Problem"></a>Problem</h2><p>A k-mirror number is a positive integer without leading zeros that reads the same both forward and backward in base-10 as well as in base-k.</p>
+<p>For example, <code>9</code> is a 2-mirror number. The representation of <code>9</code> in <code>base-10</code> and <code>base-2</code> are <code>9</code> and <code>1001</code> respectively, which read the same both forward and backward.<br>On the contrary, 4 is not a 2-mirror number. The representation of 4 in base-2 is 100, which does not read the same both forward and backward.<br>Given the base <code>k</code> and the number <code>n</code>, return the sum of the <code>n</code> smallest k-mirror numbers.</p>
+<h2 id="Examples"><a href="#Examples" class="headerlink" title="Examples"></a>Examples</h2><h3 id="Example-1"><a href="#Example-1" class="headerlink" title="Example 1"></a>Example 1</h3><figure class="highlight json"><table><tr><td class="code"><pre><span class="line">Input<span class="punctuation">:</span> k = <span class="number">2</span><span class="punctuation">,</span> n = <span class="number">5</span></span><br><span class="line">Output<span class="punctuation">:</span> <span class="number">25</span></span><br><span class="line">Explanation<span class="punctuation">:</span></span><br><span class="line">The <span class="number">5</span> smallest <span class="number">2</span>-mirror numbers and their representations in base<span class="number">-2</span> are listed as follows<span class="punctuation">:</span></span><br><span class="line">  base<span class="number">-10</span>    base<span class="number">-2</span></span><br><span class="line">    <span class="number">1</span>          <span class="number">1</span></span><br><span class="line">    <span class="number">3</span>          <span class="number">11</span></span><br><span class="line">    <span class="number">5</span>          <span class="number">101</span></span><br><span class="line">    <span class="number">7</span>          <span class="number">111</span></span><br><span class="line">    <span class="number">9</span>          <span class="number">1001</span></span><br><span class="line">Their sum = <span class="number">1</span> + <span class="number">3</span> + <span class="number">5</span> + <span class="number">7</span> + <span class="number">9</span> = <span class="number">25.</span> </span><br></pre></td></tr></table></figure>
+<h3 id="Example-2"><a href="#Example-2" class="headerlink" title="Example 2"></a>Example 2</h3><figure class="highlight json"><table><tr><td class="code"><pre><span class="line">Input<span class="punctuation">:</span> k = <span class="number">3</span><span class="punctuation">,</span> n = <span class="number">7</span></span><br><span class="line">Output<span class="punctuation">:</span> <span class="number">499</span></span><br><span class="line">Explanation<span class="punctuation">:</span></span><br><span class="line">The <span class="number">7</span> smallest <span class="number">3</span>-mirror numbers are and their representations in base<span class="number">-3</span> are listed as follows<span class="punctuation">:</span></span><br><span class="line">  base<span class="number">-10</span>    base<span class="number">-3</span></span><br><span class="line">    <span class="number">1</span>          <span class="number">1</span></span><br><span class="line">    <span class="number">2</span>          <span class="number">2</span></span><br><span class="line">    <span class="number">4</span>          <span class="number">11</span></span><br><span class="line">    <span class="number">8</span>          <span class="number">22</span></span><br><span class="line">    <span class="number">121</span>        <span class="number">11111</span></span><br><span class="line">    <span class="number">151</span>        <span class="number">12121</span></span><br><span class="line">    <span class="number">212</span>        <span class="number">21212</span></span><br><span class="line">Their sum = <span class="number">1</span> + <span class="number">2</span> + <span class="number">4</span> + <span class="number">8</span> + <span class="number">121</span> + <span class="number">151</span> + <span class="number">212</span> = <span class="number">499.</span></span><br></pre></td></tr></table></figure>
+<h3 id="Example-3"><a href="#Example-3" class="headerlink" title="Example 3"></a>Example 3</h3><figure class="highlight json"><table><tr><td class="code"><pre><span class="line">Input<span class="punctuation">:</span> k = <span class="number">7</span><span class="punctuation">,</span> n = <span class="number">17</span></span><br><span class="line">Output<span class="punctuation">:</span> <span class="number">20379000</span></span><br><span class="line">Explanation<span class="punctuation">:</span> The <span class="number">17</span> smallest <span class="number">7</span>-mirror numbers are<span class="punctuation">:</span></span><br><span class="line"><span class="number">1</span><span class="punctuation">,</span> <span class="number">2</span><span class="punctuation">,</span> <span class="number">3</span><span class="punctuation">,</span> <span class="number">4</span><span class="punctuation">,</span> <span class="number">5</span><span class="punctuation">,</span> <span class="number">6</span><span class="punctuation">,</span> <span class="number">8</span><span class="punctuation">,</span> <span class="number">121</span><span class="punctuation">,</span> <span class="number">171</span><span class="punctuation">,</span> <span class="number">242</span><span class="punctuation">,</span> <span class="number">292</span><span class="punctuation">,</span> <span class="number">16561</span><span class="punctuation">,</span> <span class="number">65656</span><span class="punctuation">,</span> <span class="number">2137312</span><span class="punctuation">,</span> <span class="number">4602064</span><span class="punctuation">,</span> <span class="number">6597956</span><span class="punctuation">,</span> <span class="number">6958596</span></span><br></pre></td></tr></table></figure>
+<h3 id="Analysis"><a href="#Analysis" class="headerlink" title="Analysis"></a>Analysis</h3><p>I may would like to ‘generate’ palindromic numbers instead of checking every number from <code>1</code> to a big number.</p>
+]]></content>
+      <categories>
+        <category>巴别塔(babel-tower)</category>
+        <category>算(hermes)</category>
+      </categories>
+      <tags>
+        <tag>tries</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Leetcode 2966 Divied array to Arrays  with max difference</title>
+    <url>/2025/06/18/%E5%B7%B4%E5%88%AB%E5%A1%94/%E7%AE%97/leetcode2966/</url>
+    <content><![CDATA[<h2 id="Problem"><a href="#Problem" class="headerlink" title="Problem"></a>Problem</h2><p>You are given an integer array <code>nums</code> of size <code>n</code> where <code>n</code> is a multiple of <code>3</code> and a positive integer <code>k</code>.</p>
+<p>Divide the array <code>nums</code> into <code>n / 3</code> arrays of size <code>3</code> satisfying the following condition:</p>
+<p>The difference between any two elements in one array is less than or equal to <code>k</code>.<br>Return a 2D array containing the arrays. If it is impossible to satisfy the conditions, return an empty array. And if there are multiple answers, return any of them.</p>
+<h2 id="Intuition"><a href="#Intuition" class="headerlink" title="Intuition"></a>Intuition</h2><p>That’s this a easy version of <a href="https://bochuan.site/2025/06/13/%E5%B7%B4%E5%88%AB%E5%A1%94/%E7%AE%97/maxmize_minimu_pairs/">Leetcode2616</a>. We can sort the array first and keep the track of  an ‘Window’ which contains 3 adjacent elements. If <code>nums[i+2] - nums[i]</code> is greater than <code>k</code>, we can just return an empty array. Since we always get the minimum difference, if current array do <strong>not</strong> satisfy the threshold, it’s impossible to exist a another <em>optimal</em> solution.</p>
+<h2 id="COOOOOOOOOOOOODING"><a href="#COOOOOOOOOOOOODING" class="headerlink" title="COOOOOOOOOOOOODING"></a>COOOOOOOOOOOOODING</h2><figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span> &#123;</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    vector&lt;vector&lt;<span class="type">int</span>&gt;&gt; <span class="built_in">divideArray</span>(vector&lt;<span class="type">int</span>&gt;&amp; nums, <span class="type">int</span> k) &#123;</span><br><span class="line">        <span class="built_in">sort</span>(nums.<span class="built_in">begin</span>(), nums.<span class="built_in">end</span>());</span><br><span class="line">        vector&lt;vector&lt;<span class="type">int</span>&gt;&gt; ans;</span><br><span class="line">        <span class="keyword">for</span> (<span class="type">int</span> i = <span class="number">0</span>; i &lt; nums.<span class="built_in">size</span>(); i += <span class="number">3</span>) &#123;</span><br><span class="line">            <span class="keyword">if</span> (nums[i + <span class="number">2</span>] - nums[i] &gt; k) &#123;</span><br><span class="line">                <span class="keyword">return</span> &#123;&#125;;</span><br><span class="line">            &#125;</span><br><span class="line">            ans.<span class="built_in">push_back</span>(&#123;nums[i], nums[i + <span class="number">1</span>], nums[i + <span class="number">2</span>]&#125;);</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> ans;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>]]></content>
       <categories>
         <category>巴别塔(babel-tower)</category>
         <category>算(hermes)</category>
       </categories>
       <tags>
         <tag>array</tag>
+        <tag>greedy</tag>
       </tags>
   </entry>
   <entry>
@@ -388,6 +551,66 @@
       </categories>
       <tags>
         <tag>math</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Leetcode 3423. MAX diff between adjacent Elements in a Circular Arrar</title>
+    <url>/2025/06/12/%E5%B7%B4%E5%88%AB%E5%A1%94/%E7%AE%97/leetcode3421/</url>
+    <content><![CDATA[<p><strong>Question</strong>:Given a circular array nums, find the maximum absolute difference between adjacent elements.</p>
+<p><strong>Note</strong>: In a circular array, the first and last elements are adjacent.</p>
+<p>Easy question directly answer</p>
+<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span>&#123;</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">        <span class="function"><span class="type">int</span> <span class="title">maxAdjacentDistance</span><span class="params">(Vector&lt;<span class="type">int</span>&gt;&amp; nums)</span></span>&#123;</span><br><span class="line">                <span class="type">int</span> n = num.<span class="built_in">size</span>();</span><br><span class="line">                <span class="type">int</span> res = <span class="built_in">abs</span>(nums[<span class="number">0</span>] - nums[n<span class="number">-1</span>]);</span><br><span class="line">                <span class="keyword">for</span>(<span class="type">int</span> i = <span class="number">0</span>; i &lt;n<span class="number">-1</span>; i++)&#123;</span><br><span class="line">                        res = <span class="built_in">max</span>(res, <span class="built_in">abs</span>(nums[i] - nums[i<span class="number">+1</span>]));</span><br><span class="line">                &#125;</span><br><span class="line">                <span class="keyword">return</span> res;</span><br><span class="line">        &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>]]></content>
+      <categories>
+        <category>巴别塔(babel-tower)</category>
+        <category>算(hermes)</category>
+      </categories>
+      <tags>
+        <tag>array</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Leetcode 3443, Max Manhattan distance after change K dirctions</title>
+    <url>/2025/06/20/%E5%B7%B4%E5%88%AB%E5%A1%94/%E7%AE%97/leetcode3443/</url>
+    <content><![CDATA[<h2 id="Problem"><a href="#Problem" class="headerlink" title="Problem"></a>Problem</h2><p>You are given a string s consisting of the characters ‘N’, ‘S’, ‘E’, and ‘W’, where <code>s[i]</code> indicates movements in an infinite grid:</p>
+<p>‘N’ : Move north by 1 unit.<br>‘S’ : Move south by 1 unit.<br>‘E’ : Move east by 1 unit.<br>‘W’ : Move west by 1 unit.<br>Initially, you are at the origin <code>(0, 0)</code>. You can change at most <code>k</code> characters to any of the four directions.</p>
+<p>Find the maximum Manhattan distance from the origin that can be achieved at any time while performing the movements in order.</p>
+<p>The Manhattan Distance between two cells <code>(xi, yi)</code> and <code>(xj, yj)</code> is <code>|xi - xj| + |yi - yj|</code>.</p>
+<h2 id="Examples"><a href="#Examples" class="headerlink" title="Examples"></a>Examples</h2><h3 id="Example-1"><a href="#Example-1" class="headerlink" title="Example 1"></a>Example 1</h3><figure class="highlight console"><table><tr><td class="code"><pre><span class="line">Input: s = &quot;NWSE&quot;, k = 1</span><br><span class="line"></span><br><span class="line">Output: 3</span><br><span class="line"></span><br><span class="line">Explanation:</span><br><span class="line"></span><br><span class="line">Change `s[2]` from &#x27;S&#x27; to &#x27;N&#x27;. The string s becomes &quot;NWNE&quot;.</span><br></pre></td></tr></table></figure>
+<h3 id="Example-2"><a href="#Example-2" class="headerlink" title="Example 2"></a>Example 2</h3><figure class="highlight console"><table><tr><td class="code"><pre><span class="line">Input: s = &quot;NSWWEW&quot;, k = 3</span><br><span class="line"></span><br><span class="line">Output: 6</span><br><span class="line"></span><br><span class="line">Explanation:</span><br><span class="line">Change `s[1]` from &#x27;S&#x27; to &#x27;N&#x27;, and s[4] from &#x27;E&#x27; to &#x27;W&#x27;. The string s becomes &quot;NNWWWW&quot;.</span><br></pre></td></tr></table></figure>
+
+<h2 id="Intuition"><a href="#Intuition" class="headerlink" title="Intuition"></a>Intuition</h2><p>Intuitively, that is a easy question. what we should do is made modification on the direction which appear less. </p>
+<p>After that we can handle the vertical direction(of course you can do horizontal one first if you want to ). Flipping the direction which has more occurrences leads to an immediate increment of 2. If the number of occurrences is less than <code>k</code>, we can will keep the chance to made modification on horizontal direction.</p>
+<h2 id="COOOOOOOOOOOOODING"><a href="#COOOOOOOOOOOOODING" class="headerlink" title="COOOOOOOOOOOOODING"></a>COOOOOOOOOOOOODING</h2><figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span> &#123;</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="type">int</span> <span class="title">maxDistance</span><span class="params">(string s, <span class="type">int</span> k)</span> </span>&#123;</span><br><span class="line">        <span class="type">int</span> ans = <span class="number">0</span>;</span><br><span class="line">        <span class="type">int</span> north = <span class="number">0</span>, south = <span class="number">0</span>, east = <span class="number">0</span>,west = <span class="number">0</span>;        </span><br><span class="line">        <span class="keyword">for</span>(<span class="type">char</span> direction: s)&#123;</span><br><span class="line">            <span class="keyword">switch</span>(direction)&#123;</span><br><span class="line">                <span class="keyword">case</span> <span class="string">&quot;N&quot;</span></span><br><span class="line">                    north++;</span><br><span class="line">                    <span class="keyword">break</span>;</span><br><span class="line"></span><br><span class="line">                <span class="keyword">case</span> <span class="string">&quot;S&quot;</span></span><br><span class="line">                    south++;</span><br><span class="line">                <span class="keyword">break</span>;</span><br><span class="line"></span><br><span class="line">                <span class="keyword">case</span> <span class="string">&quot;E&quot;</span></span><br><span class="line">                    east++;</span><br><span class="line">                <span class="keyword">break</span>;</span><br><span class="line"></span><br><span class="line">                <span class="keyword">case</span> <span class="string">&quot;E&quot;</span></span><br><span class="line">                    west++;</span><br><span class="line">                <span class="keyword">break</span>;</span><br><span class="line">            &#125;</span><br><span class="line">        <span class="type">int</span> vertical = <span class="built_in">min</span>(&#123;north,south,k&#125;);</span><br><span class="line">        <span class="type">int</span> hori = <span class="built_in">min</span>(&#123;east,west, k-times1&#125;);</span><br><span class="line">        ans = <span class="built_in">max</span>(ans, <span class="built_in">cal</span>(north, south, vertical) + <span class="built_in">cal</span>(east, west, hori));</span><br><span class="line">        &#125;</span><br><span class="line">    <span class="keyword">return</span> ans;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="function"><span class="type">int</span> <span class="title">cal</span><span class="params">(<span class="type">int</span> dir1, <span class="type">int</span> dirt2, <span class="type">int</span> times)</span></span>&#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="built_in">abs</span>(dir1 - dir2) + <span class="number">2</span>*times</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+
+]]></content>
+      <categories>
+        <category>巴别塔(babel-tower)</category>
+        <category>算(hermes)</category>
+      </categories>
+      <tags>
+        <tag>math</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Leetcode1431. Max Difference You Can Get From Changing an Integer</title>
+    <url>/2025/06/15/%E5%B7%B4%E5%88%AB%E5%A1%94/%E7%AE%97/maximux_difference_Remap/</url>
+    <content><![CDATA[<h2 id="Problem"><a href="#Problem" class="headerlink" title="Problem"></a>Problem</h2><p>You are given an integer <code>num</code>. Bob will sneakily remap one of the <code>10</code> possible digits(<code>0</code> to <code>9</code>) to another digit.</p>
+<p>Return the difference between the maximum and minimum value Bob can make by remap <strong>exactly one</strong> digit in <code>num</code>.</p>
+<p>Bob can remap a digit to it self.(not change)</p>
+<p>Resulting number after remapping can <strong>not</strong> contain leading zeros.</p>
+<h2 id="Intuition"><a href="#Intuition" class="headerlink" title="Intuition"></a>Intuition</h2><p>This problem is like to Leetcode2567, Yes…exactly the daily question in Leetcode yesterday. The only difference is that we canNOT have leading zeros today.<br>We need to consider how to get the minimum value. Is that replacing all first digit to 1? Apparently not, <code>11111</code> the min value should be <code>10000</code>.</p>
+<p>Can we do the same thing in the way of finding the max value? Replace the first non-1 digit to 0? No…. which breaks the rule no leading zero..</p>
+<p>Then maybe if the first digit is not <code>1</code>, we replace it to <code>1</code>. And for non-first digit, we change it to 0. </p>
+<h2 id="COOOOOOOOOOOOODING"><a href="#COOOOOOOOOOOOODING" class="headerlink" title="COOOOOOOOOOOOODING"></a>COOOOOOOOOOOOODING</h2><figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span>&#123;</span><br><span class="line">    <span class="keyword">public</span>:</span><br><span class="line">        <span class="function"><span class="type">int</span> <span class="title">maxDIff</span><span class="params">(<span class="type">int</span> num)</span></span>&#123;</span><br><span class="line">            string s = <span class="built_in">to_string</span>(num);</span><br><span class="line">            <span class="type">int</span> index_max = <span class="number">-1</span>;</span><br><span class="line">            <span class="type">int</span> index_max = <span class="number">-1</span>;</span><br><span class="line"></span><br><span class="line">            <span class="keyword">for</span>(<span class="type">int</span> i = <span class="number">0</span>; i &lt;s.<span class="built_in">length</span>(); i++)&#123;</span><br><span class="line">                <span class="keyword">if</span>(s[i] != <span class="string">&#x27;9&#x27;</span> &amp;&amp; index_max == <span class="number">-1</span>)&#123;</span><br><span class="line">                    index_max = i;</span><br><span class="line">                &#125;</span><br><span class="line">                <span class="keyword">if</span>(index_min == <span class="number">-1</span>)&#123;</span><br><span class="line">                    <span class="keyword">if</span>(i == <span class="number">0</span> &amp;&amp; s[i] != <span class="string">&#x27;1&#x27;</span>) &#123;</span><br><span class="line">                        index_min = i;</span><br><span class="line">                    &#125;</span><br><span class="line">                    <span class="keyword">else</span> <span class="keyword">if</span>(i &gt; <span class="number">0</span> &amp;&amp; s[i] != <span class="string">&#x27;0&#x27;</span> &amp;&amp; s[i] != s[<span class="number">0</span>]) &#123;</span><br><span class="line">                        index_min = i;</span><br><span class="line">                    &#125;</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">        string s_max = s;</span><br><span class="line">        <span class="keyword">if</span>(index_max != <span class="number">-1</span>) &#123;</span><br><span class="line">            <span class="keyword">for</span>(<span class="type">char</span>&amp; ch : s_max) &#123;</span><br><span class="line">                <span class="keyword">if</span>(ch == s[index_max]) ch = <span class="string">&#x27;9&#x27;</span>;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        </span><br><span class="line">        string s_min = s;</span><br><span class="line">        <span class="keyword">if</span>(index_min != <span class="number">-1</span>) &#123;</span><br><span class="line">            <span class="type">char</span> replacement = (index_min == <span class="number">0</span>) ? <span class="string">&#x27;1&#x27;</span> : <span class="string">&#x27;0&#x27;</span>;</span><br><span class="line">            <span class="keyword">for</span>(<span class="type">char</span>&amp; ch : s_min) &#123;</span><br><span class="line">                <span class="keyword">if</span>(ch == s[index_min]) ch = replacement;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        </span><br><span class="line">        <span class="type">int</span> max_val = <span class="built_in">stoi</span>(s_max);</span><br><span class="line">        <span class="type">int</span> min_val = <span class="built_in">stoi</span>(s_min);</span><br><span class="line">        <span class="keyword">return</span> max_val - min_val;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+]]></content>
+      <categories>
+        <category>巴别塔(babel-tower)</category>
+        <category>算(hermes)</category>
+      </categories>
+      <tags>
+        <tag>string</tag>
       </tags>
   </entry>
   <entry>
@@ -446,70 +669,8 @@
         <category>算(hermes)</category>
       </categories>
       <tags>
+        <tag>greedy</tag>
         <tag>binary</tag>
-        <tag>greedy</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Leetcode1431. Max Difference You Can Get From Changing an Integer</title>
-    <url>/2025/06/15/%E5%B7%B4%E5%88%AB%E5%A1%94/%E7%AE%97/maximux_difference_Remap/</url>
-    <content><![CDATA[<h2 id="Problem"><a href="#Problem" class="headerlink" title="Problem"></a>Problem</h2><p>You are given an integer <code>num</code>. Bob will sneakily remap one of the <code>10</code> possible digits(<code>0</code> to <code>9</code>) to another digit.</p>
-<p>Return the difference between the maximum and minimum value Bob can make by remap <strong>exactly one</strong> digit in <code>num</code>.</p>
-<p>Bob can remap a digit to it self.(not change)</p>
-<p>Resulting number after remapping can <strong>not</strong> contain leading zeros.</p>
-<h2 id="Intuition"><a href="#Intuition" class="headerlink" title="Intuition"></a>Intuition</h2><p>This problem is like to Leetcode2567, Yes…exactly the daily question in Leetcode yesterday. The only difference is that we canNOT have leading zeros today.<br>We need to consider how to get the minimum value. Is that replacing all first digit to 1? Apparently not, <code>11111</code> the min value should be <code>10000</code>.</p>
-<p>Can we do the same thing in the way of finding the max value? Replace the first non-1 digit to 0? No…. which breaks the rule no leading zero..</p>
-<p>Then maybe if the first digit is not <code>1</code>, we replace it to <code>1</code>. And for non-first digit, we change it to 0. </p>
-<h2 id="COOOOOOOOOOOOODING"><a href="#COOOOOOOOOOOOODING" class="headerlink" title="COOOOOOOOOOOOODING"></a>COOOOOOOOOOOOODING</h2><figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span>&#123;</span><br><span class="line">    <span class="keyword">public</span>:</span><br><span class="line">        <span class="function"><span class="type">int</span> <span class="title">maxDIff</span><span class="params">(<span class="type">int</span> num)</span></span>&#123;</span><br><span class="line">            string s = <span class="built_in">to_string</span>(num);</span><br><span class="line">            <span class="type">int</span> index_max = <span class="number">-1</span>;</span><br><span class="line">            <span class="type">int</span> index_max = <span class="number">-1</span>;</span><br><span class="line"></span><br><span class="line">            <span class="keyword">for</span>(<span class="type">int</span> i = <span class="number">0</span>; i &lt;s.<span class="built_in">length</span>(); i++)&#123;</span><br><span class="line">                <span class="keyword">if</span>(s[i] != <span class="string">&#x27;9&#x27;</span> &amp;&amp; index_max == <span class="number">-1</span>)&#123;</span><br><span class="line">                    index_max = i;</span><br><span class="line">                &#125;</span><br><span class="line">                <span class="keyword">if</span>(index_min == <span class="number">-1</span>)&#123;</span><br><span class="line">                    <span class="keyword">if</span>(i == <span class="number">0</span> &amp;&amp; s[i] != <span class="string">&#x27;1&#x27;</span>) &#123;</span><br><span class="line">                        index_min = i;</span><br><span class="line">                    &#125;</span><br><span class="line">                    <span class="keyword">else</span> <span class="keyword">if</span>(i &gt; <span class="number">0</span> &amp;&amp; s[i] != <span class="string">&#x27;0&#x27;</span> &amp;&amp; s[i] != s[<span class="number">0</span>]) &#123;</span><br><span class="line">                        index_min = i;</span><br><span class="line">                    &#125;</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">        string s_max = s;</span><br><span class="line">        <span class="keyword">if</span>(index_max != <span class="number">-1</span>) &#123;</span><br><span class="line">            <span class="keyword">for</span>(<span class="type">char</span>&amp; ch : s_max) &#123;</span><br><span class="line">                <span class="keyword">if</span>(ch == s[index_max]) ch = <span class="string">&#x27;9&#x27;</span>;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        </span><br><span class="line">        string s_min = s;</span><br><span class="line">        <span class="keyword">if</span>(index_min != <span class="number">-1</span>) &#123;</span><br><span class="line">            <span class="type">char</span> replacement = (index_min == <span class="number">0</span>) ? <span class="string">&#x27;1&#x27;</span> : <span class="string">&#x27;0&#x27;</span>;</span><br><span class="line">            <span class="keyword">for</span>(<span class="type">char</span>&amp; ch : s_min) &#123;</span><br><span class="line">                <span class="keyword">if</span>(ch == s[index_min]) ch = replacement;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        </span><br><span class="line">        <span class="type">int</span> max_val = <span class="built_in">stoi</span>(s_max);</span><br><span class="line">        <span class="type">int</span> min_val = <span class="built_in">stoi</span>(s_min);</span><br><span class="line">        <span class="keyword">return</span> max_val - min_val;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-
-]]></content>
-      <categories>
-        <category>巴别塔(babel-tower)</category>
-        <category>算(hermes)</category>
-      </categories>
-      <tags>
-        <tag>string</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Leetcode 2966 Divied array to Arrays  with max difference</title>
-    <url>/2025/06/18/%E5%B7%B4%E5%88%AB%E5%A1%94/%E7%AE%97/leetcode2966/</url>
-    <content><![CDATA[<h2 id="Problem"><a href="#Problem" class="headerlink" title="Problem"></a>Problem</h2><p>You are given an integer array <code>nums</code> of size <code>n</code> where <code>n</code> is a multiple of <code>3</code> and a positive integer <code>k</code>.</p>
-<p>Divide the array <code>nums</code> into <code>n / 3</code> arrays of size <code>3</code> satisfying the following condition:</p>
-<p>The difference between any two elements in one array is less than or equal to <code>k</code>.<br>Return a 2D array containing the arrays. If it is impossible to satisfy the conditions, return an empty array. And if there are multiple answers, return any of them.</p>
-<h2 id="Intuition"><a href="#Intuition" class="headerlink" title="Intuition"></a>Intuition</h2><p>That’s this a easy version of <a href="https://bochuan.site/2025/06/13/%E5%B7%B4%E5%88%AB%E5%A1%94/%E7%AE%97/maxmize_minimu_pairs/">Leetcode2616</a>. We can sort the array first and keep the track of  an ‘Window’ which contains 3 adjacent elements. If <code>nums[i+2] - nums[i]</code> is greater than <code>k</code>, we can just return an empty array. Since we always get the minimum difference, if current array do <strong>not</strong> satisfy the threshold, it’s impossible to exist a another <em>optimal</em> solution.</p>
-<h2 id="COOOOOOOOOOOOODING"><a href="#COOOOOOOOOOOOODING" class="headerlink" title="COOOOOOOOOOOOODING"></a>COOOOOOOOOOOOODING</h2><figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span> &#123;</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    vector&lt;vector&lt;<span class="type">int</span>&gt;&gt; <span class="built_in">divideArray</span>(vector&lt;<span class="type">int</span>&gt;&amp; nums, <span class="type">int</span> k) &#123;</span><br><span class="line">        <span class="built_in">sort</span>(nums.<span class="built_in">begin</span>(), nums.<span class="built_in">end</span>());</span><br><span class="line">        vector&lt;vector&lt;<span class="type">int</span>&gt;&gt; ans;</span><br><span class="line">        <span class="keyword">for</span> (<span class="type">int</span> i = <span class="number">0</span>; i &lt; nums.<span class="built_in">size</span>(); i += <span class="number">3</span>) &#123;</span><br><span class="line">            <span class="keyword">if</span> (nums[i + <span class="number">2</span>] - nums[i] &gt; k) &#123;</span><br><span class="line">                <span class="keyword">return</span> &#123;&#125;;</span><br><span class="line">            &#125;</span><br><span class="line">            ans.<span class="built_in">push_back</span>(&#123;nums[i], nums[i + <span class="number">1</span>], nums[i + <span class="number">2</span>]&#125;);</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> ans;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>]]></content>
-      <categories>
-        <category>巴别塔(babel-tower)</category>
-        <category>算(hermes)</category>
-      </categories>
-      <tags>
-        <tag>array</tag>
-        <tag>greedy</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Leetcode 3443, Max Manhattan distance after change K dirctions</title>
-    <url>/2025/06/20/%E5%B7%B4%E5%88%AB%E5%A1%94/%E7%AE%97/leetcode3443/</url>
-    <content><![CDATA[<h2 id="Problem"><a href="#Problem" class="headerlink" title="Problem"></a>Problem</h2><p>You are given a string s consisting of the characters ‘N’, ‘S’, ‘E’, and ‘W’, where <code>s[i]</code> indicates movements in an infinite grid:</p>
-<p>‘N’ : Move north by 1 unit.<br>‘S’ : Move south by 1 unit.<br>‘E’ : Move east by 1 unit.<br>‘W’ : Move west by 1 unit.<br>Initially, you are at the origin <code>(0, 0)</code>. You can change at most <code>k</code> characters to any of the four directions.</p>
-<p>Find the maximum Manhattan distance from the origin that can be achieved at any time while performing the movements in order.</p>
-<p>The Manhattan Distance between two cells <code>(xi, yi)</code> and <code>(xj, yj)</code> is <code>|xi - xj| + |yi - yj|</code>.</p>
-<h2 id="Examples"><a href="#Examples" class="headerlink" title="Examples"></a>Examples</h2><h3 id="Example-1"><a href="#Example-1" class="headerlink" title="Example 1"></a>Example 1</h3><figure class="highlight console"><table><tr><td class="code"><pre><span class="line">Input: s = &quot;NWSE&quot;, k = 1</span><br><span class="line"></span><br><span class="line">Output: 3</span><br><span class="line"></span><br><span class="line">Explanation:</span><br><span class="line"></span><br><span class="line">Change `s[2]` from &#x27;S&#x27; to &#x27;N&#x27;. The string s becomes &quot;NWNE&quot;.</span><br></pre></td></tr></table></figure>
-<h3 id="Example-2"><a href="#Example-2" class="headerlink" title="Example 2"></a>Example 2</h3><figure class="highlight console"><table><tr><td class="code"><pre><span class="line">Input: s = &quot;NSWWEW&quot;, k = 3</span><br><span class="line"></span><br><span class="line">Output: 6</span><br><span class="line"></span><br><span class="line">Explanation:</span><br><span class="line">Change `s[1]` from &#x27;S&#x27; to &#x27;N&#x27;, and s[4] from &#x27;E&#x27; to &#x27;W&#x27;. The string s becomes &quot;NNWWWW&quot;.</span><br></pre></td></tr></table></figure>
-
-<h2 id="Intuition"><a href="#Intuition" class="headerlink" title="Intuition"></a>Intuition</h2><p>Intuitively, that is a easy question. what we should do is made modification on the direction which appear less. </p>
-<p>After that we can handle the vertical direction(of course you can do horizontal one first if you want to ). Flipping the direction which has more occurrences leads to an immediate increment of 2. If the number of occurrences is less than <code>k</code>, we can will keep the chance to made modification on horizontal direction.</p>
-<h2 id="COOOOOOOOOOOOODING"><a href="#COOOOOOOOOOOOODING" class="headerlink" title="COOOOOOOOOOOOODING"></a>COOOOOOOOOOOOODING</h2><figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span> &#123;</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="type">int</span> <span class="title">maxDistance</span><span class="params">(string s, <span class="type">int</span> k)</span> </span>&#123;</span><br><span class="line">        <span class="type">int</span> ans = <span class="number">0</span>;</span><br><span class="line">        <span class="type">int</span> north = <span class="number">0</span>, south = <span class="number">0</span>, east = <span class="number">0</span>,west = <span class="number">0</span>;        </span><br><span class="line">        <span class="keyword">for</span>(<span class="type">char</span> direction: s)&#123;</span><br><span class="line">            <span class="keyword">switch</span>(direction)&#123;</span><br><span class="line">                <span class="keyword">case</span> <span class="string">&quot;N&quot;</span></span><br><span class="line">                    north++;</span><br><span class="line">                    <span class="keyword">break</span>;</span><br><span class="line"></span><br><span class="line">                <span class="keyword">case</span> <span class="string">&quot;S&quot;</span></span><br><span class="line">                    south++;</span><br><span class="line">                <span class="keyword">break</span>;</span><br><span class="line"></span><br><span class="line">                <span class="keyword">case</span> <span class="string">&quot;E&quot;</span></span><br><span class="line">                    east++;</span><br><span class="line">                <span class="keyword">break</span>;</span><br><span class="line"></span><br><span class="line">                <span class="keyword">case</span> <span class="string">&quot;E&quot;</span></span><br><span class="line">                    west++;</span><br><span class="line">                <span class="keyword">break</span>;</span><br><span class="line">            &#125;</span><br><span class="line">        <span class="type">int</span> vertical = <span class="built_in">min</span>(&#123;north,south,k&#125;);</span><br><span class="line">        <span class="type">int</span> hori = <span class="built_in">min</span>(&#123;east,west, k-times1&#125;);</span><br><span class="line">        ans = <span class="built_in">max</span>(ans, <span class="built_in">cal</span>(north, south, vertical) + <span class="built_in">cal</span>(east, west, hori));</span><br><span class="line">        &#125;</span><br><span class="line">    <span class="keyword">return</span> ans;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="function"><span class="type">int</span> <span class="title">cal</span><span class="params">(<span class="type">int</span> dir1, <span class="type">int</span> dirt2, <span class="type">int</span> times)</span></span>&#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="built_in">abs</span>(dir1 - dir2) + <span class="number">2</span>*times</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
-
-]]></content>
-      <categories>
-        <category>巴别塔(babel-tower)</category>
-        <category>算(hermes)</category>
-      </categories>
-      <tags>
-        <tag>math</tag>
       </tags>
   </entry>
   <entry>
